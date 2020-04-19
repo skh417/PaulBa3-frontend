@@ -4,8 +4,9 @@ import {
     Route,
     Switch,
 } from "react-router-dom";
-import App from "../src/App";
-import Menu from "../src/pages/Main/Main";
+import App from "./App";
+import Menu from "./pages/Main/Main";
+import Login from "./pages/Login/Login";
 
 class Routes extends Component {
     render() {
@@ -14,6 +15,7 @@ class Routes extends Component {
                 <Switch>
                     <Route exact path="/" component={App} />
                     <Route exact path="/menu" component={Menu} />
+                    <Route exact path="/login" component={Login} />
                 </Switch>
             </Router>
         );
