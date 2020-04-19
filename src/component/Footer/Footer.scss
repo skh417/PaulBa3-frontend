@@ -1,0 +1,85 @@
+.Footer {
+    position: relative;
+    padding: 20px 0 0 50px;
+    height: 127px;
+    font-family: NotoSans, "맑은 고딕", "Malgun Gothic", NanumGothic, Dotum, 돋움, gulim, 굴림, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #3d3937;
+    color: #ffffff;
+    
+    .menu {
+        ul {
+            list-style: none;
+            display: block;
+            padding: 0;
+            li {
+                float: left;
+                margin-right: 20px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .company-info {
+        display: block;
+        padding-top: 40px;
+        font-size: 11px;
+        color: #959595;
+        font-family: 'NotoSansL';
+        letter-spacing: 1px;
+
+        span {
+            margin-left: 20px;
+            color: #7e7e7e;
+        }
+    }
+
+    .more-info {
+        position: absolute;
+        right: 40px;
+        top: 47px;
+        width: 428px;
+        text-align: right;
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            margin-left: 25px;
+        }
+
+        .sns {
+            
+            a {
+                display: inline-block;
+                margin-left: 20px;
+                width: 28px;
+                height: 28px;
+            }
+            a::before .facebook {
+                background: url("https://png.pngitem.com/pimgs/s/402-4025166_thumb-image-facebook-logo-white-pdf-hd-png.png") no-repact 0 0;
+                background-position: -87px 2px;
+            }
+            .instagram {
+                background: url("")
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .Footer {
+        height: 197px;
+    }
+
+    .more-info {
+        position: static;
+        width: auto;
+        text-align: left;
+        padding-left: 20px;
+    }
+}
