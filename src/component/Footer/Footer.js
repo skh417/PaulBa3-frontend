@@ -16,13 +16,13 @@ class Footer extends Component {
                         <li>사이트맵</li>
                     </ul>
                 </div>
-                <div className="company-info">
+                <div className="companyInfo">
                     엠즈씨드(주) 대표이사 : 김용철 주소 : 서울특별시 강남구 도산대로 75길 22 (청담동)
                     <br />
                     사업자등록번호 211-88-95935 대표번호 1899-8829 개인정보관리책임자 : 정의천 <span>© 2019 m’s seed Co., Ltd. All rights reserved.</span>
                 </div>
                 <br />
-                <div className="more-info">
+                <div className="moreInfo">
                     <ul>
                         <li><img src="https://www.baristapaulbassett.co.kr/images/common/footer01.png" /></li>
                         <li><img src="https://www.baristapaulbassett.co.kr/images/common/footer02.png" alt="2017년 제 19회 대한민국 브랜드 대상 산업정책 연구원이사장상" /></li>
@@ -30,13 +30,14 @@ class Footer extends Component {
                     <div className="sns">
                         <a 
                             href="https://www.facebook.com/paulbassettkorea/" 
-                            target="_blank">
-                            <span className="facebook">페이스북</span>
+                            target="_blank"
+                            className="facebook">
+                            
                         </a>
                         <a 
                             href="https://www.instagram.com/paulbassettkorea/" 
-                            target="_blank">
-                            <span className="instagram">인스타그램</span>
+                            target="_blank"
+                            className="instagram">
                         </a>
                     </div>
                 </div>

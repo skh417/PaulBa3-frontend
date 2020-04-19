@@ -5,8 +5,9 @@ import {
     Switch,
 } from "react-router-dom";
 import Home from "./Home";
-import Menu from "./pages/Main/Main";
+import Menu from "./pages/Menu/Menu";
 import Login from "./pages/Login/Login";
+import Coffee from "./pages/Menu/Coffee/Coffee";
 
 class Routes extends Component {
     render() {
@@ -16,6 +17,7 @@ class Routes extends Component {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/menu" component={Menu} />
                     <Route exact path="/login" component={Login} />
+                    <Route exact path="/menu/coffee" component={Coffee} />
                 </Switch>
             </Router>
         );

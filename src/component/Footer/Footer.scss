@@ -1,7 +1,7 @@
 .Footer {
     position: relative;
     padding: 20px 0 0 50px;
-    height: 127px;
+    height: 147px;
     font-family: NotoSans, "맑은 고딕", "Malgun Gothic", NanumGothic, Dotum, 돋움, gulim, 굴림, Helvetica, sans-serif;
     font-size: 13px;
     background: #3d3937;
@@ -20,7 +20,7 @@
         }
     }
 
-    .company-info {
+    .companyInfo {
         display: block;
         padding-top: 40px;
         font-size: 11px;
@@ -34,7 +34,7 @@
         }
     }
 
-    .more-info {
+    .moreInfo {
         position: absolute;
         right: 40px;
         top: 47px;
@@ -52,20 +52,32 @@
 
         .sns {
             
-            a {
+            img {
                 display: inline-block;
                 margin-left: 20px;
                 width: 28px;
                 height: 28px;
             }
-            a::before .facebook {
-                background: url("https://png.pngitem.com/pimgs/s/402-4025166_thumb-image-facebook-logo-white-pdf-hd-png.png") no-repact 0 0;
-                background-position: -87px 2px;
-            }
-            .instagram {
-                background: url("")
+
+            a {
+                margin-right: 5px;
             }
 
+            .facebook::before {
+                content: "";
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                background: url("https://spng.pngfind.com/pngs/s/174-1744532_facebook-icon-link-facebook-white-icon-hd-png.png");
+            }
+
+            .instagram::before {
+                content: "";
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                background: url("https://toppng.com/public/uploads/preview/insta-business-card-icons-instagram-11563063694u4aewer5gi.png");
+            }
         }
     }
 
