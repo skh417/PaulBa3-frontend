@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Coffee.scss";
-import coffeTopImage from "../../../image/menu-coffee-topimage.jpg";
+import icon from "../../../image/menu-coffee-test.jpg";
 
 class Coffee extends Component {
     render() {
@@ -18,14 +18,26 @@ class Coffee extends Component {
                     <ul>
                         <li>전체</li>
                         <li>Coffee</li>
-                        <li>Lattee</li>
+                        <li>Latte</li>
                         <li>Espresso</li>
                         <li>Cold Brew</li>
                         <li>Single Origin</li>
                     </ul>
                 </div>
-                <div className="menuList">
-
+                <div className="menuConatinaer">
+                    <div className="menuList">
+                        <ul>
+                            <li>
+                                <a href="" />
+                                <div >
+                                    <img className="icon" src={icon}/>
+                                    <div className="text">
+                                        아이스 룽고 <span>Iced Lungo</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         );

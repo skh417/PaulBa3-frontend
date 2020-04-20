@@ -17,29 +17,29 @@
             .title {
                 font-size: 50px;
                 font-weight: bold;
+                font-family: 'Roboto';
             }
         }
     }
 
     .category {
-        position: relative;
-        display: table;
         width: 100%;
         height: 58px;
         border-bottom: 1px solid #aaa8a7;
         font-size: 13px;
-
         ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            width: 706px;
             text-align: center;
-            padding-top: 5px;
+            transform: translateX(50%);
+            padding-top: 15px;
             
             li {
-                display: table-cell;
+                font-size: 15px;
                 color: #382e2c;
                 width: 145px;
+                cursor: pointer;
                 
                 .on {
                     border-bottom: 3px #e0004d;
@@ -47,5 +47,55 @@
             }
         }
 
+    }
+
+    .menuConatinaer {
+        padding-top: 70px; 
+
+        .menuList {
+            width: 1236px;
+            margin: 0 auto;
+            ul {
+                margin: 0 auto;
+                max-width: 1236px;
+                list-style: none;
+                li {
+                    cursor: pointer;
+                    display: inline-block;
+                    position: relative;
+                    margin: 0 15px 60px 15px;
+                    width: 276px;
+                    height: 350px;
+                    vertical-align: top;
+
+                    div {
+                        height: 276px;
+                        width: 276px;
+                        
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            border: 4px solid #ffffff;
+                            border-radius: 150px;
+                        }
+
+                        .text {
+                            padding-top: 30px;
+                            font-size: 20px;
+                            color: #382e2c;
+                            text-align: center;
+
+                            span {
+                                display: block;
+                                margin-top: 5px;
+                                color: #987346;
+                                font-family: 'Roboto', 'NotoSans';
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

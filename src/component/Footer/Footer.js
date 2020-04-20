@@ -39,6 +39,7 @@ class Footer extends Component {
                             target="_blank"
                             className="instagram">
                         </a>
+                        
                     </div>
                 </div>
             </div>
