@@ -1,9 +1,7 @@
 .Footer {
     position: relative;
-    padding: 20px 0 0 50px;
+    padding: 40px 0 0 50px;
     height: 147px;
-    font-family: NotoSans, "맑은 고딕", "Malgun Gothic", NanumGothic, Dotum, 돋움, gulim, 굴림, Helvetica, sans-serif;
-    font-size: 13px;
     background: #3d3937;
     color: #ffffff;
     
@@ -17,6 +15,9 @@
                 margin-right: 20px;
                 font-weight: normal;
             }
+            .privacy {
+                font-weight: 700;
+            }
         }
     }
 
@@ -28,16 +29,17 @@
         font-family: 'NotoSansL';
         letter-spacing: 1px;
 
-        span {
+        .copyright {
             margin-left: 20px;
             color: #7e7e7e;
+            font-size: 12px;
         }
     }
 
     .moreInfo {
         position: absolute;
         right: 40px;
-        top: 47px;
+        top: 60px;
         width: 428px;
         text-align: right;
 
@@ -47,7 +49,7 @@
 
         li {
             float: left;
-            margin-left: 25px;
+            margin-right: 25px;
         }
 
         .sns {
@@ -68,7 +70,8 @@
                 display: inline-block;
                 width: 28px;
                 height: 28px;
-                background: url("https://spng.pngfind.com/pngs/s/174-1744532_facebook-icon-link-facebook-white-icon-hd-png.png");
+                background: url("../../image/icon.png");
+                background-position: 50px 2px;
             }
 
             .instagram::before {
@@ -76,7 +79,8 @@
                 display: inline-block;
                 width: 28px;
                 height: 28px;
-                background: url("https://toppng.com/public/uploads/preview/insta-business-card-icons-instagram-11563063694u4aewer5gi.png");
+                background: url("../../image/icon.png");
+                background-position: 60px -32px;
             }
         }
     }
@@ -86,12 +90,17 @@
 @media (max-width: 1200px) {
     .Footer {
         height: 197px;
-    }
-
-    .more-info {
-        position: static;
-        width: auto;
-        text-align: left;
-        padding-left: 20px;
+        padding: 40px 0 0 50px;
+        
+        .moreInfo {
+            position: static;
+            display: flex;
+            width: 420px;
+            
+            .sns {
+                margin-top: 10px;
+                margin-left: 25px;
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ class Footer extends Component {
             <div className="Footer">
                 <div className="menu">
                     <ul>
-                        <li>개인정보처리방침</li>
+                        <li className="privacy">개인정보처리방침</li>
                         <li>신규입점안내</li>
                         <li>이용약관</li>
                         <li>소사이어티카드 이용약관</li>
@@ -19,7 +19,7 @@ class Footer extends Component {
                 <div className="companyInfo">
                     엠즈씨드(주) 대표이사 : 김용철 주소 : 서울특별시 강남구 도산대로 75길 22 (청담동)
                     <br />
-                    사업자등록번호 211-88-95935 대표번호 1899-8829 개인정보관리책임자 : 정의천 <span>© 2019 m’s seed Co., Ltd. All rights reserved.</span>
+                    사업자등록번호 211-88-95935 대표번호 1899-8829 개인정보관리책임자 : 정의천 <span className="copyright"> © 2019 m’s seed Co., Ltd. All rights reserved.</span>
                 </div>
                 <br />
                 <div className="moreInfo">
