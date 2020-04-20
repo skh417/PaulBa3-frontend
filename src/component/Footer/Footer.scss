@@ -15,8 +15,9 @@
                 margin-right: 20px;
                 font-weight: normal;
             }
-            .privacy {
-                font-weight: 700;
+
+            .copyright {
+                font-weight: bold;
             }
         }
     }
@@ -29,7 +30,7 @@
         font-family: 'NotoSansL';
         letter-spacing: 1px;
 
-        .copyright {
+        span {
             margin-left: 20px;
             color: #7e7e7e;
             font-size: 12px;
@@ -38,13 +39,15 @@
 
     .moreInfo {
         position: absolute;
-        right: 40px;
-        top: 60px;
+        right: 10px;
+        top: 57px;
         width: 428px;
         text-align: right;
+        padding-left: 10px;
 
         ul {
             list-style: none;
+            width: 284px;
         }
 
         li {
@@ -53,10 +56,8 @@
         }
 
         .sns {
-            
             img {
                 display: inline-block;
-                margin-left: 20px;
                 width: 28px;
                 height: 28px;
             }
@@ -70,7 +71,7 @@
                 display: inline-block;
                 width: 28px;
                 height: 28px;
-                background: url("../../image/icon.png");
+                background: url("../../image//icon.png");
                 background-position: 50px 2px;
             }
 
@@ -79,8 +80,8 @@
                 display: inline-block;
                 width: 28px;
                 height: 28px;
-                background: url("../../image/icon.png");
-                background-position: 60px -32px;
+                background: url("../../image//icon.png");
+                background-position: 59px -32px;
             }
         }
     }
@@ -91,16 +92,20 @@
     .Footer {
         height: 197px;
         padding: 40px 0 0 50px;
-        
+
         .moreInfo {
             position: static;
             display: flex;
-            width: 420px;
+            width: auto;
+            text-align: left;
+            padding-top: 2px;
+            padding-left: 0px;
             
             .sns {
-                margin-top: 10px;
-                margin-left: 25px;
+                padding-left: 25px;
+                padding-top: 10px;
             }
         }
     }
+
 }
