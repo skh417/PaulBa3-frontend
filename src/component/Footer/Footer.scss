@@ -1,0 +1,111 @@
+.Footer {
+    position: relative;
+    padding: 40px 0 0 50px;
+    height: 147px;
+    background: #3d3937;
+    color: #ffffff;
+    
+    .menu {
+        ul {
+            list-style: none;
+            display: block;
+            padding: 0;
+            li {
+                float: left;
+                margin-right: 20px;
+                font-weight: normal;
+            }
+
+            .copyright {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .companyInfo {
+        display: block;
+        padding-top: 40px;
+        font-size: 11px;
+        color: #959595;
+        font-family: 'NotoSansL';
+        letter-spacing: 1px;
+
+        span {
+            margin-left: 20px;
+            color: #7e7e7e;
+            font-size: 12px;
+        }
+    }
+
+    .moreInfo {
+        position: absolute;
+        right: 10px;
+        top: 57px;
+        width: 428px;
+        text-align: right;
+        padding-left: 10px;
+
+        ul {
+            list-style: none;
+            width: 284px;
+        }
+
+        li {
+            float: left;
+            margin-right: 25px;
+        }
+
+        .sns {
+            img {
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+            }
+
+            a {
+                margin-right: 5px;
+            }
+
+            .facebook::before {
+                content: "";
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                background: url("../../image//icon.png");
+                background-position: 50px 2px;
+            }
+
+            .instagram::before {
+                content: "";
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                background: url("../../image//icon.png");
+                background-position: 59px -32px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .Footer {
+        height: 197px;
+        padding: 40px 0 0 50px;
+
+        .moreInfo {
+            position: static;
+            display: flex;
+            width: auto;
+            text-align: left;
+            padding-top: 2px;
+            padding-left: 0px;
+            
+            .sns {
+                padding-left: 25px;
+                padding-top: 10px;
+            }
+        }
+    }
+
+}
