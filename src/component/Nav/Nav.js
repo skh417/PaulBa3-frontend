@@ -10,21 +10,18 @@ class Nav extends Component {
         }
     }
 
-    hoverOnOff = () => {
+    hoveronOff = () => {
         this.setState({show: !this.state.show, })
     }
 
     render() {
         return (
             <div className={this.state.show? "Nav NavShow" : "Nav NavUnshown"}>
-                <div className="logoContainer">
+                <div className="logoContainer" onMouseEnter={this.hoveronOff}>
                     <div className={this.state.show ? "logo logoShow" : "logo logoUnshown"}></div>
                 </div>
-                <div className="navList">
-                    <ul 
-                        onMouseEnter={this.hoverOnOff}
-                        onMouseLeave={this.hoverOnOff}
-                    >
+                <div className="navList" >
+                    <ul onMouseEnter={this.hoveronOff}>
                         <li><span className="aboutUs">ABOUT US</span></li>
                         <li><span className="menu">MENU</span></li>
                         <li><span className="store">STORE</span></li>
@@ -42,11 +39,10 @@ class Nav extends Component {
                         <li><span>FAQ</span></li>
                     </ul>
                 </div>
-                <NavDetail 
+                {this.state.show && <NavDetail 
                     show={this.state.show} 
-                    // onMouseEnter={this.hoverOnOff}
-                    // onMouseLeave={this.hoverOnOff}
-                />
+                    onMouseLeave={this.hoveronOff}
+                />}
             </div>
         );
     }

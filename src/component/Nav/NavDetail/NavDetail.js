@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import "./NavDetail.scss";
 
 class NavDetail extends Component {
+
     render() {
         return (
-            <div className={this.props.show ? "NavDetail show" : "NavDetail unShown"}>
+            <div 
+                className={this.props.show ? "NavDetail show" : "NavDetail unShown"}
+                onMouseLeave={this.props.onMouseLeave}
+            >
                 
                 <div>
                     <ul className="aboutList">
