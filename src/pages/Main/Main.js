@@ -29,7 +29,7 @@ class Main extends Component {
                 <div className="mainSectionOne">
                     <div className={`mainBanner img${this.state.imgNum}`}>
                         <div className="mainText">
-                            <strong className="korName">카라멜 마키아토</strong>
+                            <p className="korName">카라멜 마키아토</p>
                             <p className="description">지친 일상에 달콤한 위로가 되어줄 커피</p>
                             <span className="detail">DETAIL VIEW</span>
                         </div>
