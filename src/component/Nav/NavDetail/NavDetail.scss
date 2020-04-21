@@ -22,6 +22,7 @@
                 line-height: 25px;
                 font-family: 'Roboto', 'NotoSans';
                 font-size: 12px;
+                
             }
         }
 
@@ -44,4 +45,12 @@
             padding-left: 50px;
         }
     }
+}
+
+.show {
+    display: block;
+}
+
+.unShown {
+    display: none;
 }

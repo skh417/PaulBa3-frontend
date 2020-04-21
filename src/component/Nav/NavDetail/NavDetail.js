@@ -4,10 +4,8 @@ import "./NavDetail.scss";
 class NavDetail extends Component {
     render() {
         return (
-            <div
-                className="NavDetail"
-                style={{ display: this.props.show }}
-            >
+            <div className={this.props.show ? "NavDetail show" : "NavDetail unShown"}>
+                
                 <div>
                     <ul className="aboutList">
                         <li>WBC 챔피언 폴 바셋</li>

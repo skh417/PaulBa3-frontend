@@ -4,15 +4,16 @@
     height: 110px;
     z-index: 100;
 
-    .logo {
+    .logoContainer {
         padding-top: 10px;
-        text-align: center;
 
-        img {
+        .logo {
             cursor: pointer;
+            margin: 0 auto;
             width: 110px;
             height: 48px;
-        }
+            
+        }        
     }
 
     .navList {
@@ -55,12 +56,12 @@
         position: fixed;
         top: 5px;
         right: 20px;
+        
 
         ul {
             list-style: none;
             display: flex;
             margin-left: 15px;
-            // z-index: 10;
 
             li {
                 margin-right: 15px;
@@ -68,13 +69,38 @@
                 span {
                     cursor: pointer;
                     font-size: 12px;
-                    // color: rgba(255,255,255,0.7);
                     font-family: 'Roboto', 'NotoSans';
                 }
             }
         }
     }
 }
+
+.NavShow {
+    background-color: white;
+    color: black;
+}
+.NavUnshown {
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+}
+
+.logoShow {
+    background: url("../../image/logo_on.png");
+    background-size: cover;
+}
+.logoUnshown {
+    background: url("../../image/logo.png");
+    background-size: cover;
+}
+
+.smallNavListShow {
+    color: #969696;
+}
+.smallNavListUnshown {
+    color: rgba(255,255,255,0.7);
+}
+
 
 @media (min-width: 1361px) {
 
