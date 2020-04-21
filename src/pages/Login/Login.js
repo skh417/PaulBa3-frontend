@@ -12,13 +12,16 @@ class Login extends Component {
     }
 
     checkBox = (e) => {
-        this.setState(state => ({
-            isToggleOn : !state.isToggleOn
-        }));
+        this.setState({
+            isToggleOn : !this.state.isToggleOn
+        });
+        console.log("clicked")
     }
 
     render() {
         const { isToggleOn } = this.state; // 비구조화 할당
+
+        console.log(isToggleOn)
         return (
             <div className="Login">
                 <div className="loginArea">    
@@ -31,11 +34,10 @@ class Login extends Component {
                             </div>
                             <a className="loginBtn">로그인</a>
                         </div>
-                    
                         <div className="saveAndFindInfo">
                             <div className="saveId">
-                                <input type="checkbox" id="saveId" className="saveId" style={isToggleOn?{backgroundPositionY : 0 } : {backgroundPositionY : -15 + 'px'}} onClick={this.checkBox} />
-                                <label for="saveId" onClick={this.checkBox}>아이디 저장</label>
+                                <input type="checkbox" id="saveId" className={isToggleOn?"uncheckedSaveId":"checkedSaveId"} onClick={this.checkBox}/>
+                                <label for="saveId">아이디 저장</label>
                             </div>    
                             <div className="idPwBtn">
                                 <a>아이디 찾기</a>
