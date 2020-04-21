@@ -1,0 +1,107 @@
+.Nav {
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    z-index: 100;
+
+    .logoContainer {
+        padding-top: 10px;
+
+        .logo {
+            cursor: pointer;
+            margin: 0 auto;
+            width: 110px;
+            height: 48px;
+            
+        }        
+    }
+
+    .navList {
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            margin-top: 5px; 
+            width: 1003px;
+            justify-content: center;
+
+            li {
+                font-weight: normal;
+                justify-content: space-evenly;
+                padding: 0 45px;
+
+                span {
+                    cursor: pointer;
+                    font-size: 14px;
+                    height: 100%;
+                    letter-spacing: 2px;
+                    margin-right: 6px;
+                    padding-bottom: 22px;
+                }
+
+                span:hover {
+                    border-bottom: 3px red solid;
+                }
+
+                .eShop {
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+
+    .smallNavList {
+        position: fixed;
+        top: 5px;
+        right: 20px;
+        
+
+        ul {
+            list-style: none;
+            display: flex;
+            margin-left: 15px;
+
+            li {
+                margin-right: 15px;
+
+                span {
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-family: 'Roboto', 'NotoSans';
+                }
+            }
+        }
+    }
+}
+
+.NavShow {
+    background-color: white;
+    color: black;
+}
+.NavUnshown {
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+}
+
+.logoShow {
+    background: url("../../image/logo_on.png");
+    background-size: cover;
+}
+.logoUnshown {
+    background: url("../../image/logo.png");
+    background-size: cover;
+}
+
+.smallNavListShow {
+    color: #969696;
+}
+.smallNavListUnshown {
+    color: rgba(255,255,255,0.7);
+}
+
+
+@media (min-width: 1361px) {
+
+}
