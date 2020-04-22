@@ -1,0 +1,106 @@
+.MainTwo {
+    ::-webkit-scrollbar {
+        // width: 0px;
+    }
+
+    position: relative;
+    background-color: #382e2c;
+    height: calc(100vh - 147px);
+    overflow: hidden;
+
+    .bottomBanner {
+        position: absolute;
+        display: flex;
+        // display: inline-block;
+        width: 100%;
+        top: 10%;
+        left: 50px;
+        bottom: 10%;
+        overflow-x: scroll;
+        // overflow-y: hidden;
+        // white-space: nowrap;
+        
+        .container {
+            position: relative;
+            height: 100%;
+            width: 900px;
+            margin: 0 30px;
+            
+            
+            img {
+                display: inline-block;
+                height: 100%;
+                object-fit: center;
+            }
+
+            .text {
+                position: absolute;
+                top: 0;
+                color: white;
+                margin-top: 40px;
+                margin-left: 30px;
+                // color: rgba(255,255,255,0.7);
+
+                .title {
+                    span {
+                        display: block;
+                        font-weight: 600;
+                        font-size: 60px;
+                        line-height: 76px;
+                    }
+                }
+
+                .two {
+                    span {
+                        font-size: 100px;
+                        font-family: 'RobotoM';
+                        line-height: 100px;
+                    }
+                }
+
+                .content {
+                    margin-top: 28px;
+                    span {
+                        display: block;
+                        line-height: 28px;
+                        font-size: 17px;
+                    }
+                }
+            }
+            .shown {
+                .logo {
+                    position: absolute;
+                    top: 50px;
+                    right: 40px;
+                    width: 36px;
+                    height: 46px;
+                }
+                .one {
+                    background: url("../../../image/bannerIcon.png") no-repeat;
+                    background-position: 0 0;
+                }
+                .two {
+                    background: url("../../../image/bannerIcon.png") no-repeat;
+                    background-position: -36px 0;
+                }
+                .three {
+                    background: url("../../../image/bannerIcon.png") no-repeat;
+                    background-position: -72px 0;
+                }
+
+                .detail {
+                    position: absolute;
+                    color: white;
+                    bottom: 50px;
+                    right: 50px;
+                    font-family: 'RobotoB';
+                    font-weight: 700;
+                    font-size: 13px;
+                }
+            }
+        }
+        .imgThree {
+            width: 360px;
+        }
+    }
+}

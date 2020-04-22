@@ -5,11 +5,18 @@ import Footer from "./component/Footer/Footer";
 import './Home.scss';
 
 class Home extends Component {
+
+  handleScroll = () => {
+        if (window.scrollY > 0) {
+          console.log("scrollY", window.scrollY)
+        }
+  }
+
   render() {
     return (
-      <div className="Home">
+      <div className="Home" onScroll={this.handleScroll}>
         <Nav />
-        <Main />
+        <Main scroll={this.handleScroll}/>
         <Footer />
       </div>
     );
