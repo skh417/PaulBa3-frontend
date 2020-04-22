@@ -16,9 +16,9 @@ class Nav extends Component {
 
     render() {
         return (
-            <div className={this.state.show? "Nav NavShow" : "Nav NavUnshown"}>
+            <div className={this.state.show? "Nav" : "Nav showList"}>
                 <div className="logoContainer" onMouseEnter={this.hoveronOff}>
-                    <div className={this.state.show ? "logo logoShow" : "logo logoUnshown"}></div>
+                    <div className={this.state.show ? "logo showList" : "logo"}></div>
                 </div>
                 <div className="navList" >
                     <ul onMouseEnter={this.hoveronOff}>
@@ -30,7 +30,7 @@ class Nav extends Component {
                         <li><span className="eShop">E-SHOP</span></li>
                     </ul>
                 </div>
-                <div className={this.state.show ? "smallNavList smallNavListShow" : "smallNavList smallNavListUnshown"}>
+                <div className={this.state.show ? "smallNavList showList" : "smallNavList"}>
                     <ul>
                         <li><span>Login</span></li>
                         <li><span>Join</span></li>
