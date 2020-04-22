@@ -11,7 +11,7 @@ class MainTwo extends Component {
                 <div className="bottomBanner">
                     {/* 이벤트 */}
                     <div className="container">
-                        <img src={bottomImgOne} alt=""/>
+                        <img src={bottomImgOne} alt="" />
                         <div className="text">
                             <div className="title">
                                 <span>크라운 오더</span>
@@ -29,7 +29,7 @@ class MainTwo extends Component {
                     </div>
                     {/* coffee class */}
                     <div className="container">
-                        <img src={bottomImgTwo} alt=""/>
+                        <img src={bottomImgTwo} alt="" />
                         <div className="text">
                             <div className="title two">
                                 <span>Coffee</span>
@@ -46,7 +46,7 @@ class MainTwo extends Component {
                     </div>
                     {/* 세번째 이미지 */}
                     <div className="container imgThree">
-                        <img src={bottomImgThree} alt=""/>
+                        <img src={bottomImgThree} alt="" />
                         <div className="text">
                             <div className="title two">
                                 <span>Bean</span>
@@ -60,6 +60,30 @@ class MainTwo extends Component {
                             <div className="logo three"></div>
                             <div className="detail">DETAIL VIEW</div>
                         </div>
+                    </div>
+                </div>
+                <div className="links">
+                    <div className="container">
+                        <div className="mobile"></div>
+                        <a
+                            href="https://www.baristapaulbassett.co.kr/society/MobileApp.pb"
+                            target="_blank"
+                        >Mobile<br/>App</a>
+                    </div>
+                    <div className="container">
+                        <div className="special"></div>
+                            <a
+                                href="https://www.baristapaulbassett.co.kr/society/Rating.pb"
+                                target="_blank"
+                            >Special<br/>Benefit</a>
+                    </div>
+                    <div className="container">
+                        <div className="eshop"></div>
+                            <a
+                                href="https://www.baristapaulbassett.co.kr/eshop/index.pb"
+                                target="_blank"
+                                className="text"
+                            >e-Shop</a>
                     </div>
                 </div>
             </div>
