@@ -3,11 +3,25 @@
     ;
     font-weight: normal;
     box-sizing: border-box;
+
+    :focus {
+        outline: none;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 0 10px;
+    }
 }
 
 .SignUp {
     margin: 0 auto;
     width: 1005px;
+
+    select {
+        -webkit-appearance: none;
+        background: url("https://www.baristapaulbassett.co.kr/images/blt/blt_select02.png") no-repeat 93%;
+    }
 
     h2 {
         padding: 80px 0 45px 0;
@@ -256,7 +270,6 @@
             padding: 0 10px;
             border: 1px solid #aaa8a7;
             color: #62605f;
-
         }
 
         .address {
