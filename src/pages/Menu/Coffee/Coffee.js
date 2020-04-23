@@ -5,6 +5,7 @@ import icon from "../../../image/menu-coffee-test.jpg";
 class Coffee extends Component {
     render() {
         return (
+            <>
             <div className="Coffee">
                 <div className="topImage">
                     <img />
@@ -40,6 +41,7 @@ class Coffee extends Component {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 }

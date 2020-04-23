@@ -16,6 +16,7 @@ class HomeNav extends Component {
     }
 
     render() {
+
         console.log('homenav', this.props);
         return (
             <div className={`Nav ${this.state.show ? "showList" : ""}`} style={{display: this.props.navShow}}>
