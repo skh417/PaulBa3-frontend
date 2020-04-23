@@ -7,30 +7,38 @@ import './Home.scss';
 // let lastScroll = 0;
 
 class Home extends Component {
-  
-  // scrollTo = () => {
-  //   var currentY = window.pageYOffset || document.documentElement.scrollTop;
-  //   if (currentY > lastScroll) {
-  //     window.location.href = "#bottom";
-  //     lastScroll = currentY;
-  //   } else {
-  //     window.location.href = "#top";
-  //     lastScroll = currentY;
-  //   }
-  // }
+  state = {
+    navShow: 'block',
+  }
 
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.scrollTo);
-  // }
+  scrollTo = () => {
+    var currentY = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentY >= 10) {
+      this.setState({navShow: 'none',})
+    } else {
+      this.setState({navShow: 'block',})
+    }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', this.scrollTo);
-  // }
+    // if (currentY > lastScroll) {
+    //   window.location.href = "#bottom";
+    //   lastScroll = currentY;
+    // } else {
+    //   window.location.href = "#top";
+    //   lastScroll = currentY;
+    // }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollTo);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollTo);
+  }
 
   render() {
     return (
       <div className="Home">
-        <HomeNav />
+        <HomeNav navShow={this.state.navShow}/>
         <Main />
         <Footer />
       </div>
