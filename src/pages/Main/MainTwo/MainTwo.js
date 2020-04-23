@@ -7,7 +7,7 @@ import bottomImgThree from "../../../image/buttomBanner-3.jpg";
 class MainTwo extends Component {
     render() {
         return (
-            <div className="MainTwo">
+            <div className="MainTwo" id="bottom">
                 <div className="bottomBanner">
                     {/* 이벤트 */}
                     <div className="container">
@@ -65,25 +65,15 @@ class MainTwo extends Component {
                 <div className="links">
                     <div className="container">
                         <div className="mobile"></div>
-                        <a
-                            href="https://www.baristapaulbassett.co.kr/society/MobileApp.pb"
-                            target="_blank"
-                        >Mobile<br/>App</a>
+                        <div className="text">Mobile<br />App</div>
                     </div>
                     <div className="container">
                         <div className="special"></div>
-                            <a
-                                href="https://www.baristapaulbassett.co.kr/society/Rating.pb"
-                                target="_blank"
-                            >Special<br/>Benefit</a>
+                        <div className="text">Special<br />Benefit</div>
                     </div>
                     <div className="container">
                         <div className="eshop"></div>
-                            <a
-                                href="https://www.baristapaulbassett.co.kr/eshop/index.pb"
-                                target="_blank"
-                                className="text"
-                            >e-Shop</a>
+                        <div className="text">e-Shop</div>
                     </div>
                 </div>
             </div>

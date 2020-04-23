@@ -1,79 +1,81 @@
 import React, { Component } from "react";
 import "./MainOne.scss";
 
-const mainBanner = {
-    one: {
+const main = {
+    banner1: {
         id: 1,
-        imgNum: 1,
+        img1: "img1",
         name: "카라멜 마키아토",
         description: "지친 일상에 달콤한 위로가 되어줄 커피"
     },
-    two: {
+    banner2: {
         id: 2,
-        imgNum: 2,
+        img2: "img2",
         name: "MALCHA",
         description: "폴 바셋에서 싱그러운 봄을 만나보세요."
     },
-    three: {
+    banner3: {
         id: 3,
-        imgNum: 3,
+        img3: "img3",
         name: "깊고 부드러운 초콜릿 아이스크림",
         description: "깊고 풍부한 발로나 초콜릿과 상하목장 원유의 만남"
     },
-    four: {
+    banner4: {
         id: 4,
-        imgNum: 4,
+        img4: "img4",
         name: "프리미엄 과일 블렌딩티",
         description: "프랑스 프리미엄 티 포숑으로 만든 상큼한 과일티"
     },
-    five: {
+    banner5: {
         id: 5,
-        imgNum: 5,
+        img5: "img5",
         name: "시그니처 앵글 머그",
         description: "폴 바셋 시그니처 디자인 머그"
     },
-    six: {
+    banner6: {
         id: 6,
-        imgNum: 6,
+        img6: "img6",
         name: "5월 가정의 달 쿠폰 틴케이스",
         description: "쿠폰 틴케이스 구매하시고, 5월의 다양한 혜택을 즐겨보세요"
     }
 }
 
 class MainOne extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            mainBanner: [
-                {
-                    imgNum: 1, name: "카라멜 마키아토", description: "지친 일상에 달콤한 위로가 되어줄 커피"
-                },
-            ],
-            imgNum: 1,
-        }
+    
+    componentDidMount = () => {
+        this.changeBanner()
+        // this.changeBanner = setInterval(this.changeBanner, 1000);
     }
-
-    // componentDidMount = () => {
-    //     this.changeImg = setInterval(this.changeImg, 1000);
-    // }
-
     // componentWillUnmount = () => {
-    //     clearInterval(this.changeImg);
+    //     clearInterval(this.changeBanner);
     // }
-
-    // changeBanner = () => {
-    //     this.state.mainbanner[i] > 5
-    //         ? this.setState({ imgNum: 1 })
-    //         : this.setState({ imgNum: this.state.imgNum + 1})
-    // }
+    changeBanner = () => {        
+        for (var i = 0; i<Object.keys(main).length; i++) {
+            if (i > 6) {
+                i = 0;
+                console.log('0', Object.keys(main)[i])
+            } else {
+                console.log('!0', Object.keys(main)[i]);
+            }
+            // console.log(Object.keys(main)[i]);
+        }
+        /*
+        // for(var i = 0; i < Object.keys(main).length; i++) {
+        //     console.log(i)
+        //     if (i > 6) {
+        //         i = 0
+        //     }
+        // }
+        */
+    }
 
     render() {
         return (
-            <div className="MainOne">
-                <div className={`mainBanner img${mainBanner.one.imgNum}`}>
+            <div className="MainOne" id="top">
+                <div className={`mainBanner ${main.banner1.img1}`}>
                     <div className="mainText">
-                        <p className="korName">{this.state.mainBanner[0].name}</p>
-                        <p className="description">{this.state.mainBanner[0].description}</p>
+                        <p className="korName">{main.banner1.name}</p>
+                        <p className="description">{main.banner1.description}</p>
                         <span className="detail">DETAIL VIEW</span>
                     </div>
                     <div className="slideNum">
@@ -95,17 +97,17 @@ class MainOne extends Component {
                             href="https://www.facebook.com/paulbassettkorea/"
                             target="_blank"
                             className="facebook"
-        >{""}</a>
+                        >{""}</a>
                         <a
                             href="https://www.instagram.com/paulbassettkorea/"
                             target="_blank"
                             className="instagram"
-                        ></a>
+                        >{""}</a>
                         <a
                             href="https://www.baristapaulbassett.co.kr/society/MobileApp.pb"
                             target="_blank"
                             className="app"
-                        ></a>
+                        >{""}</a>
                     </div>
                     <div className="findStore">
                         <div className="logo"></div>

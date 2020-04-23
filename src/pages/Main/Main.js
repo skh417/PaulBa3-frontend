@@ -11,9 +11,9 @@ class Main extends Component {
 
     render() {
         return (
-            <div className="Main" onScroll={this.props.scroll}>
+            <div className="Main">
                 <MainOne />
-                <MainTwo onScroll={this.handleScroll}/>
+                <MainTwo />
             </div>
         );
     }

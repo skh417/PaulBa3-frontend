@@ -5,7 +5,6 @@
     position: relative;
     background-color: #382e2c;
     height: calc(100vh - 147px);
-    overflow: hidden;
 
     .bottomBanner {
         position: absolute;
@@ -19,11 +18,12 @@
         .container {
             position: relative;
             height: 100%;
-            width: 900px;
+            // width: 900px;
             margin: 0 30px;
             
             img {
                 display: inline-block;
+                width: 900px;
                 height: 100%;
                 object-fit: center;
             }
@@ -95,13 +95,15 @@
             }
         }
         .imgThree {
-            width: 360px;
+            img {
+                width: 360px;
+            }
         }
     }
 
     .links {
         position: absolute;
-        bottom: -20px;
+        bottom: -25px;
         right: 11%;
         display: flex;
         z-index: 100;
@@ -109,10 +111,12 @@
         .container {
             margin-left: 155px;
             display: flex;
-            div {
+
+            .mobile, .special, .eshop {
                 height: 64px;
                 width: 50px;
                 margin-right: 15px;
+                margin-top: 5px;
             }
             .mobile {
                 background: url("../../../image/bottomIcon.png") no-repeat;
@@ -127,21 +131,40 @@
                 background: url("../../../image/bottomIcon.png") no-repeat;
                 background-position: -100px 0;
             }
-            a {
-                margin-top: 5px;
+            .text {
                 color: white;
                 font-family: 'Roboto';
+                font-weight: 700;
                 font-size: 18px;
                 letter-spacing: 4px;
                 line-height: 26px;
-                text-decoration: none;
+                align-self: center;
             }
+        }
+    }
+}
 
-            .text {
-                margin-top: 25px;
-            }
-                
+@media (max-width: 1200px) {
+    .MainTwo {
+        .links {
+            right: 0px;
+            bottom: -40px;
+            width: 480px;
             
+            .container {
+                margin: 0 0;
+                margin-right: 20px;
+                cursor: pointer;
+
+                .mobile, .special, .eshop {
+                    border: 1px solid green;
+                }
+                
+                .text {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
         }
     }
 }

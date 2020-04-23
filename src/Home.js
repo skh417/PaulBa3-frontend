@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-import Nav from "./component/Nav/Nav";
+import HomeNav from "./component/HomeNav/HomeNav";
 import Main from "./pages/Main/Main";
 import Footer from "./component/Footer/Footer";
 import './Home.scss';
 
-class Home extends Component {
+// let lastScroll = 0;
 
-  handleScroll = () => {
-        if (window.scrollY > 0) {
-          console.log("scrollY", window.scrollY)
-        }
-  }
+class Home extends Component {
+  
+  // scrollTo = () => {
+  //   var currentY = window.pageYOffset || document.documentElement.scrollTop;
+  //   if (currentY > lastScroll) {
+  //     window.location.href = "#bottom";
+  //     lastScroll = currentY;
+  //   } else {
+  //     window.location.href = "#top";
+  //     lastScroll = currentY;
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.scrollTo);
+  // }
+
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.scrollTo);
+  // }
 
   render() {
     return (
-      <div className="Home" onScroll={this.handleScroll}>
-        <Nav />
-        <Main scroll={this.handleScroll}/>
+      <div className="Home">
+        <HomeNav />
+        <Main />
         <Footer />
       </div>
     );
