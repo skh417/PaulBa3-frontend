@@ -53,9 +53,9 @@ class MainOne extends Component {
         for (var i = 0; i<Object.keys(main).length; i++) {
             if (i > 6) {
                 i = 0;
-                console.log('0', Object.keys(main)[i])
+                // console.log('0', Object.keys(main)[i])
             } else {
-                console.log('!0', Object.keys(main)[i]);
+                // console.log('!0', Object.keys(main)[i]);
             }
             // console.log(Object.keys(main)[i]);
         }

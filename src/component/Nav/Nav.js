@@ -7,11 +7,31 @@ class Nav extends Component {
         super(props)
         this.state = {
             show: false,
+            listShow: false,
         }
     }
 
+    scrollTo = () => {
+        var currentY = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentY === 0) {
+            this.setState({ show: false, })
+        } else {
+            this.setState({ show: true, })
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.scrollTo);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.scrollTo);
+    }
+
     hoveronOff = () => {
-        this.setState({show: !this.state.show, })
+        this.setState({ 
+            show: true, 
+            listShow: !this.state.listShow,
+        })
     }
 
     render() {
@@ -39,8 +59,8 @@ class Nav extends Component {
                         <li><span>FAQ</span></li>
                     </ul>
                 </div>
-                {this.state.show && <NavDetail 
-                    show={this.state.show} 
+                {this.state.show && <NavDetail
+                    show={this.state.listShow}
                     onMouseLeave={this.hoveronOff}
                 />}
             </div>

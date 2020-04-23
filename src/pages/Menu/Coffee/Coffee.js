@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "../../../component/Nav/Nav";
+import Footer from "../../../component/Footer/Footer";
 import "./Coffee.scss";
 import icon from "../../../image/menu-coffee-test.jpg";
 
@@ -6,6 +8,7 @@ class Coffee extends Component {
     render() {
         return (
             <>
+            <Nav />
             <div className="Coffee">
                 <div className="topImage">
                     <img />
@@ -41,6 +44,7 @@ class Coffee extends Component {
                     </div>
                 </div>
             </div>
+            <Footer />
             </>
         );
     }
