@@ -156,9 +156,9 @@ class Signup extends Component {
                         <th scope="row">주소</th>
                         <td className="address">
                             <div className="addressDiv">
-                                <input id="home" className="home" className={home?"home":"home2"} onClick={this.checkHome} type="radio" />
+                                <input id="home" className={home?"home":"home2"} onClick={this.checkHome} type="radio" />
                                 <label for="home">자택</label>
-                                <input id="workplace" className="workplace" className={workplace?"workplace":"workplace2"} onClick={this.checkWork} type="radio"/>
+                                <input id="workplace" className={workplace?"workplace":"workplace2"} onClick={this.checkWork} type="radio"/>
                                 <label for="workplace">회사</label>
                             </div>
                             <input className="zipCode" type="text" />
