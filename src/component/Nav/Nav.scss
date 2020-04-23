@@ -3,6 +3,8 @@
     width: 100%;
     height: 110px;
     z-index: 100;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
 
     .logoContainer {
         padding-top: 10px;
@@ -12,8 +14,14 @@
             margin: 0 auto;
             width: 110px;
             height: 48px;
-            
-        }        
+            background: url("../../image/logo.png");
+            background-size: cover;
+        }
+
+        .showList {
+            background: url("../../image/logo_on.png");
+            background-size: cover;
+        }
     }
 
     .navList {
@@ -55,8 +63,8 @@
     .smallNavList {
         position: fixed;
         top: 5px;
-        right: 20px;
-        
+        right: 25px;
+        color: rgba(255,255,255,0.7);
 
         ul {
             list-style: none;
@@ -74,33 +82,18 @@
             }
         }
     }
+
+    .showList {
+        color: #969696;
+        background-color: white;
+    }
 }
 
-.NavShow {
+.showList {
+    
     background-color: white;
     color: black;
 }
-.NavUnshown {
-    background-color: rgba(0,0,0,0.2);
-    color: white;
-}
-
-.logoShow {
-    background: url("../../image/logo_on.png");
-    background-size: cover;
-}
-.logoUnshown {
-    background: url("../../image/logo.png");
-    background-size: cover;
-}
-
-.smallNavListShow {
-    color: #969696;
-}
-.smallNavListUnshown {
-    color: rgba(255,255,255,0.7);
-}
-
 
 @media (min-width: 1361px) {
 
