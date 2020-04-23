@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import NavDetail from "./NavDetail/NavDetail";
-import "./Nav.scss";
+import { Link } from "react-router-dom";
+import HomeNavDetail from "./HomeNavDetail/HomeNavDetail";
+import "./HomeNav.scss";
 
-class Nav extends Component {
+class HomeNav extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -15,15 +16,16 @@ class Nav extends Component {
     }
 
     render() {
+        console.log('homenav', this.props);
         return (
-            <div className={`Nav ${this.state.show ? "showList" : ""}`}>
+            <div className={`Nav ${this.state.show ? "showList" : ""}`} style={{display: this.props.navShow}}>
                 <div className="logoContainer" onMouseEnter={this.hoveronOff}>
                     <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
                 </div>
                 <div className="navList" >
                     <ul onMouseEnter={this.hoveronOff}>
                         <li><span className="aboutUs">ABOUT US</span></li>
-                        <li><span className="menu">MENU</span></li>
+                        <li><span><Link to="/menu/coffee" className="menu">MENU</Link></span></li>
                         <li><span className="store">STORE</span></li>
                         <li><span className="society">SOCIETY</span></li>
                         <li><span className="new">WHAT'S NEW</span></li>
@@ -39,7 +41,7 @@ class Nav extends Component {
                         <li><span>FAQ</span></li>
                     </ul>
                 </div>
-                {this.state.show && <NavDetail 
+                {this.state.show && <HomeNavDetail 
                     show={this.state.show} 
                     onMouseLeave={this.hoveronOff}
                 />}
@@ -48,4 +50,4 @@ class Nav extends Component {
     }
 }
 
-export default Nav;
+export default HomeNav;

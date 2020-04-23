@@ -1,0 +1,13 @@
+.Home {
+    overflow: hidden;
+    transition: 'top 1.5s cubic-bezier(0.77, 0, 0.175, 1)';
+    scroll-behavior: smooth;
+}
+
+// html {
+//     scroll-behavior: smooth;
+// }
+
+// .Home::-webkit-scrollbar {
+//     display: none;
+// }
