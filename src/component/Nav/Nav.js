@@ -11,8 +11,13 @@ class Nav extends Component {
         }
     }
 
+    
+    componentDidMount() {
+        window.addEventListener('scroll', this.scrollTo);
+    }
+
     scrollTo = () => {
-        var currentY = window.pageYOffset || document.documentElement.scrollTop;
+        let currentY = window.pageYOffset || document.documentElement.scrollTop;
         if (currentY === 0) {
             this.setState({ show: false, })
         } else {
@@ -20,28 +25,36 @@ class Nav extends Component {
         }
     }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.scrollTo);
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.scrollTo);
+    hoveron = () => {
+        let currentY = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentY === 0) {
+            this.setState({ show: true, listShow: true, })
+        } else {
+            this.setState({ show: true, listShow: true, })
+        }
     }
 
-    hoveronOff = () => {
-        this.setState({ 
-            show: true, 
-            listShow: !this.state.listShow,
-        })
+    hoverOff = () => {
+        let currentY = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentY === 0) {
+            this.setState({ show: false, listShow: false, })
+        } else {
+            this.setState({ show: true, listShow: false, })
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.scrollTo);
     }
 
     render() {
         return (
             <div className={`Nav ${this.state.show ? "showList" : ""}`}>
-                <div className="logoContainer" onMouseEnter={this.hoveronOff}>
+                <div className="logoContainer" onMouseEnter={this.hoverOff}>
                     <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
                 </div>
                 <div className="navList" >
-                    <ul onMouseEnter={this.hoveronOff}>
+                    <ul onMouseEnter={this.hoveron}>
                         <li><span className="aboutUs">ABOUT US</span></li>
                         <li><span className="menu">MENU</span></li>
                         <li><span className="store">STORE</span></li>
@@ -61,7 +74,7 @@ class Nav extends Component {
                 </div>
                 {this.state.show && <NavDetail
                     show={this.state.listShow}
-                    onMouseLeave={this.hoveronOff}
+                    onMouseLeave={this.hoverOff}
                 />}
             </div>
         );
