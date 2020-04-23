@@ -16,14 +16,10 @@ class HomeNav extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-        return (
-            <div className={`Nav ${this.state.show ? "showList" : ""}`}>
-=======
+
         console.log('homenav', this.props);
         return (
             <div className={`Nav ${this.state.show ? "showList" : ""}`} style={{display: this.props.navShow}}>
->>>>>>> master
                 <div className="logoContainer" onMouseEnter={this.hoveronOff}>
                     <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
                 </div>
