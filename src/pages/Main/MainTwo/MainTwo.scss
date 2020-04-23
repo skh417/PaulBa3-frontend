@@ -1,0 +1,170 @@
+.MainTwo {
+    // ::-webkit-scrollbar {
+    //     width: 0px;
+    // }
+    position: relative;
+    background-color: #382e2c;
+    height: calc(100vh - 147px);
+
+    .bottomBanner {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        top: 10%;
+        left: 50px;
+        bottom: 10%;
+        overflow-x: scroll;
+        
+        .container {
+            position: relative;
+            height: 100%;
+            // width: 900px;
+            margin: 0 30px;
+            
+            img {
+                display: inline-block;
+                width: 900px;
+                height: 100%;
+                object-fit: center;
+            }
+
+            .text {
+                position: absolute;
+                top: 0;
+                color: white;
+                margin-top: 40px;
+                margin-left: 30px;
+                // color: rgba(255,255,255,0.7);
+
+                .title {
+                    span {
+                        display: block;
+                        font-weight: 600;
+                        font-size: 60px;
+                        line-height: 76px;
+                    }
+                }
+
+                .two {
+                    span {
+                        font-size: 100px;
+                        font-family: 'Roboto';
+                        line-height: 100px;
+                    }
+                }
+
+                .content {
+                    margin-top: 28px;
+                    span {
+                        display: block;
+                        line-height: 28px;
+                        font-size: 17px;
+                    }
+                }
+            }
+            .shown {
+                .logo {
+                    position: absolute;
+                    top: 50px;
+                    right: 40px;
+                    width: 36px;
+                    height: 46px;
+                }
+                .one {
+                    background: url("../../../image/bannerIcon.png") no-repeat;
+                    background-position: 0 0;
+                }
+                .two {
+                    background: url("../../../image/bannerIcon.png") no-repeat;
+                    background-position: -36px 0;
+                }
+                .three {
+                    background: url("../../../image/bannerIcon.png") no-repeat;
+                    background-position: -72px 0;
+                }
+
+                .detail {
+                    position: absolute;
+                    color: white;
+                    bottom: 50px;
+                    right: 50px;
+                    font-family: 'RobotoB';
+                    font-weight: 700;
+                    font-size: 13px;
+                }
+            }
+        }
+        .imgThree {
+            img {
+                width: 360px;
+            }
+        }
+    }
+
+    .links {
+        position: absolute;
+        bottom: -25px;
+        right: 11%;
+        display: flex;
+        z-index: 100;
+        
+        .container {
+            margin-left: 155px;
+            display: flex;
+
+            .mobile, .special, .eshop {
+                height: 64px;
+                width: 50px;
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+            .mobile {
+                background: url("../../../image/bottomIcon.png") no-repeat;
+                background-position: 0 0;
+            }
+            .special {
+                display: inline-block;
+                background: url("../../../image/bottomIcon.png") no-repeat;
+                background-position: -50px 0;
+            }
+            .eshop {
+                background: url("../../../image/bottomIcon.png") no-repeat;
+                background-position: -100px 0;
+            }
+            .text {
+                color: white;
+                font-family: 'Roboto';
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 4px;
+                line-height: 26px;
+                align-self: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .MainTwo {
+        .links {
+            right: 0px;
+            bottom: -40px;
+            width: 480px;
+            
+            .container {
+                margin: 0 0;
+                margin-right: 20px;
+                cursor: pointer;
+
+                .mobile, .special, .eshop {
+                    border: 1px solid green;
+                }
+                
+                .text {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
