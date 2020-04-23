@@ -9,8 +9,24 @@ class Signup extends Component {
             smsAgree : true,
             mailAgree : true,
             pushAgree : true,
-            agreeAll : true
+            agreeAll : true,
+            home : false,
+            workplace : true
         }
+    }
+
+    checkHome = (e) => {
+        this.setState({
+            home : false,
+            workplace : true
+        });
+    }
+
+    checkWork = (e) => {
+        this.setState({
+            home : true,
+            workplace : false
+        });
     }
 
     checkSmsAgree = (e) => {
@@ -51,7 +67,7 @@ class Signup extends Component {
     }
 
     render() {
-        const { smsAgree, mailAgree, pushAgree, agreeAll } = this.state;
+        const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
         return(
             <div className="SignUp">
                 <h2>회원가입</h2>
@@ -140,9 +156,9 @@ class Signup extends Component {
                         <th scope="row">주소</th>
                         <td className="address">
                             <div className="addressDiv">
-                                <input id="home" className="home" type="radio" />
+                                <input id="home" className="home" className={home?"home":"home2"} onClick={this.checkHome} type="radio" />
                                 <label for="home">자택</label>
-                                <input id="workplace" className="workplace" type="radio"/>
+                                <input id="workplace" className="workplace" className={workplace?"workplace":"workplace2"} onClick={this.checkWork} type="radio"/>
                                 <label for="workplace">회사</label>
                             </div>
                             <input className="zipCode" type="text" />
@@ -203,16 +219,16 @@ class Signup extends Component {
                     </div>
                     <div className="marketingCheck">
                         <div className="checkAgree">
-                            <input id="smsAgree" className={smsAgree?"toggleOn":"toggleOff"} onClick={this.checkSmsAgree} type="checkbox"></input>
+                            <input id="smsAgree" className={smsAgree?"toggleOff":"toggleOn"} onClick={this.checkSmsAgree} type="checkbox"></input>
                             <label for="smsAgree">SMS/MMS 수신 동의</label>
-                            <input id="mailAgree" className={mailAgree?"toggleOn":"toggleOff"} onClick={this.checkMailAgree} type="checkbox"></input>
+                            <input id="mailAgree" className={mailAgree?"toggleOff":"toggleOn"} onClick={this.checkMailAgree} type="checkbox"></input>
                             <label for="mailAgree">E-mail 수신 동의</label>
-                            <input id="pushAgree" className={pushAgree?"toggleOn":"toggleOff"} onClick={this.checkPushAgree} type="checkbox"></input>
+                            <input id="pushAgree" className={pushAgree?"toggleOff":"toggleOn"} onClick={this.checkPushAgree} type="checkbox"></input>
                             <label for="pushAgree">PUSH 수신 동의</label>
                         </div>
                         <div className="checkAll">
-                            <input for="agreeAll" className={agreeAll?"agreeAll":"agreeAll2"} onClick={this.agreeAll} type="checkbox"></input>
-                            <label id="agreeAll">광고/정보 수신 및 마케팅 활용에 전체 동의합니다.</label>
+                            <input id="agreeAll" className={agreeAll?"agreeAll1":"agreeAll2"} onClick={this.agreeAll} type="checkbox"></input>
+                            <label for="agreeAll">광고/정보 수신 및 마케팅 활용에 전체 동의합니다.</label>
                         </div>
                     </div>
                 </div>

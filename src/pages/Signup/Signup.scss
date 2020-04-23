@@ -276,9 +276,17 @@
           width: 15px;
           height: 15px;
           background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_radio.png");
-          background-position-y: 0%;
+          background-position-y: 0;
           -webkit-appearance: none;
           vertical-align: middle;
+        }
+
+        .home2 {
+          background-position-y: -15px;
+        }
+
+        .workplace2 {
+          background-position-y: -15px;
         }
 
         label {
@@ -403,35 +411,32 @@
           margin: 0 40px 0 4px;
         }
 
-        .toggleOn {
+        .toggleOff {
           background-position-y: 0;
         }
 
-        .toggleOff {
+        .toggleOn {
           background-position-y: -15px;
         }
       }
 
-      .checkAll input {
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
-        -webkit-appearance: none;
-        background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png");
-      }
-
-      .checkAll label {
-        margin-left: 4px;
-      }
-
-      .checkAll .agreeAll {
-        background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png")
-          0 0%;
-      }
-
-      .checkAll .agreeAll2 {
-        background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png")
-          0 100%;
+      .checkAll {
+        input {
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+          -webkit-appearance: none;
+          background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png");
+        }
+        label {
+          margin-left: 4px;
+        }
+        .agreeAll1 {
+          background-position-y: 0px;
+        }
+        .agreeAll2 {
+          background-position-y: 20px;
+        }
       }
     }
   }
