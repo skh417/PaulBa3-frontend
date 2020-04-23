@@ -111,6 +111,7 @@
         .container {
             margin-left: 155px;
             display: flex;
+            cursor: pointer;
 
             .mobile, .special, .eshop {
                 height: 64px;
@@ -146,18 +147,32 @@
 
 @media (max-width: 1200px) {
     .MainTwo {
+        height: calc(100vh - 197px);
         .links {
-            right: 0px;
-            bottom: -40px;
-            width: 480px;
+            right: -10px;
+            bottom: -25px;
             
             .container {
                 margin: 0 0;
-                margin-right: 20px;
-                cursor: pointer;
-
+                margin-right: 50px;
+              
                 .mobile, .special, .eshop {
-                    border: 1px solid green;
+                    height: 50px;
+                    width: 36px;
+                    background-size: cover;
+                    margin-right: 10px;
+                }
+                .mobile {
+                    background-position-x: -8px;
+                }
+                .special {
+                    width: 37px;
+                    background-position: center;
+                    background-position-x: -41px;
+                }
+                .eshop {
+                    width: 42px;
+                    background-position-x: -78px;
                 }
                 
                 .text {
