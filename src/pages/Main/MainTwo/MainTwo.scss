@@ -146,6 +146,7 @@
 
 @media (max-width: 1200px) {
     .MainTwo {
+        height: calc(100vh - 197px);
         .links {
             right: 0px;
             bottom: -40px;
