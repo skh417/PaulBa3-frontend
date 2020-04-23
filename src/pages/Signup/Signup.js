@@ -2,8 +2,56 @@ import React, { Component } from "react";
 import "./Signup.scss";
 
 class Signup extends Component {
+    constructor(){
+        super();
+
+        this.state = {
+            smsAgree : true,
+            mailAgree : true,
+            pushAgree : true,
+            agreeAll : true
+        }
+    }
+
+    checkSmsAgree = (e) => {
+        this.setState({
+            smsAgree : !this.state.smsAgree
+        });
+        // console.log('ok');
+    }
+    checkMailAgree = (e) => {
+        this.setState({
+            mailAgree : !this.state.mailAgree
+        });
+        // console.log('ok');
+    }
+    checkPushAgree = (e) => {
+        this.setState({
+            pushAgree : !this.state.pushAgree
+        });
+        // console.log('ok');
+    }
+    agreeAll = (e) => {
+        this.setState({
+            agreeAll : !this.state.agreeAll,
+        })
+        if(this.state.agreeAll === false){
+            this.setState({
+            smsAgree : true,
+            mailAgree : true,
+            pushAgree : true
+            })
+        }else{
+            this.setState({
+            smsAgree : false,
+            mailAgree : false,
+            pushAgree : false
+            })
+        }
+    }
 
     render() {
+        const { smsAgree, mailAgree, pushAgree, agreeAll } = this.state;
         return(
             <div className="SignUp">
                 <h2>회원가입</h2>
@@ -155,15 +203,15 @@ class Signup extends Component {
                     </div>
                     <div className="marketingCheck">
                         <div className="checkAgree">
-                            <input id="smsAgree" type="checkbox"></input>
+                            <input id="smsAgree" className={smsAgree?"toggleOn":"toggleOff"} onClick={this.checkSmsAgree} type="checkbox"></input>
                             <label for="smsAgree">SMS/MMS 수신 동의</label>
-                            <input id="mailAgree" type="checkbox"></input>
+                            <input id="mailAgree" className={mailAgree?"toggleOn":"toggleOff"} onClick={this.checkMailAgree} type="checkbox"></input>
                             <label for="mailAgree">E-mail 수신 동의</label>
-                            <input id="pushAgree" type="checkbox"></input>
+                            <input id="pushAgree" className={pushAgree?"toggleOn":"toggleOff"} onClick={this.checkPushAgree} type="checkbox"></input>
                             <label for="pushAgree">PUSH 수신 동의</label>
                         </div>
                         <div className="checkAll">
-                            <input for="agreeAll" type="checkbox"></input>
+                            <input for="agreeAll" className={agreeAll?"agreeAll":"agreeAll2"} onClick={this.agreeAll} type="checkbox"></input>
                             <label id="agreeAll">광고/정보 수신 및 마케팅 활용에 전체 동의합니다.</label>
                         </div>
                     </div>
