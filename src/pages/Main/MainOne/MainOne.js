@@ -53,8 +53,7 @@ class MainOne extends Component {
                         >
                             {banner.description}
                         </p>
-                        <span 
-                            // className="detail"
+                        <span
                             className={`${banner.classname} === "hasWhite"? detailWhite: detail`}
                         >{banner.detail}</span>
                     </div>
