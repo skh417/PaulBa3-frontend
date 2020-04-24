@@ -5,10 +5,43 @@ import bottomImgTwo from "../../../image/buttomBanner-2.jpg";
 import bottomImgThree from "../../../image/buttomBanner-3.jpg";
 
 class MainTwo extends Component {
+    state = {
+        veryLeft: 50,
+    }
+
+    scrollHorizontal = (e) => {
+        if (e.nativeEvent.wheelDelta > 0) {
+            // 마우스 휠 UP
+            this.setState({
+                veryLeft: this.state.veryLeft + 100
+            })
+            if (this.state.veryLeft >= 50) {
+                this.setState({veryLeft: 50})
+            }
+        } else {
+            // 마우스 휠 DOWN
+            this.setState({
+                veryLeft: this.state.veryLeft - 100
+            })
+            // console.log('width', window.innerWidth / document.documentElement.clientWidth * 100)
+            // console.log('실제 width', window.innerWidth)
+            // console.log('최대치', (window.innerWidth) * 1.2)
+            // console.log('left', this.state.veryLeft)
+            // console.log(`만약 왼쪽값 ${this.state.veryLeft}이 윈도우 width ${-window.innerWidth}보다 커진다면, `)
+            if (this.state.veryLeft <= -(window.innerWidth * 1.2) ) {
+                this.setState({veryLeft: -(window.innerWidth * 1.8) })
+            }
+        }
+    }
+
     render() {
         return (
             <div className="MainTwo" id="bottom">
-                <div className="bottomBanner">
+                <div 
+                    className="bottomBanner" 
+                    style={{left: this.state.veryLeft,}} 
+                    onWheel={this.scrollHorizontal}
+                >
                     {/* 이벤트 */}
                     <div className="container">
                         <img src={bottomImgOne} alt="" />
@@ -65,15 +98,15 @@ class MainTwo extends Component {
                 <div className="links">
                     <div className="container">
                         <div className="mobile"></div>
-                        <div className="text">Mobile<br />App</div>
+                        <p className="text">Mobile<br />App</p>
                     </div>
                     <div className="container">
                         <div className="special"></div>
-                        <div className="text">Special<br />Benefit</div>
+                        <p className="text">Special<br />Benefit</p>
                     </div>
                     <div className="container">
                         <div className="eshop"></div>
-                        <div className="text">e-Shop</div>
+                        <p className="text">e-Shop</p>
                     </div>
                 </div>
             </div>
