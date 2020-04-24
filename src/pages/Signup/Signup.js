@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "../../component/Nav/Nav";
+import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
 
 class Signup extends Component {
@@ -69,6 +71,8 @@ class Signup extends Component {
     render() {
         const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
         return(
+            <>
+            <Nav />
             <div className="SignUp">
                 <h2>회원가입</h2>
                 <ul className="currentStep">
@@ -237,6 +241,8 @@ class Signup extends Component {
                     <a className="join" href="">회원가입</a>
                 </div>
             </div>
+            <Footer />
+            </>
         )
     }
 }
