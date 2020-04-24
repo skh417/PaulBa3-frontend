@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "../../../component/Nav/Nav";
 import Footer from "../../../component/Footer/Footer";
 import "./Coffee.scss";
-import icon from "../../../image/menu-coffee-test.jpg";
+import icon from "../../../image/menu_coffe_product.jpg";
 
 class Coffee extends Component {
     render() {
@@ -36,7 +36,7 @@ class Coffee extends Component {
                                 <div >
                                     <img className="icon" src={icon}/>
                                     <div className="text">
-                                        아이스 룽고 <span>Iced Lungo</span>
+                                        아이스 카라멜 마키아토 <span>Iced Caramel Macchiato</span>
                                     </div>
                                 </div>
                             </li>
