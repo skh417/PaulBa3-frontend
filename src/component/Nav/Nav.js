@@ -26,12 +26,7 @@ class Nav extends Component {
     }
 
     hoveron = () => {
-        let currentY = window.pageYOffset || document.documentElement.scrollTop;
-        if (currentY === 0) {
-            this.setState({ show: true, listShow: true, })
-        } else {
-            this.setState({ show: true, listShow: true, })
-        }
+        this.setState({ show: true, listShow: true, })
     }
 
     hoverOff = () => {
