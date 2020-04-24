@@ -28,8 +28,13 @@ class MainTwo extends Component {
             // console.log('최대치', (window.innerWidth) * 1.2)
             // console.log('left', this.state.veryLeft)
             // console.log(`만약 왼쪽값 ${this.state.veryLeft}이 윈도우 width ${-window.innerWidth}보다 커진다면, `)
-            if (this.state.veryLeft <= -(window.innerWidth * 1.2)) {
-                this.setState({ veryLeft: -(window.innerWidth * 1.8) })
+            // if (this.state.veryLeft <= -(window.innerWidth * 1.2)) {
+            //     this.setState({ veryLeft: -(window.innerWidth * 1.8) })
+            // }
+
+            if (this.state.veryLeft <= -1200) {
+                console.log(this.state.veryLeft)
+                this.setState({ veryLeft: -1200 })
             }
         }
     }
