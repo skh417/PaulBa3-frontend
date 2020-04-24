@@ -16,7 +16,7 @@ class MainTwo extends Component {
                 veryLeft: this.state.veryLeft + 100
             })
             if (this.state.veryLeft >= 50) {
-                this.setState({veryLeft: 50})
+                this.setState({ veryLeft: 50 })
             }
         } else {
             // 마우스 휠 DOWN
@@ -28,8 +28,8 @@ class MainTwo extends Component {
             // console.log('최대치', (window.innerWidth) * 1.2)
             // console.log('left', this.state.veryLeft)
             // console.log(`만약 왼쪽값 ${this.state.veryLeft}이 윈도우 width ${-window.innerWidth}보다 커진다면, `)
-            if (this.state.veryLeft <= -(window.innerWidth * 1.2) ) {
-                this.setState({veryLeft: -(window.innerWidth * 1.8) })
+            if (this.state.veryLeft <= -(window.innerWidth * 1.2)) {
+                this.setState({ veryLeft: -(window.innerWidth * 1.8) })
             }
         }
     }
@@ -37,9 +37,9 @@ class MainTwo extends Component {
     render() {
         return (
             <div className="MainTwo" id="bottom">
-                <div 
-                    className="bottomBanner" 
-                    style={{left: this.state.veryLeft,}} 
+                <div
+                    className="bottomBanner"
+                    style={{ left: this.state.veryLeft, }}
                     onWheel={this.scrollHorizontal}
                 >
                     {/* 이벤트 */}
