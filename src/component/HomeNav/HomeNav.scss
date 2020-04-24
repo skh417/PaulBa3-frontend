@@ -7,7 +7,8 @@
     color: white;
 
     .logoContainer {
-        padding-top: 10px;
+        position: absolute;
+        width: 100vw;
 
         .logo {
             cursor: pointer;
@@ -25,6 +26,10 @@
     }
 
     .navList {
+        position: absolute;
+        width: 100vw;
+        margin-top: 60px;
+        
         ul {
             list-style: none;
             display: flex;
@@ -38,22 +43,22 @@
                 font-weight: normal;
                 justify-content: space-evenly;
                 padding: 0 45px;
-
+                
                 span {
                     cursor: pointer;
-                    font-size: 14px;
                     height: 100%;
-                    letter-spacing: 2px;
-                    margin-right: 6px;
-                    padding-bottom: 22px;
-                    
-                    .menu {
-                        text-decoration: none;
-                    }
+                    margin-right: 6px;             
                 }
-
                 span:hover {
                     border-bottom: 3px red solid;
+                }
+
+                .aboutUs, .menu, .store, .society, .new, .eShop {
+                    padding-bottom: 25px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    height: 100%;
                 }
 
                 .eShop {
@@ -66,8 +71,7 @@
 
     .smallNavList {
         position: fixed;
-        top: 5px;
-        right: 25px;
+        margin-top: 2px;
         color: rgba(255,255,255,0.7);
 
         ul {
@@ -100,5 +104,27 @@
 }
 
 @media (min-width: 1361px) {
+    .Nav {
+        .logoContainer {
+            width: 0vw;
+            left: 30px;
+            top: 20px;
+            .logo {
+                width: 150px;
+                height: 76px;
+                margin: 0 0 ;
+            }
+        }
 
+        .smallNavList {
+            margin-top: 20px;
+            margin-right: -5px;
+
+            ul {
+                li {
+                    margin-left: 5px;    
+                }
+            }
+        }
+    }
 }
