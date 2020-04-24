@@ -1,478 +1,498 @@
 * {
-  font-family: NotoSans, "맑은 고딕", "Malgun Gothic", NanumGothic, Dotum, 돋움,
-    gulim, 굴림, Helvetica, sans-serif;
-  font-weight: normal;
-  box-sizing: border-box;
+    font-family: NotoSans, "맑은 고딕", "Malgun Gothic", NanumGothic, Dotum, 돋움,
+        gulim, 굴림, Helvetica, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
 
-  :focus {
-    outline: none;
-  }
+    :focus {
+        outline: none;
+    }
 
-  input[type="text"],
-  input[type="password"] {
-    padding: 0 10px;
-  }
+    input[type="text"],
+    input[type="password"] {
+        padding: 0 10px;
+    }
 }
 
 .SignUp {
-  margin: 0 auto;
-  padding-top: 110px;
-  width: 1005px;
+    margin: 0 auto;
+    padding-top: 110px;
+    width: 1005px;
 
-  select {
-    -webkit-appearance: none;
-    background: url("https://www.baristapaulbassett.co.kr/images/blt/blt_select02.png")
-      no-repeat 93%;
-  }
-
-  h2 {
-    padding: 80px 0 45px 0;
-    font-size: 30px;
-    color: #382e2c;
-    text-align: center;
-  }
-
-  .currentStep {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 50px auto;
-  }
-
-  .currentStep li {
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
-    color: #382e2c;
-    line-height: 18px;
-    position: relative;
-    margin: 0 30px;
-  }
-
-  .currentStep li:nth-child(3) {
-    margin: 0 20px;
-  }
-
-  .currentStep li::before {
-    background: url("https://www.baristapaulbassett.co.kr/images/member/joinIcon.png");
-    content: "";
-    display: block;
-    width: 40px;
-    height: 40px;
-    clear: both;
-    margin: 0 auto 15px auto;
-  }
-
-  .currentStep li:nth-child(2)::before {
-    background-position-x: -50px;
-  }
-
-  .currentStep li:nth-child(3)::before {
-    background-position-x: -100px;
-    background-position-y: -49px;
-  }
-
-  .currentStep li:nth-child(4)::before {
-    background-position-x: -150px;
-  }
-
-  .currentStep li::after {
-    background: url("https://www.baristapaulbassett.co.kr/images/blt/blt10.png");
-    content: "";
-    display: block;
-    width: 54px;
-    height: 1px;
-    position: absolute;
-    top: 25px;
-    right: -60px;
-  }
-
-  .currentStep li:nth-child(4)::after {
-    width: 0;
-    height: 0;
-    background: none;
-  }
-
-  .currentStep li span {
-    margin-right: 5px;
-    font-size: 13px;
-    color: #e0004d;
-    font-family: "RobotoB", "NotoSans";
-    font-weight: 900;
-  }
-
-  .memberInfoTitle {
-    display: flex;
-    justify-content: space-between;
-    font-size: 22px;
-    font-weight: 700;
-    color: #382e2c;
-    border-bottom: 2px solid #382e2c;
-    padding-bottom: 15px;
-
-    span {
-      color: #e0004d;
-      font-size: 13px;
-      font-weight: normal;
-      display: flex;
-      align-items: flex-end;
-    }
-  }
-
-  .notice {
-    font-size: 14px;
-    font-weight: normal;
-    color: #62605f;
-    padding: 20px 0;
-    border-bottom: 1px solid #e4dfdb;
-  }
-
-  table.memberInfoTable {
-    display: table;
-    vertical-align: middle;
-    border-color: grey;
-    border-collapse: collapse;
-    border-bottom: 1px solid #aaa8a7;
-    width: 100%;
-
-    tr:nth-child(1) td {
-      border-top: none;
+    select {
+        -webkit-appearance: none;
+        background: url("https://www.baristapaulbassett.co.kr/images/blt/blt_select02.png") no-repeat 93%;
     }
 
-    th {
-      text-align: left;
-      width: 20%;
-      font-size: 15px;
-      font-weight: bold;
-
-      span {
-        color: #e0004d;
-        margin-left: 5px;
-        font-size: 15px;
-        font-weight: bold;
-      }
-    }
-
-    td {
-      padding: 20px 0;
-      border-top: 1px solid #e2dfdc;
-      line-height: 36px;
-
-      .customId {
-        width: 200px;
-        height: 36px;
-      }
-
-      .checkOverlap {
-        display: inline-block;
-        margin: 0 3px;
-        min-width: 90px;
-        height: 36px;
-        padding: 0 10px;
-        font-size: 14px;
-        text-align: center;
-        color: #fff;
-        background-color: #9f8362;
-      }
-    }
-
-    .customPw {
-      border: 1px solid #d8d8d8;
-      width: 260px;
-      height: 42px;
-    }
-
-    .pwCaption {
-      list-style: none;
-      color: #969696;
-      margin-top: 15px;
-
-      li {
-        float: left;
-        width: 300px;
-        position: relative;
-        padding-left: 10px;
-        line-height: 22px;
-      }
-
-      li::before {
-        content: "";
-        display: block;
-        clear: both;
-        width: 2px;
-        height: 2px;
-        background: #b0997d;
-        position: absolute;
-        top: 10px;
-        left: 0;
-      }
-    }
-
-    .checkPw {
-      border: 1px solid #d8d8d8;
-      height: 42px;
-      width: 260px;
-      // line-height: 42px;
-    }
-
-    .inputName {
-      height: 36px;
-      width: 200px;
-      background-color: #f6f6f6;
-      border: 1px solid #aaa8a7;
-    }
-
-    .birthDay select {
-      height: 34px;
-      width: 150px;
-      padding: 0 10px;
-      margin-right: 10px;
-    }
-
-    .phoneNumber {
-      display: flex;
-      align-items: center;
-
-      input {
-        width: 100px;
-        height: 36px;
-        padding: 0 10px;
-        background-color: #f6f6f6;
-        border: 1px solid #aaa8a7;
-      }
-
-      .selectPhone {
-        height: 34px;
-        width: 150px;
-        padding: 0 10px;
-        margin-right: 10px;
-      }
-    }
-
-    .eMail input {
-      width: 200px;
-      height: 36px;
-      padding: 0 10px;
-      border: 1px solid #aaa8a7;
-    }
-
-    .eMail span {
-      margin: 0 3px;
-    }
-
-    .eMail .selectMail {
-      width: 22%;
-      height: 34px;
-      margin-left: 3px;
-      padding: 0 10px;
-      border: 1px solid #aaa8a7;
-      color: #62605f;
-    }
-
-    .address {
-      .addressDiv {
-        margin-bottom: 15px;
-
-        input {
-          width: 15px;
-          height: 15px;
-          background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_radio.png");
-          background-position-y: 0;
-          -webkit-appearance: none;
-          vertical-align: middle;
-        }
-
-        .home2 {
-          background-position-y: -15px;
-        }
-
-        .workplace2 {
-          background-position-y: -15px;
-        }
-
-        label {
-          margin: 0 20px 0 4px;
-        }
-      }
-
-      .zipCode {
-        width: 80px;
-        height: 36px;
-        padding: 0 10px;
-        border: 1px solid #aaa8a7;
-        margin-bottom: 5px;
-      }
-
-      a {
-        margin: 0 3px;
-        min-width: 90px;
-        height: 36px;
-        padding: 0 10px;
-        font-size: 14px;
-        background: #9f8362;
-        display: inline-block;
-        color: #fff;
-        text-decoration: none;
-        text-align: center;
-      }
-
-      input.addAddress {
-        width: 500px;
-        height: 36px;
-        margin: 5px 0;
-        border: 1px solid #aaa8a7;
-      }
-
-      p {
-        margin-top: 15px;
-        font-size: 13px;
-        color: #969696;
-        line-height: 22px;
-      }
-    }
-  }
-
-  .marketingAgree {
-    margin: 50px 0 70px 0;
-
-    strong {
-      position: relative;
-      display: inline-block;
-      font-size: 22px;
-      font-weight: bold;
-      color: #382e2c;
-      margin-bottom: 10px;
-
-      span {
-        position: absolute;
-        right: -50px;
-        top: 5px;
-        border: 1px solid #382e2c;
-        padding: 1px 9px;
-        font-size: 12px;
-        font-weight: bold;
+    h2 {
+        padding: 80px 0 45px 0;
+        font-size: 30px;
         color: #382e2c;
-      }
+        text-align: center;
     }
 
-    ul {
-      list-style: none;
+    .currentStep {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 50px auto;
+    }
 
-      li {
-        padding-left: 10px;
-        position: relative;
-        color: #62605f;
-        font-size: 13px;
+    .currentStep li {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        color: #382e2c;
         line-height: 18px;
-      }
+        position: relative;
+        margin: 0 30px;
+    }
 
-      li::before {
+    .currentStep li:nth-child(3) {
+        margin: 0 20px;
+    }
+
+    .currentStep li::before {
+        background: url("https://www.baristapaulbassett.co.kr/images/member/joinIcon.png");
         content: "";
         display: block;
+        width: 40px;
+        height: 40px;
         clear: both;
-        width: 2px;
-        height: 2px;
-        background: #b0997d;
+        margin: 0 auto 15px auto;
+    }
+
+    .currentStep li:nth-child(2)::before {
+        background-position-x: -50px;
+    }
+
+    .currentStep li:nth-child(3)::before {
+        background-position-x: -100px;
+        background-position-y: -49px;
+    }
+
+    .currentStep li:nth-child(4)::before {
+        background-position-x: -150px;
+    }
+
+    .currentStep li::after {
+        background: url("https://www.baristapaulbassett.co.kr/images/blt/blt10.png");
+        content: "";
+        display: block;
+        width: 54px;
+        height: 1px;
         position: absolute;
-        left: 0;
-        top: 8px;
-      }
+        top: 25px;
+        right: -60px;
     }
 
-    .marketingTxt {
-      margin: 30px 0 15px 0;
-      border: 1px solid #aaa8a7;
-      padding: 10px;
-      height: 180px;
-      overflow-y: scroll;
-      font-size: 13px;
-      color: #62605f;
+    .currentStep li:nth-child(4)::after {
+        width: 0;
+        height: 0;
+        background: none;
+    }
 
-      strong {
+    .currentStep li span {
+        margin-right: 5px;
         font-size: 13px;
+        color: #e0004d;
+        font-family: "RobotoB", "NotoSans";
+        font-weight: 900;
+    }
+
+    .memberInfoTitle {
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+        font-weight: 700;
+        color: #382e2c;
+        border-bottom: 2px solid #382e2c;
+        padding-bottom: 15px;
+
+        span {
+            color: #e0004d;
+            font-size: 13px;
+            font-weight: normal;
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    .notice {
+        font-size: 14px;
+        font-weight: normal;
         color: #62605f;
-      }
+        padding: 20px 0;
+        border-bottom: 1px solid #e4dfdb;
     }
 
-    .marketingCheck {
-      display: flex;
-      justify-content: space-between;
+    table.memberInfoTable {
+        display: table;
+        vertical-align: middle;
+        border-color: grey;
+        border-collapse: collapse;
+        border-bottom: 1px solid #aaa8a7;
+        width: 100%;
 
-      .checkAgree {
-        input {
-          width: 15px;
-          height: 15px;
-          background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check3.png");
-          background-size: 15px auto;
-          -webkit-appearance: none;
-          vertical-align: middle;
+        tr:nth-child(1) td {
+            border-top: none;
         }
 
-        label {
-          margin: 0 40px 0 4px;
+        th {
+            text-align: left;
+            width: 20%;
+            font-size: 15px;
+            font-weight: bold;
+
+            span {
+                color: #e0004d;
+                margin-left: 5px;
+                font-size: 15px;
+                font-weight: bold;
+            }
         }
 
-        .toggleOff {
-          background-position-y: 0;
+        td {
+            padding: 20px 0;
+            border-top: 1px solid #e2dfdc;
+            line-height: 36px;
+
+            .customId {
+                width: 200px;
+                height: 36px;
+            }
+
+            .checkOverlap {
+                display: inline-block;
+                margin: 0 3px;
+                min-width: 90px;
+                height: 36px;
+                padding: 0 10px;
+                font-size: 14px;
+                text-align: center;
+                color: #fff;
+                background-color: #9f8362;
+            }
         }
 
-        .toggleOn {
-          background-position-y: -15px;
+        .customPw {
+            border: 1px solid #d8d8d8;
+            width: 260px;
+            height: 42px;
         }
-      }
 
-      .checkAll {
-        input {
-          width: 20px;
-          height: 20px;
-          vertical-align: middle;
-          -webkit-appearance: none;
-          background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png");
+        .pwCaption {
+            list-style: none;
+            color: #969696;
+            margin-top: 15px;
+
+            li {
+                float: left;
+                width: 300px;
+                position: relative;
+                padding-left: 10px;
+                line-height: 22px;
+            }
+
+            li::before {
+                content: "";
+                display: block;
+                clear: both;
+                width: 2px;
+                height: 2px;
+                background: #b0997d;
+                position: absolute;
+                top: 10px;
+                left: 0;
+            }
         }
-        label {
-          margin-left: 4px;
+
+        .checkPw {
+            border: 1px solid #d8d8d8;
+            height: 42px;
+            width: 260px;
+            // line-height: 42px;
         }
-        .agreeAll1 {
-          background-position-y: 0px;
+
+        .inputName {
+            height: 36px;
+            width: 200px;
+            background-color: #f6f6f6;
+            border: 1px solid #aaa8a7;
         }
-        .agreeAll2 {
-          background-position-y: 20px;
+
+        .birthDay {
+            input.birthDay {
+                // fetch 실습을 위해 만든 인풋
+                height: 36px;
+                width: 200px;
+                background-color: #f6f6f6;
+                border: 1px solid #aaa8a7;
+            }
         }
-      }
+
+        .birthDay select {
+            height: 34px;
+            width: 150px;
+            padding: 0 10px;
+            margin-right: 10px;
+        }
+
+        .phoneNumber {
+            display: flex;
+            align-items: center;
+
+            input.phoneNumber {
+                // fetch 실습을 위해 만든 인풋
+                height: 36px;
+                width: 200px;
+                background-color: #f6f6f6;
+                border: 1px solid #aaa8a7;
+            }
+
+            input {
+                width: 100px;
+                height: 36px;
+                padding: 0 10px;
+                background-color: #f6f6f6;
+                border: 1px solid #aaa8a7;
+            }
+
+            .selectPhone {
+                height: 34px;
+                width: 150px;
+                padding: 0 10px;
+                margin-right: 10px;
+            }
+        }
+
+        .eMail input {
+            width: 200px;
+            height: 36px;
+            padding: 0 10px;
+            border: 1px solid #aaa8a7;
+        }
+
+        .eMail span {
+            margin: 0 3px;
+        }
+
+        .eMail .selectMail {
+            width: 22%;
+            height: 34px;
+            margin-left: 3px;
+            padding: 0 10px;
+            border: 1px solid #aaa8a7;
+            color: #62605f;
+        }
+
+        .address {
+            .addressDiv {
+                margin-bottom: 15px;
+
+                input {
+                    width: 15px;
+                    height: 15px;
+                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_radio.png");
+                    background-position-y: 0;
+                    -webkit-appearance: none;
+                    vertical-align: middle;
+                }
+
+                .home2 {
+                    background-position-y: -15px;
+                }
+
+                .workplace2 {
+                    background-position-y: -15px;
+                }
+
+                label {
+                    margin: 0 20px 0 4px;
+                }
+            }
+
+            .zipCode {
+                width: 80px;
+                height: 36px;
+                padding: 0 10px;
+                border: 1px solid #aaa8a7;
+                margin-bottom: 5px;
+            }
+
+            a {
+                margin: 0 3px;
+                min-width: 90px;
+                height: 36px;
+                padding: 0 10px;
+                font-size: 14px;
+                background: #9f8362;
+                display: inline-block;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            input.addAddress {
+                width: 500px;
+                height: 36px;
+                margin: 5px 0;
+                border: 1px solid #aaa8a7;
+            }
+
+            p {
+                margin-top: 15px;
+                font-size: 13px;
+                color: #969696;
+                line-height: 22px;
+            }
+        }
     }
-  }
 
-  .buttonArea {
-    display: flex;
-    justify-content: center;
-    padding: 50px 0;
+    .marketingAgree {
+        margin: 50px 0 70px 0;
 
-    a {
-      text-decoration: none;
-      margin: 0 5px;
-      min-width: 150px;
-      height: 50px;
-      color: #fff;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        strong {
+            position: relative;
+            display: inline-block;
+            font-size: 22px;
+            font-weight: bold;
+            color: #382e2c;
+            margin-bottom: 10px;
+
+            span {
+                position: absolute;
+                right: -50px;
+                top: 5px;
+                border: 1px solid #382e2c;
+                padding: 1px 9px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #382e2c;
+            }
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                padding-left: 10px;
+                position: relative;
+                color: #62605f;
+                font-size: 13px;
+                line-height: 18px;
+            }
+
+            li::before {
+                content: "";
+                display: block;
+                clear: both;
+                width: 2px;
+                height: 2px;
+                background: #b0997d;
+                position: absolute;
+                left: 0;
+                top: 8px;
+            }
+        }
+
+        .marketingTxt {
+            margin: 30px 0 15px 0;
+            border: 1px solid #aaa8a7;
+            padding: 10px;
+            height: 180px;
+            overflow-y: scroll;
+            font-size: 13px;
+            color: #62605f;
+
+            strong {
+                font-size: 13px;
+                color: #62605f;
+            }
+        }
+
+        .marketingCheck {
+            display: flex;
+            justify-content: space-between;
+
+            .checkAgree {
+                input {
+                    width: 15px;
+                    height: 15px;
+                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check3.png");
+                    background-size: 15px auto;
+                    -webkit-appearance: none;
+                    vertical-align: middle;
+                }
+
+                label {
+                    margin: 0 40px 0 4px;
+                }
+
+                .toggleOff {
+                    background-position-y: 0;
+                }
+
+                .toggleOn {
+                    background-position-y: -15px;
+                }
+            }
+
+            .checkAll {
+                input {
+                    width: 20px;
+                    height: 20px;
+                    vertical-align: middle;
+                    -webkit-appearance: none;
+                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png");
+                }
+
+                label {
+                    margin-left: 4px;
+                }
+
+                .agreeAll1 {
+                    background-position-y: 0px;
+                }
+
+                .agreeAll2 {
+                    background-position-y: 20px;
+                }
+            }
+        }
     }
 
-    .cancle {
-      background: #b9b9b9;
-    }
+    .buttonArea {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
 
-    .join {
-      background: #9f8362;
+        a {
+            text-decoration: none;
+            margin: 0 5px;
+            min-width: 150px;
+            height: 50px;
+            color: #fff;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cancle {
+            background: #b9b9b9;
+        }
+
+        .join {
+            background: #9f8362;
+        }
     }
-  }
 }
 
 .hyphen {
-  display: inline-block;
-  height: 1px;
-  width: 7px;
-  margin: 0 7px;
-  background: #aaa8a7;
+    display: inline-block;
+    height: 1px;
+    width: 7px;
+    margin: 0 7px;
+    background: #aaa8a7;
 }
