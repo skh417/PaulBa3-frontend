@@ -19,7 +19,7 @@ class HomeNav extends Component {
         return (
             <div className={`Nav ${this.state.show ? "showList" : ""}`} style={{display: this.props.navShow}}>
                 <div className="logoContainer" onMouseEnter={this.hoveronOff}>
-                    <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
+                    <Link to="/"><div className={`logo ${this.state.show ? "showList" : ""}`}></div></Link>
                 </div>
                 <div className="navList" >
                     <ul onMouseEnter={this.hoveronOff}>
