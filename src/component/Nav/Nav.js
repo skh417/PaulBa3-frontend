@@ -7,21 +7,49 @@ class Nav extends Component {
         super(props)
         this.state = {
             show: false,
+            listShow: false,
         }
     }
 
-    hoveronOff = () => {
-        this.setState({show: !this.state.show, })
+    
+    componentDidMount() {
+        window.addEventListener('scroll', this.scrollTo);
+    }
+
+    scrollTo = () => {
+        let currentY = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentY === 0) {
+            this.setState({ show: false, })
+        } else {
+            this.setState({ show: true, })
+        }
+    }
+
+    hoveron = () => {
+        this.setState({ show: true, listShow: true, })
+    }
+
+    hoverOff = () => {
+        let currentY = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentY === 0) {
+            this.setState({ show: false, listShow: false, })
+        } else {
+            this.setState({ show: true, listShow: false, })
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.scrollTo);
     }
 
     render() {
         return (
             <div className={`Nav ${this.state.show ? "showList" : ""}`}>
-                <div className="logoContainer" onMouseEnter={this.hoveronOff}>
+                <div className="logoContainer" onMouseEnter={this.hoverOff}>
                     <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
                 </div>
                 <div className="navList" >
-                    <ul onMouseEnter={this.hoveronOff}>
+                    <ul onMouseEnter={this.hoveron}>
                         <li><span className="aboutUs">ABOUT US</span></li>
                         <li><span className="menu">MENU</span></li>
                         <li><span className="store">STORE</span></li>
@@ -39,9 +67,9 @@ class Nav extends Component {
                         <li><span>FAQ</span></li>
                     </ul>
                 </div>
-                {this.state.show && <NavDetail 
-                    show={this.state.show} 
-                    onMouseLeave={this.hoveronOff}
+                {this.state.show && <NavDetail
+                    show={this.state.listShow}
+                    onMouseLeave={this.hoverOff}
                 />}
             </div>
         );

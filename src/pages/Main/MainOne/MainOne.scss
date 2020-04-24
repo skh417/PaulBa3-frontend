@@ -19,6 +19,7 @@
             .korName {
                 font-size: 47px;
                 font-family: 'NanumSqaure';
+                font-weight: 700;
             }
             .description {
                 font-size: 15px;
@@ -30,7 +31,19 @@
                 padding-bottom: 4px;
                 color: #382e2c;
                 border-bottom: 2px solid #382e2c;
-            }   
+            }
+            .hasWhite {
+                color: white;
+            }
+
+            .detailWhite {
+                cursor: pointer;
+                font-family: 'Roboto';
+                font-weight: bold;
+                padding-bottom: 4px;
+                color: white;
+                border-bottom: 2px solid white;
+            }
         }
 
         .slideNum {

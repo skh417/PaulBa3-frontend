@@ -11,14 +11,14 @@ class MainOne extends Component {
         // 배너 값 받아오기
         fetch('/data/banner.json')
             .then(data => data.json())
-            .then(data => this.setState({ banners: data },))
+            .then(data => this.setState({ banners: data }))
         this.changeCurrent()
     }
 
     // current값 바꾸기
     changeCurrent = () => {
-        setInterval( () => {
-            this.setState({ current: this.state.current +1 })
+        setInterval(() => {
+            this.setState({ current: this.state.current + 1 })
         }, 2500)
     }
 
@@ -26,7 +26,7 @@ class MainOne extends Component {
         // console.log(banners)
         const filterResult = banners.filter((banner) => {
             // current는 무한으로 올라가는데, 6나머지값 받아오기
-            return banner.id === current % 6 +1; 
+            return banner.id === current % 6 + 1;
         }).concat({
             // ComponentDidMount 전에 올 가짜데이터 처리
             "id": 0,
@@ -43,9 +43,19 @@ class MainOne extends Component {
             <div className="MainOne" id="top">
                 <div className={`mainBanner ${banner.img}`}>
                     <div className="mainText">
-                        <p className="korName">{banner.name}</p>
-                        <p className="description">{banner.description}</p>
-                        <span className="detail">DETAIL VIEW</span>
+                        <p 
+                            className={`${banner.classname} === "hasWhite"? korName hasWhite: korName`}
+                        >
+                            {banner.name}
+                        </p>
+                        <p 
+                            className={`${banner.classname} === "hasWhite"? description hasWhite: description`}
+                        >
+                            {banner.description}
+                        </p>
+                        <span
+                            className={`${banner.classname} === "hasWhite"? detailWhite: detail`}
+                        >{banner.detail}</span>
                     </div>
                     <div className="slideNum">
                         <span className="nowPage">0{banner.id}</span>
