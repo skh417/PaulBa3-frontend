@@ -16,9 +16,9 @@ class MainOne extends Component {
     }
 
     // current값 바꾸기
-    changeCurrent = () => {
-        setInterval( () => {
-            this.setState({ current: this.state.current +1 })
+     changeCurrent = () => {
+        setInterval(() => {
+            this.setState({ current: this.state.current + 1 })
         }, 2500)
     }
 
@@ -26,7 +26,7 @@ class MainOne extends Component {
         // console.log(banners)
         const filterResult = banners.filter((banner) => {
             // current는 무한으로 올라가는데, 6나머지값 받아오기
-            return banner.id === current % 6 +1; 
+            return banner.id === current % 6 + 1;
         }).concat({
             // ComponentDidMount 전에 올 가짜데이터 처리
             "id": 0,
