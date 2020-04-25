@@ -1,3 +1,8 @@
+* {
+  font-family: "NotoSans", "맑은 고딕", "Malgun Gothic", "NanumGothic", "Dotum",
+    "돋움", "gulim", "굴림", Helvetica, sans-serif;
+}
+
 .menuDetailBG {
   background: #f5f0e9;
 }
@@ -157,5 +162,116 @@
         color: #969696;
       }
     }
+  }
+}
+
+.bestMenu {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 120px;
+  h2 {
+    margin-bottom: 40px;
+    font-size: 34px;
+    color: #382e2c;
+    font-family: "RobotoM", "NotoSans";
+    text-align: center;
+    letter-spacing: 15px;
+    font-weight: 700;
+  }
+  .bestImgContainer {
+    display: flex;
+    justify-content: center;
+    .best {
+      max-width: 276px;
+      margin: 0 22px;
+      img {
+        border-radius: 50%;
+        max-width: 100%;
+      }
+      div.korName {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 18px;
+        color: #382e2c;
+        span.engName {
+          display: block;
+          font-size: 13px;
+          font-family: "Roboto", "NotoSans";
+          color: #987346;
+        }
+      }
+    }
+  }
+}
+.espressoStyle {
+  padding: 120px 0 50px 0;
+  h2 {
+    margin-bottom: 40px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #382e2c;
+    font-family: "RobotoM", "NotoSans";
+    text-align: center;
+  }
+  ul {
+    height: 370px;
+    li {
+      position: relative;
+      text-align: center;
+      list-style: none;
+      width: 20%;
+      height: 370px;
+      float: left;
+      padding: 50px 0;
+      border: 1px solid #e2dfdc;
+      border-left: none;
+      span {
+        display: block;
+        padding: 150px 40px 0 40px;
+        font-size: 14px;
+        line-height: 22px;
+        color: #62605f;
+      }
+    }
+    li::before {
+      content: "";
+      clear: both;
+      display: block;
+      width: 200px;
+      height: 130px;
+      position: absolute;
+      background: url("https://www.baristapaulbassett.co.kr/images/menu/icon.png")
+        no-repeat 0 0;
+      background-position: 0 -52px;
+      left: 40px;
+      top: 120px;
+    }
+    li:nth-child(2)::before {
+      background-position-x: -200px;
+    }
+    li:nth-child(3)::before {
+      background-position-x: -405px;
+    }
+    li:nth-child(4)::before {
+      background-position-x: -610px;
+    }
+    li:nth-child(5)::before {
+      background-position-x: -815px;
+    }
+  }
+}
+.btnContainer {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    min-width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    color: #fff;
+    background: #9f8b62;
   }
 }
