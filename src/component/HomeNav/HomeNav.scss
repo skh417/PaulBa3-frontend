@@ -1,0 +1,130 @@
+.Nav {
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+
+    .logoContainer {
+        position: absolute;
+        width: 100vw;
+
+        .logo {
+            cursor: pointer;
+            margin: 0 auto;
+            width: 110px;
+            height: 48px;
+            background: url("../../image/logo.png");
+            background-size: cover;
+        }
+
+        .showList {
+            background: url("../../image/logo_on.png");
+            background-size: cover;
+        }
+    }
+
+    .navList {
+        position: absolute;
+        width: 100vw;
+        margin-top: 60px;
+        
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            margin-top: 5px; 
+            width: 1003px;
+            justify-content: center;
+
+            li {
+                font-weight: normal;
+                justify-content: space-evenly;
+                padding: 0 45px;
+                
+                span {
+                    cursor: pointer;
+                    height: 100%;
+                    margin-right: 6px;             
+                }
+                span:hover {
+                    border-bottom: 3px red solid;
+                }
+
+                .aboutUs, .menu, .store, .society, .new, .eShop {
+                    padding-bottom: 25px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    height: 100%;
+                }
+
+                .eShop {
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+
+    .smallNavList {
+        position: fixed;
+        margin-top: 2px;
+        color: rgba(255,255,255,0.7);
+
+        ul {
+            list-style: none;
+            display: flex;
+            margin-left: 15px;
+
+            li {
+                margin-right: 15px;
+
+                span {
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-family: 'Roboto', 'NotoSans';
+                }
+            }
+        }
+    }
+
+    .showList {
+        color: #969696;
+        background-color: white;
+    }
+}
+
+.showList {
+    
+    background-color: white;
+    color: black;
+}
+
+@media (min-width: 1361px) {
+    .Nav {
+        .logoContainer {
+            width: 0vw;
+            left: 30px;
+            top: 20px;
+            .logo {
+                width: 150px;
+                height: 76px;
+                margin: 0 0 ;
+            }
+        }
+
+        .smallNavList {
+            margin-top: 20px;
+            margin-right: -5px;
+
+            ul {
+                li {
+                    margin-left: 5px;    
+                }
+            }
+        }
+    }
+}

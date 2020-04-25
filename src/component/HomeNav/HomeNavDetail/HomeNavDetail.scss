@@ -1,0 +1,56 @@
+.NavDetail {
+    position: fixed;
+    top: 110px;
+    color: black;
+    background-color: white;
+    width: 100%;
+    border-top: 1px solid #e2dfdc;
+    
+    div {
+        display: flex;
+        height: 265px;
+        width: 1003px;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        
+        ul {
+            list-style: none;
+            margin-top: 25px;
+            width: 160px;
+
+            li {
+                line-height: 35px;
+                font-family: 'Roboto', 'NotoSans';
+                font-size: 13px;
+                // letter-spacing: -0.1px;
+            }
+        }
+
+        .aboutList {
+            padding-left: 40px;
+        }
+        .menuList {
+            padding-left: 50px;
+        }
+        .storeList {
+            padding-left: 30px;
+        }
+        .societyList {
+            padding-left: 15px;
+        }
+        .newList {
+            padding-left: 15px;
+        }
+        .eShopList {
+            padding-left: 50px;
+        }
+    }
+}
+
+.show {
+    display: block;
+}
+
+.unShown {
+    display: none;
+}
