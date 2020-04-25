@@ -9,7 +9,6 @@ import Menu from "./pages/Menu/Menu";
 import MenuDetail from "./pages/Menu/MenuDetail";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
-import Coffee from "./pages/Menu/Coffee/Coffee";
 
 class Routes extends Component {
     render() {
@@ -21,7 +20,7 @@ class Routes extends Component {
                     <Route exact path="/menu/detail" component={MenuDetail} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/menu/coffee" component={Coffee} />
+                    <Route exact path="/menu/coffee" component={Menu} />
                 </Switch>
             </Router>
         );

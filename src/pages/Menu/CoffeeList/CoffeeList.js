@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import Nav from "../../../component/Nav/Nav";
-import Footer from "../../../component/Footer/Footer";
-import "./Coffee.scss";
-import icon from "../../../image/menu_coffe_product.jpg";
+import Coffee from "./Coffee/Coffee";
+import "./CoffeeList.scss";
 
-class Coffee extends Component {
+
+class CoffeeList extends Component {
     render() {
+        // const { coffee } = this.props;
+
         return (
             <>
             <Nav />
-            <div className="Coffee">
+            <div className="CoffeeList">
                 <div className="topImage">
                     <img />
                     <div>
@@ -29,25 +31,17 @@ class Coffee extends Component {
                     </ul>
                 </div>
                 <div className="menuConatinaer">
-                    <div className="menuList">
-                        <ul>
-                            <li>
-                                <a href="" />
-                                <div >
-                                    <img className="icon" src={icon}/>
-                                    <div className="text">
-                                        아이스 카라멜 마키아토 <span>Iced Caramel Macchiato</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <Coffee 
+                        // key={coffee.id}
+                        // id={coffee.id}
+                        // name={coffee.name}
+
+                    />
                 </div>
             </div>
-            <Footer />
             </>
         );
     }
 }
 
-export default Coffee;
+export default CoffeeList;

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "../../component/Nav/Nav";
+import CoffeeList from "./CoffeeList/CoffeeList";
 import "./Menu.scss";
 
 class Menu extends Component {
@@ -18,9 +20,8 @@ class Menu extends Component {
     render() {
         return (
             <>
-                <div className="Menu">
-                    Menu
-                </div>
+            <Nav />
+            <CoffeeList />
             </>
         );
     }
