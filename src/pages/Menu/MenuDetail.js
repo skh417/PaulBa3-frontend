@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./MenuDetail.scss";
+import MenuDetailFooter from "./MenuDetailFooter"
 
 class MenuDetail extends Component {
     // state = {
@@ -148,6 +149,7 @@ class MenuDetail extends Component {
                 <div className="btnContainer">
                     <a href="">LIST</a>
                 </div>
+                <MenuDetailFooter />
             </div>
         )
     }
