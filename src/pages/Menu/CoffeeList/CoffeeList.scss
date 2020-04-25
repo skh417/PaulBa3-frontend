@@ -24,19 +24,20 @@
     }
 
     .category {
-        width: 100%;
+        width: 100vw;
         height: 58px;
         border-bottom: 1px solid #aaa8a7;
         font-size: 13px;
-        ul {
+
+        .all {
             list-style: none;
             display: flex;
             width: 706px;
+            margin: 0 auto;
             text-align: center;
-            padding-top: 15px;
-            transform: translateX(50%);
+            padding-top: 20px;
             
-            li {
+            div {
                 font-size: 15px;
                 color: #382e2c;
                 width: 145px;

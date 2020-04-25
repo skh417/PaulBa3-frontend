@@ -15,20 +15,21 @@ class CoffeeList extends Component {
                 <div className="topImage">
                     <img />
                     <div>
-                        <span className="title">COFFE</span>
+                        <span className="title">COFFEE</span>
                         <br/>
                         <span>한잔의 완벽한 커피</span>
                     </div>
                 </div>
                 <div className="category">
-                    <ul>
-                        <li>전체</li>
-                        <li>Coffee</li>
-                        <li>Latte</li>
-                        <li>Espresso</li>
-                        <li>Cold Brew</li>
-                        <li>Single Origin</li>
-                    </ul>
+                    <div className="all">
+                        <div>전체</div>
+                        <div>Coffee</div>
+                        <div>Latte</div>
+                        <div>Espresso</div>
+                        <div>Cold Brew</div>
+                        <div>Single Origin</div>
+                    </div>
+                    
                 </div>
                 <div className="menuConatinaer">
                     <Coffee 
