@@ -5,10 +5,15 @@ import bottomImgTwo from "../../../image/buttomBanner-2.jpg";
 import bottomImgThree from "../../../image/buttomBanner-3.jpg";
 
 class MainTwo extends Component {
+
     render() {
         return (
             <div className="MainTwo" id="bottom">
-                <div className="bottomBanner">
+                <div
+                    className="bottomBanner"
+                    style={{ left: this.props.veryLeft, }}
+                    onWheel={this.props.scrollHorizontal}
+                >
                     {/* 이벤트 */}
                     <div className="container">
                         <img src={bottomImgOne} alt="" />
@@ -65,15 +70,15 @@ class MainTwo extends Component {
                 <div className="links">
                     <div className="container">
                         <div className="mobile"></div>
-                        <div className="text">Mobile<br />App</div>
+                        <p className="text">Mobile<br />App</p>
                     </div>
                     <div className="container">
                         <div className="special"></div>
-                        <div className="text">Special<br />Benefit</div>
+                        <p className="text">Special<br />Benefit</p>
                     </div>
                     <div className="container">
                         <div className="eshop"></div>
-                        <div className="text">e-Shop</div>
+                        <p className="text">e-Shop</p>
                     </div>
                 </div>
             </div>
