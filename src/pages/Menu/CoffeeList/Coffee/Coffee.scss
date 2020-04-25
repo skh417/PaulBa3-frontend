@@ -1,8 +1,7 @@
 .Coffee {
-    width: 1236px;
+    display: inline-block;
     margin: 0 auto;
-
-    .oneContainer {
+    .oneCoffee {
         cursor: pointer;
         display: inline-block;
         position: relative;
@@ -38,7 +37,7 @@
 
 @media (max-width: 1360px) {
     .Coffee {
-        width: 500px;
+        
         margin: 0 auto;
     }
 }

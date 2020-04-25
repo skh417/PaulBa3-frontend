@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NavDetail from "./NavDetail/NavDetail";
 import "./Nav.scss";
 
@@ -45,9 +46,11 @@ class Nav extends Component {
     render() {
         return (
             <div className={`Nav ${this.state.show ? "showList" : ""}`}>
-                <div className="logoContainer" onMouseEnter={this.hoverOff}>
-                    <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
-                </div>
+                <Link to="/">
+                    <div className="logoContainer" onMouseEnter={this.hoverOff}>
+                        <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
+                    </div>
+                </Link>
                 <div className="navList" >
                     <ul onMouseEnter={this.hoveron}>
                         <li><span className="aboutUs">ABOUT US</span></li>

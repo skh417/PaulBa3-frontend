@@ -6,7 +6,9 @@ import "./CoffeeList.scss";
 
 class CoffeeList extends Component {
     render() {
-        // const { coffee } = this.props;
+        const { products } = this.props.coffee;
+        if (!products) return (<></>);
+        console.log(products)
 
         return (
             <>
@@ -32,12 +34,20 @@ class CoffeeList extends Component {
                     
                 </div>
                 <div className="menuConatinaer">
-                    <Coffee 
-                        // key={coffee.id}
-                        // id={coffee.id}
-                        // name={coffee.name}
-
-                    />
+                    <div className="oneContainer">
+                        {products.map( (item, index) => {
+                            return (
+                                <Coffee
+                                    key={index}
+                                    korName={item.name_kor}
+                                    engName={item.name_eng}
+                                    img={item.images}
+                                    isNew={item.is_new}
+                                    isBest={item.is_best}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
             </>

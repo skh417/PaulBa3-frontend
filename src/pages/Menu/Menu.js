@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../../component/Nav/Nav";
 import CoffeeList from "./CoffeeList/CoffeeList";
+import Footer from "../../component/Footer/Footer"
 import "./Menu.scss";
 
 class Menu extends Component {
@@ -8,20 +9,26 @@ class Menu extends Component {
         super(props)
 
         this.state = {
-            latte: [],
+            coffee: [],
         }
     }
     componentDidMount() {
-        fetch("http://10.58.7.104:8000/menus")
+        fetch("http://10.58.0.33:8000/menu/COFFEE/1")
             .then(data => data.json())
-            .then(data => console.log(data));
+            .then(data => this.setState({coffee: data}));
     }
 
     render() {
+        const { coffee } = this.state;
+        // const filteredList = latte.filter((one) => {
+        //     return one
+        // })
+
         return (
             <>
             <Nav />
-            <CoffeeList />
+            <CoffeeList coffee={coffee}/>
+            <Footer />
             </>
         );
     }
