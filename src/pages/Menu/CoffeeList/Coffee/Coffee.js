@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Coffee.scss";
-import icon from "../../../../image/menu_coffe_product.jpg";
 
 class Coffee extends Component {
     render() {
