@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./MenuDetail.scss";
 import MenuDetailFooter from "./MenuDetailFooter"
+import "./MenuDetail.scss";
 
 class MenuDetail extends Component {
     // state = {
@@ -18,7 +18,7 @@ class MenuDetail extends Component {
         // if (!coffee) return (<></>);
 
         return(
-            <div>
+            <div className="MenuDetail">
                 <div className="menuDetailBG">
                     <div className="menuDetail">
                         <div className="menuTitle">
