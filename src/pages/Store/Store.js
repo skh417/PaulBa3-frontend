@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import NameSection from "./NameSection/NameSection";
-import LocationSection from "./LocationSection/LocationSection";
+import NameSection from "./NameSection/NameSection";
+// import LocationSection from "./LocationSection/LocationSection";
 // import OptionSection from "./OptionSection/OptionSection";
 import "./Store.scss";
 
@@ -59,10 +59,10 @@ class Store extends Component {
               </ul>
             </div>
             {/* 매장명 찾기 */}
-            {/* <NameSection /> */}
+            <NameSection />
 
             {/* 지역 찾기 */}
-            <LocationSection />
+            {/* <LocationSection /> */}
 
             {/* 옵션 선택 */}
             {/* <OptionSection /> */}
