@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./NavDetail.scss";
 
 class NavDetail extends Component {
@@ -19,14 +20,16 @@ class NavDetail extends Component {
 
           <ul className='menuList'>
             <li>NEW</li>
-            <li>COFFEE</li>
+            <li>
+              <Link to='/menu/coffee'>COFFEE</Link>
+            </li>
             <li>BEVERAGE</li>
             <li>ICE-CREAM</li>
             <li>FOOD</li>
             <li>PRODUCT</li>
           </ul>
           <ul className='storeList'>
-            <li>매장찾기</li>
+            <Link to='/store'>매장찾기</Link>
           </ul>
           <ul className='societyList'>
             <li>Paul Bassett Society</li>
