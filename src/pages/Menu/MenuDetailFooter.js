@@ -22,7 +22,6 @@ class MenuDetailFooter extends Component{
         this.setState({
            changeClass : "foodImg" 
         })
-        console.log(this.state);
     }
     foodImgOff = () => {
         this.setState({
