@@ -44,7 +44,10 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className={`Nav ${this.state.show ? "showList" : ""}`}>
+      <div
+        className={`Nav ${this.state.show ? "showList" : ""}`}
+        show={this.state.show}
+      >
         <Link to='/'>
           <div className='logoContainer' onMouseEnter={this.hoverOff}>
             <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
@@ -56,10 +59,14 @@ class Nav extends Component {
               <span className='aboutUs'>ABOUT US</span>
             </li>
             <li>
-              <span className='menu'>MENU</span>
+              <span className='menu'>
+                <Link to='/menu/coffee'>MENU</Link>
+              </span>
             </li>
             <li>
-              <span className='store'>STORE</span>
+              <span className='store'>
+                <Link to='/store'>STORE</Link>
+              </span>
             </li>
             <li>
               <span className='society'>SOCIETY</span>
@@ -75,10 +82,14 @@ class Nav extends Component {
         <div className={`smallNavList ${this.state.show ? "showList" : ""}`}>
           <ul>
             <li>
-              <span>Login</span>
+              <Link to='/login'>
+                <span>Login</span>
+              </Link>
             </li>
             <li>
-              <span>Join</span>
+              <Link to='/signup'>
+                <span>Join</span>
+              </Link>
             </li>
             <li>
               <span>Contact us</span>
