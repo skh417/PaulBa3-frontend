@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import MenuFooter from "../../../MenuFooter/MenuFooter";
-import NavWhite from "../../../.././../component/NavWhite/NavWhite";
-import Footer from "../../../.././../component/Footer/Footer";
+import MenuFooter from "../MenuFooter/MenuFooter";
+import NavWhite from "../../../component/NavWhite/NavWhite";
+import Footer from "../../../component/Footer/Footer";
 import "./MenuDetail.scss";
 
 class MenuDetail extends Component {

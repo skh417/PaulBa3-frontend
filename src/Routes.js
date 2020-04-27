@@ -4,7 +4,7 @@ import Home from "./Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Menu from "./pages/Menu/Menu";
-import MenuDetail from "./pages/Menu/MenuList/MenuCard/MenuDetail/MenuDetail";
+import MenuDetail from "./pages/Menu/MenuDetail/MenuDetail";
 import Mypage from "./pages/Mypage/Mypage";
 import Store from "./pages/Store/Store";
 
