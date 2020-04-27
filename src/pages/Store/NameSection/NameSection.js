@@ -4,7 +4,12 @@ import "./NameSection.scss";
 class NameSection extends Component {
   render() {
     return (
-      <div className='NameSection'>
+      <div
+        className='NameSection'
+        // className={`${
+        //   !this.props.show === true
+        // } ? "NameSection show" : "NameSection"`}
+      >
         <div className='searchBox'>
           <input type='text' placeholder='매장명 또는 주소 입력'></input>
           <div>

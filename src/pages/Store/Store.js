@@ -27,6 +27,7 @@ class Store extends Component {
   };
 
   render() {
+    const { selected } = this.state;
     return (
       <>
         <NavWhite />
@@ -39,21 +40,21 @@ class Store extends Component {
             <div className='category'>
               <ul>
                 <li
-                  className={`${this.state.selected === 0 ? "selected" : ""}`}
+                  className={`${selected === 0 ? "selected" : ""}`}
                   onClick={this.isSelected}
                   id='0'
                 >
                   매장명
                 </li>
                 <li
-                  className={`${this.state.selected === 1 ? "selected" : ""}`}
+                  className={`${selected === 1 ? "selected" : ""}`}
                   onClick={this.isSelected}
                   id='1'
                 >
                   지역
                 </li>
                 <li
-                  className={`${this.state.selected === 2 ? "selected" : ""}`}
+                  className={`${selected === 2 ? "selected" : ""}`}
                   onClick={this.isSelected}
                   id='2'
                 >
@@ -62,7 +63,7 @@ class Store extends Component {
               </ul>
             </div>
             {/* 하단 보여줄 값*/}
-            {appearValue[this.state.selected]}
+            {appearValue[selected]}
           </div>
 
           <MapAPI />
