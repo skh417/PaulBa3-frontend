@@ -25,12 +25,13 @@ $noto: "NotoSans";
     }
 
     .category {
+      
       ul {
         display: table;
         list-style: none;
         border-bottom: 1px solid #aaa8a7;
         width: 100%;
-        
+
         li {
           color: $fontColor;
           cursor: pointer;
@@ -41,19 +42,12 @@ $noto: "NotoSans";
           font-size: 15px;
           font-family: $noto;
         }
-        .clicked {
+        .selected {
           border-bottom: $borderBottom;
           padding-bottom: 1px;
+
         }
       }
     }
-  }
-
-  .map {
-    position: absolute;
-    height: calc(100vh - 110px);
-    width: calc(100vw - 380px);
-    left: 360px;
-    background-color: mintcream;
   }
 }
