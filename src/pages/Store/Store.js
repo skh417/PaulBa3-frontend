@@ -8,7 +8,7 @@ import Footer from "../../component/Footer/Footer";
 import "./Store.scss";
 
 const appearValue = {
-  0: <Component />,
+  0: <NameSection />,
   1: <LocationSection />,
   2: <OptionSection />,
 };
@@ -24,21 +24,9 @@ class Store extends Component {
 
   isSelected = (e) => {
     this.setState({ selected: Number(e.target.id) });
-    // this.showSection(this.state.selected);
   };
 
-  // showSection = (num) => {
-  //   console.log(appearValue[num].section);
-  //   return appearValue[num].section;
-  // };
-
-  // showSection = (num) => {
-  //   console.log(appearValue[num].section);
-  //   return appearValue[num].section;
-  // };
-
   render() {
-    console.log(this.state.selected);
     return (
       <>
         <NavWhite />
@@ -74,17 +62,7 @@ class Store extends Component {
               </ul>
             </div>
             {/* 하단 보여줄 값*/}
-            {/* {appearValue[this.state.selected]} */}
-            {/* {appearValue[0].value} */}
-
-            {/* 매장명 찾기 */}
-            {/* <NameSection /> */}
-
-            {/* 지역 찾기 */}
-            {/* <LocationSection /> */}
-
-            {/* 옵션 선택 */}
-            {/* <OptionSection /> */}
+            {appearValue[this.state.selected]}
           </div>
 
           <MapAPI />
