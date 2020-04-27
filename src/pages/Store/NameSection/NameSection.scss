@@ -48,9 +48,10 @@ $noto: "NotoSans";
   }
   .storeLocationContainer {
     height: 580px;
-    overflow: auto;
+    overflow: hidden;
 
     .storeLocation {
+      overflow: auto;
       margin: 0 30px;
       padding: 25px 0 16px 0;
       border-bottom: 1px solid #e2dfdc;
