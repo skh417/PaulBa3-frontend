@@ -1,0 +1,98 @@
+$noto: "NotoSans";
+
+.NameSection {
+    .searchBox {
+      border-bottom: 1px solid #aaa8a7;
+      height: 61px;
+      display: flex;
+
+      input {
+        width: 83%;
+        height: 100%;
+        font-size: 14px;
+        color: #969696;
+        border: none;
+      }
+      div {
+        display: inline-block;
+        width: 17%;
+        background-color: #ed1556;
+        cursor: pointer;
+        .searchIcon {
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+      }
+    }
+
+    .resultList {
+      .result {
+        padding: 19px 0 0 30px;
+        font-family: "Roboto", "NotoSans";
+        display: flex;
+        justify-content: space-between;
+        .totalCount {
+          margin-left: 5px;
+          font-size: 16px;
+          color: #e0004d;
+          font-family: "Roboto", "NotoSans";
+          font-weight: 700;
+        }
+        .logos {
+          margin-right: 20px;
+          cursor: pointer;
+          img {
+            margin-top: -5px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .storeLocationContainer {
+      height: 580px;
+
+      .storeLocation {
+        margin: 0 30px;
+        padding: 25px 0 16px 0;
+        border-bottom: 1px solid #e2dfdc;
+        display: flex;
+        justify-content: space-around;
+
+        .left {
+          .name {
+            font-size: 16px;
+            color: #382e2c;
+            font-weight: bold;
+            font-family: $noto;
+          }
+          .address {
+            font-family: $noto;
+            color: rgb(98, 96, 95);
+            font-size: 13px;
+            margin: 7px 0 7px 0;
+          }
+          .contact {
+            font-family: $noto;
+            color: rgb(98, 96, 95);
+
+            .telLogo {
+              display: inline-block;
+              height: 12px;
+              width: 12px;
+              margin-right: 10px;
+              background: url("../../../image/store_icon.png") no-repeat -32px 0;
+            }
+          }
+        }
+
+        .locationLogo {
+          display: inline-block;
+          height: 21px;
+          width: 16px;
+          margin-left: 30px;
+          background: url("../../../image/store_icon.png") no-repeat -64px 0;
+        }
+      }
+    }
+  }

@@ -1,0 +1,59 @@
+$fontColor: #382e2c;
+$borderBottom: 3px solid #e0004d;
+$noto: "NotoSans";
+
+.Store {
+  position: relative;
+  width: 100%;
+  padding-top: 110px;
+  display: flex;
+
+  .storeContainer {
+    display: absolute;
+    width: 360px;
+    height: calc(100vh - 110px);
+    border-right: 1px solid #e2dfdc;
+
+    .storeList {
+      p {
+        font-size: 24px;
+        font-family: "Nanum Gothic";
+        color: $fontColor;
+        text-align: center;
+        padding-top: 15px;
+      }
+    }
+
+    .category {
+      ul {
+        display: table;
+        list-style: none;
+        border-bottom: 1px solid #aaa8a7;
+        width: 100%;
+        
+        li {
+          color: $fontColor;
+          cursor: pointer;
+          display: table-cell;
+          width: 33.3%;
+          text-align: center;
+          padding: 20px 0 23px 0;
+          font-size: 15px;
+          font-family: $noto;
+        }
+        .clicked {
+          border-bottom: $borderBottom;
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+
+  .map {
+    position: absolute;
+    height: calc(100vh - 110px);
+    width: calc(100vw - 380px);
+    left: 360px;
+    background-color: mintcream;
+  }
+}
