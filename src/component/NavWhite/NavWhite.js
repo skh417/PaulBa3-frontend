@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import NavDetail from "./NavDetail/NavDetail";
-import "./Nav.scss";
+import NavDetail from "../Nav/NavDetail/NavDetail";
+import "./NavWhite.scss";
 
-class Nav extends Component {
+class NavWhite extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,19 +11,6 @@ class Nav extends Component {
       listShow: false,
     };
   }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.scrollTo);
-  }
-
-  scrollTo = () => {
-    let currentY = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentY === 0) {
-      this.setState({ show: false });
-    } else {
-      this.setState({ show: true });
-    }
-  };
 
   hoveron = () => {
     this.setState({ show: true, listShow: true });
@@ -38,16 +25,12 @@ class Nav extends Component {
     }
   };
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.scrollTo);
-  }
-
   render() {
     return (
-      <div className={`Nav ${this.state.show ? "showList" : ""}`}>
+      <div className='NavWhite'>
         <Link to='/'>
           <div className='logoContainer' onMouseEnter={this.hoverOff}>
-            <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
+            <div className={`logo`}></div>
           </div>
         </Link>
         <div className='navList'>
@@ -56,10 +39,14 @@ class Nav extends Component {
               <span className='aboutUs'>ABOUT US</span>
             </li>
             <li>
-              <span className='menu'>MENU</span>
+              <span className='menu'>
+                <Link to='/menu/coffee'>MENU</Link>
+              </span>
             </li>
             <li>
-              <span className='store'>STORE</span>
+              <span className='store'>
+                <Link to='/store'>STORE</Link>
+              </span>
             </li>
             <li>
               <span className='society'>SOCIETY</span>
@@ -72,13 +59,17 @@ class Nav extends Component {
             </li>
           </ul>
         </div>
-        <div className={`smallNavList ${this.state.show ? "showList" : ""}`}>
+        <div className='smallNavList'>
           <ul>
             <li>
-              <span>Login</span>
+              <Link to='/login'>
+                <span>Login</span>
+              </Link>
             </li>
             <li>
-              <span>Join</span>
+              <Link to='/signup'>
+                <span>Join</span>
+              </Link>
             </li>
             <li>
               <span>Contact us</span>
@@ -99,4 +90,4 @@ class Nav extends Component {
   }
 }
 
-export default withRouter(Nav);
+export default withRouter(NavWhite);

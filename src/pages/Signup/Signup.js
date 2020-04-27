@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "../../component/Nav/Nav";
+import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
 
 class Signup extends Component {
@@ -6,14 +8,84 @@ class Signup extends Component {
         super();
 
         this.state = {
-            smsAgree : true,
-            mailAgree : true,
-            pushAgree : true,
-            agreeAll : true,
-            home : false,
-            workplace : true
+            // smsAgree : true,
+            // mailAgree : true,
+            // pushAgree : true,
+            // agreeAll : true,
+            // home : false,
+            // workplace : true,
+            user_id : "",
+            password : "",
+            pwCheck : "",
+            name : "",
+            birth_date : "",
+            phone : "",
+            email : "",
+            address : "",
         }
     }
+
+    inputId = (e) => {
+        this.setState({
+            user_id : e.target.value
+        });
+    }
+
+    inputPw = (e) => {
+        this.setState({
+            password : e.target.value
+        });
+    }
+
+    inputPwCheck  = (e) => {
+        this.setState({
+            pwCheck : e.target.value
+        });
+    }
+
+    inputName  = (e) => {
+        this.setState({
+            name : e.target.value
+        });
+    }
+    
+    inputBirth  = (e) => {
+        this.setState({
+            birth_date : e.target.value
+        });
+    }
+    
+    inputPhone  = (e) => {
+        this.setState({
+            phone : e.target.value
+        });
+    }
+
+    inputEmail  = (e) => {
+        this.setState({
+            email : e.target.value
+        });
+    }
+
+    inputAddress  = (e) => {
+        this.setState({
+            address : e.target.value
+        });
+    }
+
+    handleClick = (e) => {
+        e.preventDefault();
+        console.log('ok');
+            fetch("http://10.58.4.56:8000/sign-up", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state)
+            }).then(res => console.log(res));
+    }
+
+
 
     checkHome = (e) => {
         this.setState({
@@ -69,6 +141,8 @@ class Signup extends Component {
     render() {
         const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
         return(
+            <>
+            <Nav />
             <div className="SignUp">
                 <h2>회원가입</h2>
                 <ul className="currentStep">
@@ -90,14 +164,14 @@ class Signup extends Component {
                     <tr>
                         <th scope="row">아이디<span>*</span></th>
                         <td>
-                            <input className="customId" type="text" />
+                            <input className="customId" type="text" onChange={this.inputId}/>
                             <a className="checkOverlap">중복확인</a>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">비밀번호<span>*</span></th>
                         <td>
-                            <input className="customPw" type="password" />
+                            <input className="customPw" type="password" onChange={this.inputPw} />
                             <ul className="pwCaption">
                                 <li>영문자/숫자/특수 문자가 모두 포함되어야 합니다.</li>
                                 <li>사용 가능한 특수 문자는 !@.#^* >+=_~ 입니다.</li>
@@ -109,39 +183,42 @@ class Signup extends Component {
                     <tr>
                         <th scope="row">비밀번호 확인<span>*</span></th>
                         <td>
-                            <input className="checkPw" type="password" />
+                            <input className="checkPw" type="password" onChange={this.inputPwCheck} />
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">이름<span>*</span></th>
                         <td>
-                            <input className="inputName" type="text" /> 
+                            <input className="inputName" type="text" onChange={this.inputName} /> 
                             {/* 실제 폴 바셋 사이트에서는 휴대폰 인증에서 입력한 이름이 자동으로 input value값으로 입력, readOnly */}
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">생년월일<span>*</span></th>
                         <td className="birthDay">
-                            <select className="year" />
+                            {/* fetch실습 */}
+                            <input className="birthDay" type="text" onChange={this.inputBirth} /> 
+                            {/* <select className="year" />
                             <select className="month" />
-                            <select className="day" />
+                            <select className="day" /> */}
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">휴대폰<span>*</span></th>
                         <td className="phoneNumber">
-                            <select className="selectPhone" />
+                            <input className="phoneNumber" type="text" onChange={this.inputPhone} /> 
+                            {/* <select className="selectPhone" />
                             <span className="hyphen"/>
                             <input type="text" />
                             <span className="hyphen"/>
-                            <input type="text" />
+                            <input type="text" /> */}
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">이메일<span>*</span></th>
                         <td className="eMail">
-                            <input type="text" />
-                            <span>@</span>
+                            <input type="text" onChange={this.inputEmail} />
+                            {/* <span>@</span>
                             <input type="text" />
                             <select className="selectMail">
                                 <option value>직접입력</option>
@@ -149,7 +226,7 @@ class Signup extends Component {
                                 <option>daum.net</option>
                                 <option>nate.com</option>
                                 <option>gmail.com</option>
-                            </select>
+                            </select> */}
                         </td>
                     </tr>
                     <tr>
@@ -161,13 +238,14 @@ class Signup extends Component {
                                 <input id="workplace" className={workplace?"workplace":"workplace2"} onClick={this.checkWork} type="radio"/>
                                 <label for="workplace">회사</label>
                             </div>
-                            <input className="zipCode" type="text" />
+                            {/* <input className="zipCode" type="text" />
                             <span className="hyphen" />
                             <a href="">주소찾기</a>
-                            <br />
-                            <input className ="addAddress" type="text" />
-                            <br />
-                            <input className ="addAddress" type="text" />
+                            <br /> */}
+                            <input className ="addAddress" type="text" onChange={this.inputAddress} />
+                            {/* <br />
+                            <input className ="addAddress" type="text" /> */}
+                            {/* fetch실습 */}
                             <p>2014년부터 도로명 새주소가 전면 시행되어 주소등록 및 변경 시 도로명 주소를 사용하게 됩니다.</p>
                         </td>
                     </tr>
@@ -234,9 +312,11 @@ class Signup extends Component {
                 </div>
                 <div className="buttonArea">
                     <a className="cancle" href="">취소</a>
-                    <a className="join" href="">회원가입</a>
+                    <a className="join" href="" onClick={this.handleClick}>회원가입</a>
                 </div>
             </div>
+            <Footer />
+            </>
         )
     }
 }

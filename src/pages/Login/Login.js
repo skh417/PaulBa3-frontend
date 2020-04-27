@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "../../component/Nav/Nav";
+import Footer from "../../component/Footer/Footer";
 import "./Login.scss";
 
 class Login extends Component {
@@ -23,6 +25,8 @@ class Login extends Component {
 
         console.log(isToggleOn)
         return (
+            <>
+            <Nav />
             <div className="Login">
                 <div className="loginArea">    
                     <h2>로그인</h2>
@@ -53,6 +57,8 @@ class Login extends Component {
                     </div>
                 </div>
             </div>
+            <Footer />
+            </>
         );
     }
 }

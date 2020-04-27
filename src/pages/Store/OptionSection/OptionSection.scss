@@ -1,0 +1,119 @@
+$noto: "NotoSans";
+
+.OptionSection {
+    height: 653px;
+    
+    .title {
+        margin: 23px 0 25px 30px;
+        font-family: $noto;
+        font-size: 16px;
+        color: #382e2c;
+        font-weight: 700;
+    }
+
+    .optionIcon {
+        ul {
+            width: 100%;
+            list-style: none;
+            
+            li {
+                display: inline-block;
+                height: 109px;
+                width: 33.3%;
+                text-align: center;
+                font-size: 14px;
+                font-family: $noto;
+                border-bottom: 1px solid #e2dfdc;
+                cursor: pointer;
+                position: relative;
+
+                p {
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: $noto;
+                    margin-top: 35px;
+                }
+                input {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 41px;
+                    margin-top: 4px;
+                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png") no-repeat 0 0;
+                }
+                .checked {
+                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png") no-repeat 0 -10px;
+                }
+                div {
+                    position: relative;
+                    width: 40px;
+                    height: 32px;
+                    margin: 0 auto;
+                    top: 30px;
+                    background: url("https://www.baristapaulbassett.co.kr/images/store/icon.png") no-repeat;
+                }
+                .wifi {
+                    background-position: 0 -40px;
+                    
+                }
+                .subway {
+                    background-position: -40px -40px;
+                }
+                .parking {
+                    background-position: -80px -40px;
+                }
+                .teras {
+                    background-position: -120px -40px;
+                }
+                .roasting {
+                    background-position: -160px -40px;
+                }
+                .edu {
+                    background-position: -200px -40px;
+                }
+                .iceCream {
+                    background-position: -240px -40px;
+                }
+                .multiIceCream {
+                    background-position: -280px -40px;
+                }
+                .beer {
+                    background-position: -320px -40px;
+                }
+                .single {
+                    background-position: -360px -40px;
+                }
+                .purify {
+                    background-position: -400px -40px;
+                }
+                .delivery {
+                    background-position: -440px -40px;
+                }
+
+                
+            }
+            .rightLine {
+                border-right: 1px solid #e2dfdc;
+            }
+            
+        }
+    }
+
+    .searchContainer {
+        width: 100%;
+        position: relative;
+
+        .search {
+            display: inline-block;
+            background-color: #e0004d;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 15px;
+            font-family: $noto;
+            height: 50px;
+            width: 150px;
+            margin: 50px 108px;
+        }
+    }
+}

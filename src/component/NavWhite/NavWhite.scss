@@ -1,24 +1,20 @@
-.Nav {
+.NavWhite {
     position: fixed;
     width: 100%;
     height: 110px;
     z-index: 100;
-    background-color: rgba(0,0,0,0.2);
-    color: white;
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid #e2dfdc;
 
     .logoContainer {
         padding-top: 10px;
-
+    
         .logo {
             cursor: pointer;
             margin: 0 auto;
             width: 110px;
             height: 48px;
-            background: url("../../image/logo.png");
-            background-size: cover;
-        }
-
-        .showList {
             background: url("../../image/logo_on.png");
             background-size: cover;
         }
@@ -30,7 +26,7 @@
             display: flex;
             flex-direction: row;
             margin: 0 auto;
-            margin-top: 5px; 
+            margin-top: 5px;
             width: 1003px;
             justify-content: center;
 
@@ -57,14 +53,14 @@
                 }
             }
         }
-
     }
 
     .smallNavList {
         position: fixed;
         top: 5px;
-        right: 25px;
-        color: rgba(255,255,255,0.7);
+        right: 30px;
+        color: #969696;
+        background-color: white;
 
         ul {
             list-style: none;
@@ -82,24 +78,23 @@
             }
         }
     }
-
-    .showList {
-        color: #969696;
-        background-color: white;
-    }
-}
-
-.showList {
-    
-    background-color: white;
-    color: black;
 }
 
 @media (min-width: 1361px) {
-    .Nav {
+    .NavWhite {
         .logoContainer {
+            padding-top: 30px;
+            padding-left: 30px;
             height: 70px;
             width: 120px;
+        }
+
+        .navList {
+            margin-top: -12px;
+        }
+
+        .smallNavList {
+            top: 20px;
         }
     }
 }
