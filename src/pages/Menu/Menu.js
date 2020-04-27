@@ -4,7 +4,42 @@ import MenuList from "./MenuList/MenuList";
 import Footer from "../../component/Footer/Footer";
 import "./Menu.scss";
 
-const category = ["COFFEE", "BEVERAGE", "ICE-CREAM", "FOOD", "PRODUCT"];
+const category = [
+  {
+    coffee: {
+      1: "Coffee",
+      2: "Lattee",
+      3: "Espresso",
+      4: "Cold Brew",
+      5: "Single Origin",
+    },
+    beverage: {
+      1: "Frappe",
+      2: "Tea Lattee",
+      3: "Ade Juice",
+      4: "Tea",
+      5: "Chocolate",
+      6: "Yogurt",
+    },
+    "ice-cream": {
+      1: "Milk Ice-Cream",
+      2: "Season Ice-Cream",
+    },
+    food: {
+      1: "Bakery",
+      2: "Morning foods",
+      3: "Nata",
+      4: "Cake Dessert",
+    },
+    product: {
+      1: "Barista Pouch",
+      2: "Whole bean",
+      3: "Tumbler",
+      4: "Mug",
+      5: "ETC",
+    },
+  },
+];
 
 class Menu extends Component {
   constructor(props) {
