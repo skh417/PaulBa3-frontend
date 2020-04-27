@@ -1,0 +1,43 @@
+.Coffee {
+    display: inline-block;
+    margin: 0 auto;
+    .oneCoffee {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        margin: 0 15px 60px 15px;
+        width: 276px;
+        height: 350px;
+        vertical-align: top;
+        div {
+            height: 276px;
+            width: 276px;
+            
+            img {
+                height: 100%;
+                width: 100%;
+                border: 4px solid #ffffff;
+                border-radius: 150px;
+            }
+            .text {
+                padding-top: 30px;
+                font-size: 20px;
+                color: #382e2c;
+                text-align: center;
+                span {
+                    display: block;
+                    margin-top: 5px;
+                    color: #987346;
+                    font-family: 'Roboto', 'NotoSans';
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1360px) {
+    .Coffee {
+        
+        margin: 0 auto;
+    }
+}

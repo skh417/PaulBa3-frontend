@@ -1,29 +1,37 @@
 import React, { Component } from "react";
+import Nav from "../../component/Nav/Nav";
+import CoffeeList from "./CoffeeList/CoffeeList";
+import Footer from "../../component/Footer/Footer";
 import "./Menu.scss";
 
 class Menu extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            latte: [],
-        }
-    }
-    componentDidMount() {
-        fetch("http://10.58.7.104:8000/menus")
-            .then(data => data.json())
-            .then(data => console.log(data));
-    }
+    this.state = {
+      coffee: [],
+    };
+  }
+  componentDidMount() {
+    fetch("http://10.58.0.33:8000/menu/COFFEE")
+      .then((data) => data.json())
+      .then((data) => this.setState({ coffee: data }));
+  }
 
-    render() {
-        return (
-            <>
-                <div className="Menu">
-                    Menu
-                </div>
-            </>
-        );
-    }
+  render() {
+    const { coffee } = this.state;
+    // const filteredList = latte.filter((one) => {
+    //     return one
+    // })
+
+    return (
+      <>
+        <Nav />
+        <CoffeeList coffee={coffee} />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default Menu;
