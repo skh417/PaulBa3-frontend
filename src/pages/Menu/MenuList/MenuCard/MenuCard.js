@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./Coffee.scss";
+import "./MenuCard.scss";
 
-class Coffee extends Component {
+class MenuCard extends Component {
   render() {
     const { korName, engName, img, isNew, isBest } = this.props;
     return (
-      <div className='Coffee'>
+      <div className='MenuCard'>
         <div className='oneCoffee'>
           <div>
             <img
@@ -33,4 +33,4 @@ class Coffee extends Component {
   }
 }
 
-export default Coffee;
+export default MenuCard;

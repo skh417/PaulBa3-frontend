@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Nav from "../../component/Nav/Nav";
-import CoffeeList from "./CoffeeList/CoffeeList";
+import MenuList from "./MenuList/MenuList";
 import Footer from "../../component/Footer/Footer";
 import "./Menu.scss";
+
+const category = ["COFFEE", "BEVERAGE", "ICE-CREAM", "FOOD", "PRODUCT"];
 
 class Menu extends Component {
   constructor(props) {
@@ -13,7 +15,7 @@ class Menu extends Component {
     };
   }
   componentDidMount() {
-    fetch("http://10.58.0.33:8000/menu/COFFEE")
+    fetch("http://10.58.0.33:8000/menu/FOOD")
       .then((data) => data.json())
       .then((data) => this.setState({ coffee: data }));
   }
@@ -27,7 +29,7 @@ class Menu extends Component {
     return (
       <>
         <Nav />
-        <CoffeeList coffee={coffee} />
+        <MenuList coffee={coffee} />
         <Footer />
       </>
     );
