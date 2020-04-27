@@ -1,50 +1,59 @@
 import React, { Component } from "react";
 import MenuDetailFooter from "./MenuDetailFooter"
+import NavWhite from "../../component/NavWhite/NavWhite"
+import Footer from "../../component/Footer/Footer"
 import "./MenuDetail.scss";
 
 class MenuDetail extends Component {
-    // state = {
-    //     coffee: null,
-    // }
-    // componentDidMount() {
-    //     fetch("http://10.58.0.25:8000/menu/detail?product=Machiato")
-    //         .then( data => data.json())
-    //         .then( data => this.setState({coffee: data}))
-    // }
+    state = {
+        coffee: null,
+    }
+    componentDidMount() {
+        fetch("http://10.58.0.33:8000/menu/detail?product=Machiato")
+            .then( data => data.json())
+            .then( data => this.setState({coffee: data}))
+    }
 
     render() {
-        // const { coffee } = this.state;
-        // console.log(coffee)
-        // if (!coffee) return (<></>);
+        const { coffee } = this.state;
+        console.log(coffee)
+        if (!coffee) return (<></>);
 
         return(
+            <>
+            <NavWhite />
             <div className="MenuDetail">
                 <div className="menuDetailBG">
                     <div className="menuDetail">
                         <div className="menuTitle">
                             <dl>
                                 <dt>
-                                    {/* <span>{coffee.menu.name_eng}</span> */}
-                                    {/* {coffee.menu.name_kor} */}
+                                    <span>{coffee.menu.name_eng}</span>
+                                    {coffee.menu.name_kor}
                                 </dt>
                                 <dd>
-                                    {/* {coffee.menu.description} */}
+                                    {coffee.menu.description}
                                 </dd>
                             </dl>
                         </div>
-                        <div className="menuImgContainer"></div>
+                        <div className="menuImgContainer">
+                          
+                            <img src={`https://www.baristapaulbassett.co.kr${coffee.menu.images[0]}`} />
+                           
+                          
+                        </div>
                         <ul className="infomation">
                             <li>
                                 <span>구분</span>
-                                {/* {coffee.info.sort} */}
+                                {coffee.info.sort}
                             </li>
                             <li>
                                 <span>알레르기 유발물질</span>
-                                {/* {coffee.info.allergy} */}
+                                {coffee.info.allergy}
                             </li>
                             <li>
                                 <span>제공사이즈</span>
-                                {/* {coffee.info.sizes} */}
+                                {coffee.info.sizes}
                             </li>
                         </ul>
                         <div className="nutriContainer">
@@ -151,6 +160,8 @@ class MenuDetail extends Component {
                 </div>
                 <MenuDetailFooter />
             </div>
+            <Footer />
+            </>
         )
     }
 }
