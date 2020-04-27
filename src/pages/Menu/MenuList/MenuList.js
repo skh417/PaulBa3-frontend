@@ -6,7 +6,7 @@ import "./MenuList.scss";
 
 class MenuList extends Component {
   render() {
-    const { products } = this.props.coffee;
+    const { products } = this.props.menu;
     if (!products) return <></>;
 
     return (

@@ -6,7 +6,7 @@ class MenuCard extends Component {
     const { korName, engName, img, isNew, isBest } = this.props;
     return (
       <div className='MenuCard'>
-        <div className='oneCoffee'>
+        <div className='oneMenu'>
           <div>
             <img
               className='icon'

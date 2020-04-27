@@ -11,17 +11,17 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      coffee: [],
+      menu: [],
     };
   }
   componentDidMount() {
     fetch("http://10.58.0.33:8000/menu/FOOD")
       .then((data) => data.json())
-      .then((data) => this.setState({ coffee: data }));
+      .then((data) => this.setState({ menu: data }));
   }
 
   render() {
-    const { coffee } = this.state;
+    const { menu } = this.state;
     // const filteredList = latte.filter((one) => {
     //     return one
     // })
@@ -29,7 +29,7 @@ class Menu extends Component {
     return (
       <>
         <Nav />
-        <MenuList coffee={coffee} />
+        <MenuList menu={menu} />
         <Footer />
       </>
     );
