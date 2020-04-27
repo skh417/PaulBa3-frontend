@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import Nav from "../../../component/Nav/Nav";
-import Coffee from "./Coffee/Coffee";
-import "./CoffeeList.scss";
+import MenuCard from "./MenuCard/MenuCard";
+import MenuFooter from "../MenuFooter/MenuFooter";
+import "./MenuList.scss";
 
-class CoffeeList extends Component {
+class MenuList extends Component {
   render() {
-    const { products } = this.props.coffee;
+    const { products } = this.props.menu;
     if (!products) return <></>;
 
     return (
       <>
         <Nav />
-        <div className='CoffeeList'>
+        <div className='MenuList'>
           <div className='topImage'>
             <img />
             <div>
@@ -34,7 +35,7 @@ class CoffeeList extends Component {
             <div className='oneContainer'>
               {products.map((item, index) => {
                 return (
-                  <Coffee
+                  <MenuCard
                     key={index}
                     korName={item.name_kor}
                     engName={item.name_eng}
@@ -47,9 +48,10 @@ class CoffeeList extends Component {
             </div>
           </div>
         </div>
+        <MenuFooter />
       </>
     );
   }
 }
 
-export default CoffeeList;
+export default MenuList;
