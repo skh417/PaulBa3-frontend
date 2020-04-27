@@ -10,7 +10,7 @@ class MainTwo extends Component {
       <div className='MainTwo' id='bottom'>
         <div
           className='bottomBanner'
-          style={{ left: this.state.veryLeft }}
+          // style={{ left: this.state.veryLeft }}
           onWheel={this.scrollHorizontal}
         >
           {/* 이벤트 */}
