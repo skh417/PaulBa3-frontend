@@ -1,0 +1,120 @@
+.myPage {
+    background: #f5f0e9;
+
+    h2 {
+        padding: 42px 0 18px 0;
+        font-size: 50px;
+        color: #382e2c;
+        text-align: center;
+    }
+
+    .myPageBody {
+        padding-bottom: 80px;
+    }
+
+    .myState {
+        margin: 0 auto;
+        padding: 50px 60px;
+        width: 1180px;
+        background: #fff;
+
+        .myStateTop {
+            position: relative;
+            display: flex;
+
+            .myGradeContainer {
+                display: inline-block;
+                padding-left: 108px;
+                margin-top: 40px;
+                font-size: 20px;
+                color: #382e2c;
+
+                >div {
+                    font-size: 20px;
+
+                    strong {
+                        font-size: 20px;
+                        font-weight: 800;
+                    }
+                }
+
+                .gradeArea {
+                    font-size: 30px;
+                    margin-top: 5px;
+
+                    .grade {
+                        display: inline-block;
+                        width: 160px;
+                        height: 28px;
+                        background: url("https://www.baristapaulbassett.co.kr/images/mysociety/rating03.png");
+                    }
+
+                }
+
+                .notice {
+                    padding-top: 10px;
+                    font-size: 14px;
+                    color: #969696;
+                    font-weight: 800;
+
+                }
+
+            }
+
+            .myGradeContainer::before {
+                content: "";
+                clear: both;
+                width: 92px;
+                height: 92px;
+                position: absolute;
+                left: 0px;
+                border-radius: 50px;
+                border: 1px solid black;
+                background: url("https://www.baristapaulbassett.co.kr/images/mysociety/ratingIcon.png") no-repeat 0 0;
+                background-position-y: -196px;
+            }
+
+            .myCrownArea {
+                position: absolute;
+                right: 0;
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        position: relative;
+                        color: #382e2c;
+                        float: left;
+                        margin-bottom: 7px;
+                    }
+                }
+
+                ul.steps {
+                    li a {
+                        font-size: 14px;
+                    }
+
+                    li a::after {
+                        content: "";
+                        clear: both;
+                        position: absolute;
+                        right: -15px;
+                        top: 4px;
+                        width: 6px;
+                        height: 10px;
+                        background: url("https://www.baristapaulbassett.co.kr/images/blt/blt01.png") no-repeat 0 0;
+
+                    }
+
+                    li:nth-child(2),
+                    li:nth-child(3) {
+                        margin-left: 35px;
+                    }
+                }
+
+                ul.myNums {}
+            }
+        }
+    }
+
+}

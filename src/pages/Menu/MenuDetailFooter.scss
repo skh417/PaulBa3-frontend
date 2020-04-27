@@ -1,0 +1,59 @@
+.MenuDetailFooter {
+    background: #b9a892;
+    height: 156px;
+
+    ul {
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 1360px;
+        height: 156px;
+        margin: 0 auto;
+        padding-top: 72px;
+
+        li {
+            width: 20%;
+            list-style: none;
+            text-align: center;
+            z-index: 2;
+
+            a {
+                width: 100%;
+                font-size: 13px;
+                font-weight: 600;
+                color: #fff;
+                font-family: 'RobotoM', 'Notosans';
+                letter-spacing: 8px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    ul::after {
+        content: "";
+        display: block;
+        clear: both;
+        position: absolute;
+        top: 0px;
+        width: 348px;
+        height: 156px;
+        z-index: 1;
+        background: url("https://www.baristapaulbassett.co.kr/images/menu/footCoffeeBg.png") no-repeat center center;
+    }
+
+    ul.beverageImg::after {
+        background: url("https://www.baristapaulbassett.co.kr/images/menu/footBeverageBg.png");
+    }
+
+    ul.foodImg::after {
+        background: url("https://www.baristapaulbassett.co.kr/images/menu/footFoodBg.png");
+    }
+
+    ul.icecreamImg::after {
+        background: url("https://www.baristapaulbassett.co.kr/images/menu/footIcecreamBg.png")
+    }
+
+    ul.productImg::after {
+        background: url("https://www.baristapaulbassett.co.kr/images/menu/footProductBg.png");
+    }
+}

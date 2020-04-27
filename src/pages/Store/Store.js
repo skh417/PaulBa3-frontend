@@ -1,29 +1,47 @@
 import React, { Component } from "react";
+import NavWhite from "../../component/NavWhite/NavWhite";
 import NameSection from "./NameSection/NameSection";
-// import LocationSection from "./LocationSection/LocationSection";
-// import OptionSection from "./OptionSection/OptionSection";
+import LocationSection from "./LocationSection/LocationSection";
+import OptionSection from "./OptionSection/OptionSection";
+import MapAPI from "./MapAPI/MapAPI";
+import Footer from "../../component/Footer/Footer";
 import "./Store.scss";
+
+const appearValue = {
+  0: <Component />,
+  1: <LocationSection />,
+  2: <OptionSection />,
+};
 
 class Store extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: false,
+      selected: 0,
+      show: false,
     };
   }
 
   isSelected = (e) => {
-    this.setState({ selected: true });
-    const { id, value } = e.target;
-    console.log("id", id, "value", value);
-    // this.setState({
-    //   [value]: true,
-    // });
+    this.setState({ selected: Number(e.target.id) });
+    // this.showSection(this.state.selected);
   };
 
+  // showSection = (num) => {
+  //   console.log(appearValue[num].section);
+  //   return appearValue[num].section;
+  // };
+
+  // showSection = (num) => {
+  //   console.log(appearValue[num].section);
+  //   return appearValue[num].section;
+  // };
+
   render() {
+    console.log(this.state.selected);
     return (
       <>
+        <NavWhite />
         <div className='Store'>
           {/* 왼쪽 검색 */}
           <div className='storeContainer'>
@@ -33,33 +51,34 @@ class Store extends Component {
             <div className='category'>
               <ul>
                 <li
-                  className={`${this.state.selected === true ? "clicked" : ""}`}
+                  className={`${this.state.selected === 0 ? "selected" : ""}`}
                   onClick={this.isSelected}
-                  id='storeName'
-                  value={this.state.selected}
+                  id='0'
                 >
                   매장명
                 </li>
                 <li
-                  // className={`${this.state.selected === true ? "clicked" : ""}`}
-                  // onClick={this.isSelected}
-                  id='storeLocation'
-                  value={this.state.selected}
+                  className={`${this.state.selected === 1 ? "selected" : ""}`}
+                  onClick={this.isSelected}
+                  id='1'
                 >
                   지역
                 </li>
                 <li
-                  // className={`${this.state.selected === true ? "clicked" : ""}`}
-                  // onClick={this.isSelected}
-                  id='options'
-                  value={this.state.selected}
+                  className={`${this.state.selected === 2 ? "selected" : ""}`}
+                  onClick={this.isSelected}
+                  id='2'
                 >
                   옵션 선택
                 </li>
               </ul>
             </div>
+            {/* 하단 보여줄 값*/}
+            {/* {appearValue[this.state.selected]} */}
+            {/* {appearValue[0].value} */}
+
             {/* 매장명 찾기 */}
-            <NameSection />
+            {/* <NameSection /> */}
 
             {/* 지역 찾기 */}
             {/* <LocationSection /> */}
@@ -68,9 +87,9 @@ class Store extends Component {
             {/* <OptionSection /> */}
           </div>
 
-          {/* 오른쪽 맵 */}
-          <div className='map'></div>
+          <MapAPI />
         </div>
+        <Footer />
       </>
     );
   }
