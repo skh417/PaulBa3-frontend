@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../../component/Nav/Nav";
+import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
 
@@ -142,7 +142,7 @@ class Signup extends Component {
         const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
         return(
             <>
-            <Nav />
+            <NavWhite />
             <div className="SignUp">
                 <h2>회원가입</h2>
                 <ul className="currentStep">

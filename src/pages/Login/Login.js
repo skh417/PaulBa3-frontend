@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../../component/Nav/Nav";
+import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
 import "./Login.scss";
 
@@ -26,7 +26,7 @@ class Login extends Component {
         console.log(isToggleOn)
         return (
             <>
-            <Nav />
+            <NavWhite />
             <div className="Login">
                 <div className="loginArea">    
                     <h2>로그인</h2>
