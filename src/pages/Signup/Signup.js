@@ -8,12 +8,12 @@ class Signup extends Component {
         super();
 
         this.state = {
-            // smsAgree : true,
-            // mailAgree : true,
-            // pushAgree : true,
-            // agreeAll : true,
-            // home : false,
-            // workplace : true,
+            smsAgree : true,
+            mailAgree : true,
+            pushAgree : true,
+            agreeAll : true,
+            home : false,
+            workplace : true,
             user_id : "",
             password : "",
             pwCheck : "",
@@ -22,6 +22,7 @@ class Signup extends Component {
             phone : "",
             email : "",
             address : "",
+            disable : true
         }
     }
 
@@ -76,13 +77,27 @@ class Signup extends Component {
     handleClick = (e) => {
         e.preventDefault();
         console.log('ok');
-            fetch("http://10.58.4.56:8000/sign-up", {
+            fetch("http://10.58.2.34:8000/sign-up", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(this.state)
             }).then(res => console.log(res));
+    }
+
+    idCheck = (e) => {
+        e.preventDefault();
+        fetch("http://10.58.2.34:8000/sign-up", { 
+            method : "POST", 
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({user_id : this.state.user_id}) 
+            })
+            .then(response => {if(response.status === 200){alert('사용 가능한 아이디입니다.');this.setState({disable : false})}else{alert('아이디를 확인해주세요.')}})
+
+        
     }
 
 
@@ -137,6 +152,7 @@ class Signup extends Component {
             })
         }
     }
+    
 
     render() {
         const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
@@ -165,7 +181,7 @@ class Signup extends Component {
                         <th scope="row">아이디<span>*</span></th>
                         <td>
                             <input className="customId" type="text" onChange={this.inputId}/>
-                            <a className="checkOverlap">중복확인</a>
+                            <a className="checkOverlap" onClick={this.idCheck}>중복확인</a>
                         </td>
                     </tr>
                     <tr>
@@ -312,7 +328,7 @@ class Signup extends Component {
                 </div>
                 <div className="buttonArea">
                     <a className="cancle" href="">취소</a>
-                    <a className="join" href="" onClick={this.handleClick}>회원가입</a>
+                    <a className="join" href="#" onClick={this.handleClick} disable={this.state.disable}>회원가입</a>
                 </div>
             </div>
             <Footer />
