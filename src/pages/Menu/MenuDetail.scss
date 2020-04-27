@@ -1,0 +1,309 @@
+.menuDetailBG {
+    background: #f5f0e9;
+}
+
+.menuDetail {
+    max-width: 1360px;
+    height: 725px;
+    position: relative;
+    padding-top: 160px;
+    margin: 0 auto;
+
+    .menuTitle {
+        position: absolute;
+        left: 20px;
+        top: 200px;
+
+        dt {
+            font-size: 34px;
+            color: #382e2c;
+
+            span {
+                display: block;
+                margin-bottom: 3px;
+                font-size: 16px;
+                color: #987436;
+                font-family: "Roboto", "Notosans";
+            }
+        }
+
+        dd {
+            width: 385px;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #62605f;
+            font-weight: normal;
+            word-break: break-all;
+        }
+    }
+
+    .menuImgContainer {
+        margin: 0 auto;
+        width: 470px;
+        height: 470px;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+    ul.infomation {
+        position: absolute;
+        left: 20px;
+        top: 465px;
+        list-style: none;
+
+        li {
+            position: relative;
+            padding: 0 0 26px 130px;
+            letter-spacing: -0.5px;
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 14px;
+                color: #382e2c;
+            }
+        }
+    }
+
+    .nutriContainer {
+        position: absolute;
+        right: 70px;
+        top: 220px;
+        width: 300px;
+
+        .nutriTitle {
+            position: relative;
+            width: 250px;
+            height: 66px;
+
+            >span {
+                padding-left: 35px;
+                font-size: 16px;
+                font-weight: normal;
+
+                span {
+                    display: block;
+                    padding-left: 35px;
+                    font-size: 12px;
+                    color: #969696;
+                }
+            }
+
+            ::before {
+                content: "";
+                width: 30px;
+                height: 30px;
+                display: block;
+                clear: both;
+                position: absolute;
+                left: 0;
+                top: 3px;
+                background: url("https://www.baristapaulbassett.co.kr/images/menu/menuSize01.png");
+            }
+
+            select {
+                position: absolute;
+                right: -40px;
+                top: 10px;
+                width: 90px;
+                height: 28px;
+                padding: 0 10px;
+                margin-right: 10px;
+                font-size: 14px;
+                font-family: "Roboto", "NotoSans";
+                color: #62605f;
+                text-align: center;
+                border: none;
+                -webkit-appearance: none;
+                background: url("https://www.baristapaulbassett.co.kr/images/blt/blt_select.png") no-repeat 95% 50%;
+            }
+        }
+
+        .nutriContents {
+            display: block;
+
+            .sizeML {
+                position: relative;
+                display: block;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+                border-bottom: 1px solid #aaa8a7;
+                font-size: 13px;
+                color: #62605f;
+
+                span {
+                    position: absolute;
+                    right: 19px;
+                    top: 0;
+                    font-size: 18px;
+                    color: #987346;
+                    font-family: "Roboto", "NotoSans";
+                }
+            }
+
+            ul.nutriDetails {
+                display: block;
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    position: relative;
+                    font-size: 13px;
+                    color: #62605f;
+                    width: 49%;
+                    padding-bottom: 16px;
+
+                    span.tit {
+                        font-size: 13px;
+                    }
+
+                    span.nums {
+                        display: inline-block;
+                        position: absolute;
+                        right: 0;
+                        margin: 0 10px;
+                        width: 56px;
+                        font-size: 16px;
+                        color: #987346;
+                        text-align: right;
+                    }
+                }
+            }
+
+            p {
+                margin-top: 20px;
+                font-size: 12px;
+                color: #969696;
+            }
+        }
+    }
+}
+
+.bestMenu {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 120px;
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 34px;
+        color: #382e2c;
+        font-family: "RobotoM", "NotoSans";
+        text-align: center;
+        letter-spacing: 15px;
+        font-weight: 700;
+    }
+
+    .bestImgContainer {
+        display: flex;
+        justify-content: center;
+
+        .best {
+            max-width: 276px;
+            margin: 0 22px;
+
+            img {
+                border-radius: 50%;
+                max-width: 100%;
+            }
+
+            div.korName {
+                text-align: center;
+                padding-top: 20px;
+                font-size: 18px;
+                color: #382e2c;
+
+                span.engName {
+                    display: block;
+                    font-size: 13px;
+                    font-family: "Roboto", "NotoSans";
+                    color: #987346;
+                }
+            }
+        }
+    }
+}
+
+.espressoStyle {
+    padding: 120px 0 50px 0;
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 34px;
+        font-weight: 700;
+        color: #382e2c;
+        font-family: "RobotoM", "NotoSans";
+        text-align: center;
+    }
+
+    ul {
+        height: 370px;
+
+        li {
+            position: relative;
+            text-align: center;
+            list-style: none;
+            width: 20%;
+            height: 370px;
+            float: left;
+            padding: 50px 0;
+            border: 1px solid #e2dfdc;
+            border-left: none;
+
+            span {
+                display: block;
+                padding: 150px 40px 0 40px;
+                font-size: 14px;
+                line-height: 22px;
+                color: #62605f;
+            }
+        }
+
+        li::before {
+            content: "";
+            clear: both;
+            display: block;
+            width: 200px;
+            height: 130px;
+            position: absolute;
+            background: url("https://www.baristapaulbassett.co.kr/images/menu/icon.png") no-repeat 0 0;
+            background-position: 0 -52px;
+            left: 40px;
+            top: 120px;
+        }
+
+        li:nth-child(2)::before {
+            background-position-x: -200px;
+        }
+
+        li:nth-child(3)::before {
+            background-position-x: -405px;
+        }
+
+        li:nth-child(4)::before {
+            background-position-x: -610px;
+        }
+
+        li:nth-child(5)::before {
+            background-position-x: -815px;
+        }
+    }
+}
+
+.btnContainer {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+        min-width: 150px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        color: #fff;
+        background: #9f8b62;
+    }
+}
