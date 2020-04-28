@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom"
+// import { withRouter } from "react-router-dom"
 import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
@@ -79,13 +79,13 @@ class Signup extends Component {
         this.props.history.push("/login")
     }
 
-    handleClick = (e) => {
+    clickLogin = (e) => {
         e.preventDefault();
         const {user_id, password, name, birth_date, phone, email, usableId} = this.state;
         console.log('ok');
         if( usableId === false ){
             alert("아이디 중복확인을 해주세요")
-        } else if (user_id === "" || password === "" || name === "" || birth_date === "" || phone === "" || email === ""){
+        } else if (!user_id || !password || !name|| !birth_date || !phone || !email){
             alert("필수항목을 작성해주세요")
         }else{
             fetch("http://10.58.6.197:8000/sign-up", {
@@ -101,7 +101,13 @@ class Signup extends Component {
                     phone : this.state.phone,
                     email : this.state.email    
                 })
-            }).then(res => {if(res.status === 400){alert('다시 한 번 확인해주세요!');}else{alert('가입 완료 !')}});
+            }).then(res => {if(res.status === 400){
+                alert('다시 한 번 확인해주세요!')
+            }else{
+                alert('가입 완료 !');
+                this.goToLogin()
+            }
+        });
         }
     
     }
@@ -116,7 +122,14 @@ class Signup extends Component {
             },
             body : JSON.stringify({user_id : this.state.user_id}) 
             })
-            .then(response => {if(response.status === 200){alert('사용 가능한 아이디입니다.');this.setState({usableId : true})}else if(response.status === 409){alert('이미 사용중인 아이디입니다.')}else{alert("사용 불가한 아이디입나다.")}})    
+            .then(response => {if(response.status === 200){
+                alert('사용 가능한 아이디입니다.');this.setState({usableId : true})
+            }else if(response.status === 409){
+                alert('이미 사용중인 아이디입니다.')
+            }else{
+                alert("사용 불가한 아이디입나다.")
+            }
+        })    
     }
 
 
@@ -173,7 +186,7 @@ class Signup extends Component {
     }
     
 
-    render() {
+    render = () => {
         const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
         return(
             <>
@@ -347,7 +360,7 @@ class Signup extends Component {
                 </div>
                 <div className="buttonArea">
                     <a className="cancle" href="">취소</a>
-                    <a className="join" href="#" onClick={this.handleClick}>회원가입</a>
+                    <a className="join" onClick={this.clickLogin}>회원가입</a>
                 </div>
             </div>
             <Footer />
@@ -356,4 +369,4 @@ class Signup extends Component {
     }
 }
 
-export default withRouter(Signup);
+export default Signup;
