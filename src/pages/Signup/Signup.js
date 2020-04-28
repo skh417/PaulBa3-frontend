@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom"
 import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
@@ -22,7 +23,7 @@ class Signup extends Component {
             phone : "",
             email : "",
             address : "",
-            disable : true
+            usableId : false
         }
     }
 
@@ -74,30 +75,48 @@ class Signup extends Component {
         });
     }
 
+    goToLogin = () => {
+        this.props.history.push("/login")
+    }
+
     handleClick = (e) => {
         e.preventDefault();
+        const {user_id, password, name, birth_date, phone, email, usableId} = this.state;
         console.log('ok');
-            fetch("http://10.58.2.34:8000/sign-up", {
+        if( usableId === false ){
+            alert("아이디 중복확인을 해주세요")
+        } else if (user_id === "" || password === "" || name === "" || birth_date === "" || phone === "" || email === ""){
+            alert("필수항목을 작성해주세요")
+        }else{
+            fetch("http://10.58.6.197:8000/sign-up", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(this.state)
-            }).then(res => console.log(res));
+                body: JSON.stringify({
+                    user_id : this.state.user_id,
+                    password : this.state.password,
+                    name : this.state.name,
+                    birth_date : this.state.birth_date,
+                    phone : this.state.phone,
+                    email : this.state.email    
+                })
+            }).then(res => {if(res.status === 400){alert('다시 한 번 확인해주세요!');}else{alert('가입 완료 !')}});
+        }
+    
     }
 
     idCheck = (e) => {
         e.preventDefault();
-        fetch("http://10.58.2.34:8000/sign-up", { 
+        const {usableId} = this.state
+        fetch("http://10.58.6.197:8000/sign-up/check", { 
             method : "POST", 
             headers : {
                 'Content-Type' : 'application/json'
             },
             body : JSON.stringify({user_id : this.state.user_id}) 
             })
-            .then(response => {if(response.status === 200){alert('사용 가능한 아이디입니다.');this.setState({disable : false})}else{alert('아이디를 확인해주세요.')}})
-
-        
+            .then(response => {if(response.status === 200){alert('사용 가능한 아이디입니다.');this.setState({usableId : true})}else if(response.status === 409){alert('이미 사용중인 아이디입니다.')}else{alert("사용 불가한 아이디입나다.")}})    
     }
 
 
@@ -328,7 +347,7 @@ class Signup extends Component {
                 </div>
                 <div className="buttonArea">
                     <a className="cancle" href="">취소</a>
-                    <a className="join" href="#" onClick={this.handleClick} disable={this.state.disable}>회원가입</a>
+                    <a className="join" href="#" onClick={this.handleClick}>회원가입</a>
                 </div>
             </div>
             <Footer />
@@ -337,4 +356,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default withRouter(Signup);
