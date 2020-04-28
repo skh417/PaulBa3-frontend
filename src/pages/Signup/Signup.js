@@ -79,10 +79,9 @@ class Signup extends Component {
         this.props.history.push("/login")
     }
 
-    clickLogin = (e) => {
+    clickSignup = (e) => {
         e.preventDefault();
         const {user_id, password, name, birth_date, phone, email, usableId} = this.state;
-        console.log('ok');
         if( usableId === false ){
             alert("아이디 중복확인을 해주세요")
         } else if (!user_id || !password || !name|| !birth_date || !phone || !email){
@@ -109,7 +108,6 @@ class Signup extends Component {
             }
         });
         }
-    
     }
 
     idCheck = (e) => {
@@ -360,7 +358,7 @@ class Signup extends Component {
                 </div>
                 <div className="buttonArea">
                     <a className="cancle" href="">취소</a>
-                    <a className="join" onClick={this.clickLogin}>회원가입</a>
+                    <a className="join" onClick={this.clickSignup}>회원가입</a>
                 </div>
             </div>
             <Footer />
