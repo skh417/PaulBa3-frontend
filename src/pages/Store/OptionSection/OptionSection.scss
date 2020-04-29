@@ -12,6 +12,7 @@ $noto: "NotoSans";
     }
 
     .optionIcon {
+        overflow: hidden;
         ul {
             width: 100%;
             list-style: none;
@@ -62,7 +63,7 @@ $noto: "NotoSans";
                 .parking {
                     background-position: -80px -40px;
                 }
-                .teras {
+                .terrace {
                     background-position: -120px -40px;
                 }
                 .roasting {
