@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import Nav from "../../component/Nav/Nav";
 import MenuList from "./MenuList/MenuList";
 import Footer from "../../component/Footer/Footer";
+import { MENU_URL } from "../../config";
 import "./Menu.scss";
-
-const category = ["COFFEE", "BEVERAGE", "ICE-CREAM", "FOOD", "PRODUCT"];
 
 class Menu extends Component {
   constructor(props) {
@@ -12,28 +12,39 @@ class Menu extends Component {
 
     this.state = {
       menu: [],
+      num: 0,
     };
   }
   componentDidMount() {
-    fetch("http://10.58.0.33:8000/menu/FOOD")
+    const { category } = this.props.match.params;
+    fetch(`${MENU_URL}${category}/0`)
       .then((data) => data.json())
       .then((data) => this.setState({ menu: data }));
   }
 
+  componentDidUpdate(prevProps) {
+    const { category } = this.props.match.params;
+    if (prevProps.match.params.category !== category) {
+      fetch(`${MENU_URL}${category}/0`)
+        .then((data) => data.json())
+        .then((data) => this.setState({ menu: data }));
+    }
+  }
+
   render() {
-    const { menu } = this.state;
-    // const filteredList = latte.filter((one) => {
-    //     return one
-    // })
+    const { products } = this.state.menu;
 
     return (
       <>
         <Nav />
-        <MenuList menu={menu} />
+        <MenuList
+          products={products}
+          category={this.props.match.params.category}
+        />
         <Footer />
       </>
     );
   }
 }
 
-export default Menu;
+export default withRouter(Menu);
