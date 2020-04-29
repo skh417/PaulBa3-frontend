@@ -19,14 +19,21 @@ class HomeNavDetail extends Component {
           </ul>
 
           <ul className='menuList'>
-            <li>NEW</li>
             <li>
-              <Link to='/menu/coffee'>COFFEE</Link>
+              <Link to='/menu/coffee/0'>COFFEE</Link>
             </li>
-            <li>BEVERAGE</li>
-            <li>ICE-CREAM</li>
-            <li>FOOD</li>
-            <li>PRODUCT</li>
+            <li>
+              <Link to='/menu/beverage/0'>BEVERAGE</Link>
+            </li>
+            <li>
+              <Link to='/menu/ice-cream/0'>ICE-CREAM</Link>
+            </li>
+            <li>
+              <Link to='/menu/food/0'>FOOD</Link>
+            </li>
+            <li>
+              <Link to='/menu/product/0'>PRODUCT</Link>
+            </li>
           </ul>
           <ul className='storeList'>
             <li>
