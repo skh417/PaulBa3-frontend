@@ -48,46 +48,60 @@ $noto: "NotoSans";
   }
   .storeLocationContainer {
     height: 580px;
-    overflow: hidden;
+    overflow: scroll;
+    
+    
 
     .storeLocation {
       overflow: auto;
-      margin: 0 30px;
+      margin: 0 20px;
       padding: 25px 0 16px 0;
       border-bottom: 1px solid #e2dfdc;
       display: flex;
       justify-content: space-around;
       .left {
-        .name {
-          font-size: 16px;
-          color: #382e2c;
-          font-weight: bold;
-          font-family: $noto;
-        }
-        .address {
-          font-family: $noto;
-          color: rgb(98, 96, 95);
-          font-size: 13px;
-          margin: 7px 0 7px 0;
-        }
-        .contact {
-          font-family: $noto;
-          color: rgb(98, 96, 95);
-          .telLogo {
-            display: inline-block;
-            height: 12px;
-            width: 12px;
-            margin-right: 10px;
-            background: url("https://www.baristapaulbassett.co.kr/images/store/icon.png") no-repeat -32px 0;
+        width: 270px;
+
+        .sotreContainer {
+          padding-bottom: 12px;
+          margin-bottom: 17px;
+          border-bottom: 1px solid #e2dfdc;
+          
+          .test {
+            display: flex;
+            justify-content: space-between;
+            .name {
+              font-size: 16px;
+              color: #382e2c;
+              font-weight: bold;
+              font-family: $noto; 
+            }
+
+            .locationLogo {
+              height: 21px;
+              width: 16px;
+              background: url("https://www.baristapaulbassett.co.kr/images/store/icon.png") no-repeat -64px 0;
+              } 
+          }
+          
+          .address {
+            font-family: $noto;
+            color: rgb(98, 96, 95);
+            font-size: 13px;
+            margin: 7px 0 7px 0;
+          }
+          .contact {
+            font-family: $noto;
+            color: rgb(98, 96, 95);
+            .telLogo {
+              display: inline-block;
+              height: 12px;
+              width: 12px;
+              margin-right: 10px;
+              background: url("https://www.baristapaulbassett.co.kr/images/store/icon.png") no-repeat -32px 0;
+            }
           }
         }
-      }
-      .locationLogo {
-        display: inline-block;
-        height: 21px;
-        width: 16px;
-        margin-left: 30px;
-        background: url("https://www.baristapaulbassett.co.kr/images/store/icon.png") no-repeat -64px 0;
       }
     }
   }
