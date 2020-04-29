@@ -4,6 +4,7 @@ import Nav from "../../../component/Nav/Nav";
 import MenuCard from "./MenuCard/MenuCard";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import { menuAll } from "./menuAll";
+import { MENU_URL } from "../../config";
 import "./MenuList.scss";
 
 class MenuList extends Component {
@@ -17,7 +18,7 @@ class MenuList extends Component {
   componentDidUpdate(prevProps) {
     const { category, id } = this.props.match.params;
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`http://10.58.0.33:8000/menu/${category}/${id}`)
+      fetch(`${MENU_URL}${category}/${id}`)
         .then((data) => data.json())
         .then((data) => this.setState({ theOne: data }));
     }
