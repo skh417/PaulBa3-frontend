@@ -7,16 +7,19 @@
 .Login {
   margin: 0;
   padding-top: 110px;
+
   .loginArea {
     width: 590px;
     margin: 0 auto;
     padding-bottom: 150px;
+
     h2 {
       text-align: center;
       padding: 80px 0 45px 0;
       color: #382e2c;
       font-size: 30px;
     }
+
     .inputInfoContainer {
       width: 590px;
       margin: 0 auto;
@@ -26,14 +29,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       .inputInfo {
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+
         .inputIdPw {
           display: flex;
           flex-direction: column;
           margin-right: 10px;
+
           input {
             width: 330px;
             height: 50px;
@@ -42,6 +48,7 @@
             border: 1px solid #aaa8a7;
           }
         }
+
         .loginBtn {
           width: 150px;
           height: 108px;
@@ -51,11 +58,14 @@
           font-size: 15px;
           color: #ffffff;
           background-color: #9f8362;
+          cursor: pointer;
         }
       }
+
       .saveAndFindInfo {
         display: flex;
         justify-content: space-between;
+
         input {
           width: 15px;
           height: 15px;
@@ -65,9 +75,11 @@
           appearance: none;
           vertical-align: middle;
         }
+
         input:focus {
           outline: none;
         }
+
         .checkedSaveId {
           background-position-y: -15px;
         }
@@ -75,26 +87,31 @@
         .uncheckedSaveId {
           background-position-y: 0px;
         }
+
         label {
           margin-left: 4px;
           font-size: 14px;
           color: #969696;
         }
+
         a {
           margin: 0 0 0 45px;
           padding: 0 15px 0 0;
           font-size: 14px;
           color: #382e2c;
         }
+
         .idPwBtn {
           a {
             position: relative;
+            cursor: pointer;
+            text-decoration: none;
           }
+
           a::after {
             content: "";
             display: inline-block;
-            background: url("https://www.baristapaulbassett.co.kr/images/blt/blt01.png")
-              no-repeat 0 0;
+            background: url("https://www.baristapaulbassett.co.kr/images/blt/blt01.png") no-repeat 0 0;
             clear: both;
             position: absolute;
             right: 0;
@@ -105,21 +122,25 @@
         }
       }
     }
+
     .loginFooter {
       margin: 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       line-height: 18px;
+
       div {
         font-size: 13px;
         color: #62605f;
         margin-top: 10px;
+
         span {
           font-size: 14px;
           color: #382e2c;
         }
       }
+
       a {
         display: flex;
         justify-content: center;
@@ -129,6 +150,8 @@
         font-size: 15px;
         color: #fff;
         background-color: #e0004d;
+        text-decoration: none;
+        cursor: pointer;
       }
     }
   }
