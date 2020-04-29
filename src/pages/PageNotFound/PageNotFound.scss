@@ -1,0 +1,35 @@
+.PageNotFound {
+    padding-top: 120px;
+    height: 100vh;
+    width: 100%;
+    background-color: #F5F0E9;
+  
+    .notFoundContainer {
+        text-align: center;
+        margin-top: 30vh;
+  
+      .img {
+        img {
+          height: 66px;
+          width: 73px;
+        
+        }
+      }
+      
+  
+      .text {
+        color: #382e2c;
+        font-family: 'NotoSans';
+        margin-top: 10px;
+          .big {
+            font-size: 40px;
+            margin-top: 15px;
+          }
+    
+          .small {
+            font-size: 15px;
+            margin-top: 20px;
+          }
+      }
+    }
+  }
