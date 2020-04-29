@@ -4,7 +4,7 @@ import NameSection from "./NameSection/NameSection";
 import LocationSection from "./LocationSection/LocationSection";
 import OptionSection from "./OptionSection/OptionSection";
 import MapAPI from "./MapAPI/MapAPI";
-import { MAP_URL } from "../../config";
+import { MAP_URL } from "../../Config";
 import Footer from "../../component/Footer/Footer";
 import "./Store.scss";
 
@@ -20,7 +20,16 @@ class Store extends Component {
     this.state = {
       selected: 0,
       show: false,
+      mapData: [],
     };
+  }
+
+  componentDidMount() {
+    fetch(`${MAP_URL}`)
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({ mapData: res }, () => console.log(this.state.mapData))
+      );
   }
 
   isSelected = (e) => {
@@ -28,7 +37,7 @@ class Store extends Component {
   };
 
   render() {
-    const { selected } = this.state;
+    const { selected, mapData } = this.state;
     return (
       <>
         <NavWhite />
@@ -67,7 +76,7 @@ class Store extends Component {
             {appearValue[selected]}
           </div>
 
-          <MapAPI />
+          <MapAPI mapData={mapData} />
         </div>
         <Footer />
       </>

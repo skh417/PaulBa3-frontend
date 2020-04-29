@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import Nav from "../../component/Nav/Nav";
 import MenuList from "./MenuList/MenuList";
 import Footer from "../../component/Footer/Footer";
-import { MENU_URL } from "../../config";
+import { MENU_URL } from "../../Config";
 import "./Menu.scss";
 
 class Menu extends Component {
