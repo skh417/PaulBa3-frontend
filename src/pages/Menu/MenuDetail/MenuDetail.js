@@ -5,6 +5,7 @@ import MenuDetailTwo from "./MenuDetailTwo/MenuDetailTwo";
 import MenuDetailThree from "./MenuDetailThree/MenuDetailTree";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import Footer from "../../../component/Footer/Footer";
+import {MENU_DETAIL} from "../../../Config";
 import "./MenuDetail.scss";
 
 class MenuDetail extends Component {
@@ -12,7 +13,7 @@ class MenuDetail extends Component {
     coffee: null,
   };
   componentDidMount() {
-    fetch("http://10.58.0.33:8000/menu/detail?product=Machiato")
+    fetch(`${MENU_DETAIL}Machiato`)
       .then((data) => data.json())
       .then((data) => this.setState({ coffee: data }));
   }
