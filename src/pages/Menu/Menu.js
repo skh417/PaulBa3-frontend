@@ -21,6 +21,15 @@ class Menu extends Component {
       .then((data) => this.setState({ menu: data }));
   }
 
+  componentDidUpdate(prevProps) {
+    const { category } = this.props.match.params;
+    if (prevProps.match.params.category !== category) {
+      fetch(`http://10.58.0.33:8000/menu/${category}/0`)
+        .then((data) => data.json())
+        .then((data) => this.setState({ menu: data }));
+    }
+  }
+
   render() {
     const { products } = this.state.menu;
 

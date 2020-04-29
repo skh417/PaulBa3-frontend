@@ -11,8 +11,6 @@ class MenuList extends Component {
     super(props);
     this.state = {
       theOne: [],
-      nowUrl: 0,
-      nowCategory: "coffee",
     };
   }
 
@@ -21,18 +19,13 @@ class MenuList extends Component {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       fetch(`http://10.58.0.33:8000/menu/${category}/${id}`)
         .then((data) => data.json())
-        .then(
-          (data) => this.setState({ theOne: data })
-          // this.setState({ theOne: data, nowUrl: id }, () =>
-          //   console.log("url", this.state.nowUrl)
-          // )
-        );
+        .then((data) => this.setState({ theOne: data }));
     }
   }
 
   render() {
     const { products, category } = this.props;
-    const { theOne, nowUrl, nowCategory } = this.state;
+    const { theOne } = this.state;
     if (!products) return <></>;
 
     return (
