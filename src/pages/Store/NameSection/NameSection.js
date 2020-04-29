@@ -13,11 +13,7 @@ class NameSection extends Component {
   componentDidMount() {
     fetch(`${MAP_URL}`)
       .then((res) => res.json())
-      .then((res) =>
-        this.setState({ list: res }, () =>
-          console.log("list", this.state.list.branches.length)
-        )
-      );
+      .then((res) => this.setState({ list: res }));
   }
 
   render() {

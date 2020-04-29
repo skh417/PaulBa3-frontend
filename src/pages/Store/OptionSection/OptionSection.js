@@ -10,12 +10,9 @@ class OptionSection extends Component {
   }
   checkOnOff = (e) => {
     console.log("e.target", e.target);
-    this.setState(
-      {
-        checked: !this.state.checked,
-      },
-      () => console.log("checked", this.state.checked)
-    );
+    this.setState({
+      checked: !this.state.checked,
+    });
   };
 
   render() {

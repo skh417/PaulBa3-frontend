@@ -27,9 +27,7 @@ class Store extends Component {
   componentDidMount() {
     fetch(`${MAP_URL}`)
       .then((res) => res.json())
-      .then((res) =>
-        this.setState({ mapData: res }, () => console.log(this.state.mapData))
-      );
+      .then((res) => this.setState({ mapData: res }));
   }
 
   isSelected = (e) => {
