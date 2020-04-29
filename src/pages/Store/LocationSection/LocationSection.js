@@ -101,7 +101,12 @@ class LocationSection extends Component {
           <ul>
             {district.map((list, index) => {
               return (
-                <li key={index} onClick={this.callArea}>
+                <li
+                  className={`${list.clickable} ? "clickable": " "`}
+                  key={index}
+                  id={list.area_code}
+                  onClick={this.callArea}
+                >
                   {Object.values(list.area_name)}
                 </li>
               );
