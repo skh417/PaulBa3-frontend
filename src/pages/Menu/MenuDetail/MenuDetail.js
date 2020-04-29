@@ -26,9 +26,9 @@ class MenuDetail extends Component {
       <>
         <NavWhite />
         <div className='MenuDetail'>
-         <MenuDetailOne coffee={coffee} />
-         <MenuDetailTwo coffee={coffee} />
-         <MenuDetailThree />
+          <MenuDetailOne coffee={coffee} />
+          <MenuDetailTwo coffee={coffee} />
+          <MenuDetailThree />
           <div className='btnContainer'>
             <a href=''>LIST</a>
           </div>

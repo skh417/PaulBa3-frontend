@@ -4,7 +4,7 @@ import Nav from "../../../component/Nav/Nav";
 import MenuCard from "./MenuCard/MenuCard";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import { menuAll } from "./menuAll";
-import { MENU_URL } from "../../config";
+import { MENU_URL } from "../../../Config";
 import "./MenuList.scss";
 
 class MenuList extends Component {
