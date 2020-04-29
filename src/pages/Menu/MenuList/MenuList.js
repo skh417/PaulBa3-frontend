@@ -1,12 +1,32 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 import Nav from "../../../component/Nav/Nav";
 import MenuCard from "./MenuCard/MenuCard";
 import MenuFooter from "../MenuFooter/MenuFooter";
+import { menuAll } from "./menuAll";
+import { MENU_URL } from "../../config";
 import "./MenuList.scss";
 
 class MenuList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      theOne: [],
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    const { category, id } = this.props.match.params;
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`${MENU_URL}${category}/${id}`)
+        .then((data) => data.json())
+        .then((data) => this.setState({ theOne: data }));
+    }
+  }
+
   render() {
-    const { products } = this.props.menu;
+    const { products, category } = this.props;
+    const { theOne } = this.state;
     if (!products) return <></>;
 
     return (
@@ -14,37 +34,63 @@ class MenuList extends Component {
         <Nav />
         <div className='MenuList'>
           <div className='topImage'>
-            <img />
+            <img src={menuAll[category].banner} />
             <div>
-              <span className='title'>COFFEE</span>
+              <span className='title'>{menuAll[category].title}</span>
               <br />
-              <span>한잔의 완벽한 커피</span>
+              <span>{menuAll[category].description}</span>
             </div>
           </div>
           <div className='category'>
             <div className='all'>
-              <div>전체</div>
-              <div>Coffee</div>
-              <div>Latte</div>
-              <div>Espresso</div>
-              <div>Cold Brew</div>
-              <div>Single Origin</div>
+              {menuAll[category].categories.map((cat, index) => {
+                return (
+                  <Link to={`/menu/${category}/${index}`} key={index}>
+                    <div id={index}>{cat}</div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className='menuConatinaer'>
             <div className='oneContainer'>
-              {products.map((item, index) => {
-                return (
-                  <MenuCard
-                    key={index}
-                    korName={item.name_kor}
-                    engName={item.name_eng}
-                    img={item.image}
-                    isNew={item.is_new}
-                    isBest={item.is_best}
-                  />
-                );
-              })}
+              {theOne.products === undefined
+                ? products.map((item, index) => {
+                    return (
+                      <Link
+                        to={`/menu/detail?product=${item.name_eng}`}
+                        key={index}
+                      >
+                        <MenuCard
+                          key={index}
+                          korName={item.name_kor}
+                          engName={item.name_eng}
+                          img={item.image}
+                          category={index}
+                          isNew={item.is_new}
+                          isBest={item.is_best}
+                        />
+                      </Link>
+                    );
+                  })
+                : theOne.products.map((item, index) => {
+                    return (
+                      <Link
+                        to={`/menu/detail?product=${item.name_eng}`}
+                        key={index}
+                      >
+                        <MenuCard
+                          key={index}
+                          korName={item.name_kor}
+                          engName={item.name_eng}
+                          img={item.image}
+                          category={index}
+                          isNew={item.is_new}
+                          isBest={item.is_best}
+                        />
+                      </Link>
+                    );
+                  })}
             </div>
           </div>
         </div>
@@ -54,4 +100,4 @@ class MenuList extends Component {
   }
 }
 
-export default MenuList;
+export default withRouter(MenuList);

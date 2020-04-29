@@ -33,7 +33,7 @@ class HomeNav extends Component {
             </li>
             <li>
               <span>
-                <Link to='/menu/coffee' className='menu'>
+                <Link to='/menu/coffee/0' className='menu'>
                   MENU
                 </Link>
               </span>

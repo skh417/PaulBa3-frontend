@@ -60,7 +60,7 @@ class Nav extends Component {
             </li>
             <li>
               <span className='menu'>
-                <Link to='/menu/coffee'>MENU</Link>
+                <Link to='/menu/coffee/0'>MENU</Link>
               </span>
             </li>
             <li>
