@@ -7,6 +7,7 @@ import Menu from "./pages/Menu/Menu";
 import MenuDetail from "./pages/Menu/MenuDetail/MenuDetail";
 import Mypage from "./pages/Mypage/Mypage";
 import Store from "./pages/Store/Store";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 class Routes extends Component {
   render() {
@@ -16,11 +17,11 @@ class Routes extends Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
+          <Route exact path='/menu/detail/:id' component={MenuDetail} />
           <Route exact path='/menu/:category/:id' component={Menu} />
-          <Route exact path='/menu/:category/0' component={Menu} />
-          <Route exact path='/menu/detail/:name' component={MenuDetail} />
           <Route exact path='/mypage' component={Mypage} />
           <Route exact path='/store' component={Store} />
+          <Route component={PageNotFound} />
         </Switch>
       </Router>
     );

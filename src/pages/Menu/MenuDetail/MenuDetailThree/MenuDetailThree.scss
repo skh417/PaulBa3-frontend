@@ -1,0 +1,65 @@
+.espressoStyle {
+    padding: 120px 0 50px 0;
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 34px;
+        font-weight: 700;
+        color: #382e2c;
+        font-family: "RobotoM", "NotoSans";
+        text-align: center;
+    }
+
+    ul {
+        height: 370px;
+
+        li {
+            position: relative;
+            text-align: center;
+            list-style: none;
+            width: 20%;
+            height: 370px;
+            float: left;
+            padding: 50px 0;
+            border: 1px solid #e2dfdc;
+            border-left: none;
+
+            span {
+                display: block;
+                padding: 150px 40px 0 40px;
+                font-size: 14px;
+                line-height: 22px;
+                color: #62605f;
+            }
+        }
+
+        li::before {
+            content: "";
+            clear: both;
+            display: block;
+            width: 200px;
+            height: 130px;
+            position: absolute;
+            background: url("https://www.baristapaulbassett.co.kr/images/menu/icon.png") no-repeat 0 0;
+            background-position: 0 -52px;
+            left: 40px;
+            top: 120px;
+        }
+
+        li:nth-child(2)::before {
+            background-position-x: -200px;
+        }
+
+        li:nth-child(3)::before {
+            background-position-x: -405px;
+        }
+
+        li:nth-child(4)::before {
+            background-position-x: -610px;
+        }
+
+        li:nth-child(5)::before {
+            background-position-x: -815px;
+        }
+    }
+}
