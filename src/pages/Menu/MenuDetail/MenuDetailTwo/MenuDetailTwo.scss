@@ -1,0 +1,44 @@
+.bestMenu {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 120px;
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 34px;
+        color: #382e2c;
+        font-family: "RobotoM", "NotoSans";
+        text-align: center;
+        letter-spacing: 15px;
+        font-weight: 700;
+    }
+
+    .bestImgContainer {
+        display: flex;
+        justify-content: center;
+
+        .best {
+            max-width: 276px;
+            margin: 0 22px;
+
+            img {
+                border-radius: 50%;
+                max-width: 100%;
+            }
+
+            div.korName {
+                text-align: center;
+                padding-top: 20px;
+                font-size: 18px;
+                color: #382e2c;
+
+                span.engName {
+                    display: block;
+                    font-size: 13px;
+                    font-family: "Roboto", "NotoSans";
+                    color: #987346;
+                }
+            }
+        }
+    }
+}
