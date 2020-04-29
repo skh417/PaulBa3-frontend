@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import { withRouter } from "react-router-dom"
 import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
@@ -8,12 +9,12 @@ class Signup extends Component {
         super();
 
         this.state = {
-            // smsAgree : true,
-            // mailAgree : true,
-            // pushAgree : true,
-            // agreeAll : true,
-            // home : false,
-            // workplace : true,
+            smsAgree : true,
+            mailAgree : true,
+            pushAgree : true,
+            agreeAll : true,
+            home : false,
+            workplace : true,
             user_id : "",
             password : "",
             pwCheck : "",
@@ -22,6 +23,7 @@ class Signup extends Component {
             phone : "",
             email : "",
             address : "",
+            usableId : false
         }
     }
 
@@ -73,16 +75,59 @@ class Signup extends Component {
         });
     }
 
-    handleClick = (e) => {
+    goToLogin = () => {
+        this.props.history.push("/login")
+    }
+
+    clickSignup = (e) => {
         e.preventDefault();
-        console.log('ok');
-            fetch("http://10.58.4.56:8000/sign-up", {
+        const {user_id, password, name, birth_date, phone, email, usableId} = this.state;
+        if( usableId === false ){
+            alert("아이디 중복확인을 해주세요")
+        } else if (!user_id || !password || !name|| !birth_date || !phone || !email){
+            alert("필수항목을 작성해주세요")
+        }else{
+            fetch("http://10.58.6.197:8000/sign-up", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(this.state)
-            }).then(res => console.log(res));
+                body: JSON.stringify({
+                    user_id : this.state.user_id,
+                    password : this.state.password,
+                    name : this.state.name,
+                    birth_date : this.state.birth_date,
+                    phone : this.state.phone,
+                    email : this.state.email    
+                })
+            }).then(res => {if(res.status === 400){
+                alert('다시 한 번 확인해주세요!')
+            }else{
+                alert('가입 완료 !');
+                this.goToLogin()
+            }
+        });
+        }
+    }
+
+    idCheck = (e) => {
+        e.preventDefault();
+        const {usableId} = this.state
+        fetch("http://10.58.6.197:8000/sign-up/check", { 
+            method : "POST", 
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({user_id : this.state.user_id}) 
+            })
+            .then(response => {if(response.status === 200){
+                alert('사용 가능한 아이디입니다.');this.setState({usableId : true})
+            }else if(response.status === 409){
+                alert('이미 사용중인 아이디입니다.')
+            }else{
+                alert("사용 불가한 아이디입나다.")
+            }
+        })    
     }
 
 
@@ -137,8 +182,9 @@ class Signup extends Component {
             })
         }
     }
+    
 
-    render() {
+    render = () => {
         const { smsAgree, mailAgree, pushAgree, agreeAll, home, workplace } = this.state;
         return(
             <>
@@ -165,7 +211,7 @@ class Signup extends Component {
                         <th scope="row">아이디<span>*</span></th>
                         <td>
                             <input className="customId" type="text" onChange={this.inputId}/>
-                            <a className="checkOverlap">중복확인</a>
+                            <a className="checkOverlap" onClick={this.idCheck}>중복확인</a>
                         </td>
                     </tr>
                     <tr>
@@ -312,7 +358,7 @@ class Signup extends Component {
                 </div>
                 <div className="buttonArea">
                     <a className="cancle" href="">취소</a>
-                    <a className="join" href="" onClick={this.handleClick}>회원가입</a>
+                    <a className="join" onClick={this.clickSignup}>회원가입</a>
                 </div>
             </div>
             <Footer />
