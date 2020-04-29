@@ -4,6 +4,7 @@ import NameSection from "./NameSection/NameSection";
 import LocationSection from "./LocationSection/LocationSection";
 import OptionSection from "./OptionSection/OptionSection";
 import MapAPI from "./MapAPI/MapAPI";
+import { MAP_URL } from "../../config";
 import Footer from "../../component/Footer/Footer";
 import "./Store.scss";
 
