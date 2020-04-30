@@ -17,7 +17,6 @@ class Menu extends Component {
   }
   componentDidMount() {
     const { category, id } = this.props.match.params;
-    console.log({ category, id });
     fetch(`${BASE_URL}/menu/${category}/${id}`)
       .then((data) => data.json())
       .then((data) => this.setState({ menu: data }));
@@ -26,7 +25,6 @@ class Menu extends Component {
   componentDidUpdate(prevProps) {
     const { category } = this.props.match.params;
     if (prevProps.match.params.category !== category) {
-      console.log("menu", category);
       fetch(`${BASE_URL}/menu/${category}/0`)
         .then((data) => data.json())
         .then((data) => this.setState({ menu: data }));
