@@ -1,7 +1,7 @@
 $noto: "NotoSans";
 
 .OptionSection {
-    height: 653px;
+    height: 816px;
     
     .title {
         margin: 23px 0 25px 30px;
@@ -27,7 +27,6 @@ $noto: "NotoSans";
                 border-bottom: 1px solid #e2dfdc;
                 cursor: pointer;
                 position: relative;
-
                 p {
                     text-align: center;
                     font-size: 14px;
@@ -40,10 +39,17 @@ $noto: "NotoSans";
                     height: 20px;
                     margin-left: 41px;
                     margin-top: 4px;
+                }
+                .checkbox {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 99px;
+                    margin-top: 58px;
                     background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png") no-repeat 0 0;
                 }
                 .checked {
-                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png") no-repeat 0 -10px;
+                    background: url("https://www.baristapaulbassett.co.kr/images/blt/ico_check.png") no-repeat 0 -20px;
                 }
                 div {
                     position: relative;
@@ -90,8 +96,6 @@ $noto: "NotoSans";
                 .delivery {
                     background-position: -440px -40px;
                 }
-
-                
             }
             .rightLine {
                 border-right: 1px solid #e2dfdc;
