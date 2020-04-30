@@ -104,6 +104,7 @@ class LocationSection extends Component {
 
   render() {
     const { district } = this.state;
+    console.log(district);
     return (
       <div className='LocationSection'>
         <div className='subtitle'>
