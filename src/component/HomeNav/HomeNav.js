@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomeNavDetail from "./HomeNavDetail/HomeNavDetail";
 import "./HomeNav.scss";
 
@@ -18,7 +18,7 @@ class HomeNav extends Component {
   render() {
     return (
       <div
-        className={`Nav ${this.state.show ? "showList" : ""}`}
+        className={`HomeNav ${this.state.show ? "showList" : ""}`}
         style={{ display: this.props.navShow }}
       >
         <div className='logoContainer' onMouseEnter={this.hoveronOff}>
@@ -26,7 +26,7 @@ class HomeNav extends Component {
             <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
           </Link>
         </div>
-        <div className='navList'>
+        <div className={`navList ${this.state.show ? "showFont" : ""}`}>
           <ul onMouseEnter={this.hoveronOff}>
             <li>
               <span className='aboutUs'>ABOUT US</span>
@@ -55,7 +55,7 @@ class HomeNav extends Component {
           </ul>
         </div>
         <div className={`smallNavList ${this.state.show ? "showList" : ""}`}>
-          <ul>
+          <ul className={`${this.state.show ? "showFont" : ""}`}>
             <li>
               <Link to='/login'>
                 <span>Login</span>

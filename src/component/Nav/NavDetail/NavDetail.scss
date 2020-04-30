@@ -6,6 +6,10 @@
     width: 100%;
     border-top: 1px solid #e2dfdc;
     
+    a {
+        color: black;
+    }
+
     div {
         display: flex;
         height: 265px;
@@ -19,9 +23,9 @@
             width: 160px;
 
             li {
-                line-height: 25px;
+                line-height: 30px;
                 font-family: 'Roboto', 'NotoSans';
-                font-size: 12px;
+                font-size: 13px;                
             }
         }
 
