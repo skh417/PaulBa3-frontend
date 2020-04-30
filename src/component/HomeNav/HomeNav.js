@@ -40,13 +40,7 @@ class HomeNav extends Component {
             </li>
             <li>
               <span className='store'>
-                <NavLink
-                  to='/store'
-                  activeClassName={`Nav showList`}
-                  activeStyle={{ backgroundColor: "white" }}
-                >
-                  STORE
-                </NavLink>
+                <Link to='/store'>STORE</Link>
               </span>
             </li>
             <li>

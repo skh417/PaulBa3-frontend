@@ -47,7 +47,7 @@
                 span {
                     cursor: pointer;
                     height: 100%;
-                    margin-right: 6px;             
+                    margin-right: 6px;
                 }
                 span:hover {
                     border-bottom: 3px red solid;
@@ -64,11 +64,11 @@
                 .eShop {
                     font-weight: bold;
                 }
+
+                
             }
 
-            li:visited, li:link, li:hover, li:active, li:focus {
-                text-decoration: none;
-            }
+            
         }
 
     }
@@ -102,11 +102,14 @@
     .showList {
         color: #969696;
         background-color: white;
+
+        a {
+            color: black;
+        }
     }
 }
 
 .showList {
-    
     background-color: white;
     color: black;
 }
