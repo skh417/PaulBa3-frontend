@@ -97,9 +97,14 @@ class LocationSection extends Component {
   }
 
   callArea = (area) => {
-    fetch(`${MAP_LOCATION}/store/${area.area_code}`)
+    console.log("현재 area", area);
+    fetch(`${MAP_LOCATION}/branch/${area.area_code}`)
       .then((res) => res.json())
-      .then((res) => this.setState({ district: res.area_info }));
+      .then((res) =>
+        this.setState({ district: res.area_info }, () => {
+          console.log("바뀐 area", this.state.district);
+        })
+      );
   };
 
   render() {
@@ -111,18 +116,21 @@ class LocationSection extends Component {
         </div>
         <div className='cityName'>
           <ul>
-            {district.map((list, index) => {
-              return (
-                <li
-                  className={`${list.clickable ? "clickable" : "disableClick"}`}
-                  key={index}
-                  id={list.area_code}
-                  onClick={() => this.callArea(list)}
-                >
-                  {Object.values(list.area_name)}
-                </li>
-              );
-            })}
+            {district &&
+              district.map((list, index) => {
+                return (
+                  <li
+                    className={`${
+                      list.clickable ? "clickable" : "disableClick"
+                    }`}
+                    key={index}
+                    id={list.area_code}
+                    onClick={() => this.callArea(list)}
+                  >
+                    {Object.values(list.area_name)}
+                  </li>
+                );
+              })}
           </ul>
         </div>
       </div>

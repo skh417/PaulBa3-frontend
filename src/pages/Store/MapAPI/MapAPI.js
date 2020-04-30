@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import "./MapAPI.scss";
 
 class MapAPI extends Component {
@@ -9,6 +9,7 @@ class MapAPI extends Component {
       markers: [],
       currentLat: 0,
       currentLng: 0,
+      isOpen: false,
     };
   }
 
@@ -21,9 +22,22 @@ class MapAPI extends Component {
     });
   }
 
+  showInfo = (e, map) => {
+    this.setState({ isOpen: true });
+    const infoWindow = new window.google.maps.InfoWindow({
+      content: '<div id="infoWindow">컨텐트</div>',
+      position: { lat: e.latitude, lng: e.longitude },
+    });
+    console.log(infoWindow);
+  };
+
+  closeInfo = () => {
+    this.setState({ isOpen: false });
+  };
+
   render() {
     const { branches } = this.props.mapData;
-    const { currentLat, currentLng } = this.state;
+    const { currentLat, currentLng, isOpen } = this.state;
     return (
       <div className='MapAPI'>
         {currentLat ? (
@@ -44,7 +58,14 @@ class MapAPI extends Component {
                       url:
                         "https://www.baristapaulbassett.co.kr/images/store/mapIcon01.png",
                     }}
-                  ></Marker>
+                    onClick={() => this.showInfo}
+                  >
+                    {this.state.isOpen && (
+                      <InfoWindow onCloseClick={this.closeInfo}>
+                        <div>yes</div>
+                      </InfoWindow>
+                    )}
+                  </Marker>
                 );
               })
             ) : (
