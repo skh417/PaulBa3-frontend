@@ -16,14 +16,22 @@ class Main extends Component {
   moveScroll = (e) => {
     if (e.nativeEvent.wheelDelta > 0) {
       // oneReft로 이동
-      window.scroll({
-        top: this.oneRef.offsetTop,
-        left: 0,
-        behavior: "smooth",
-      });
+      console.log(this.state.veryLeft);
+      if (this.state.veryLeft === 50) {
+        window.scroll({
+          top: this.oneRef.offsetTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        console.log("올라가지마ㅠㅠ");
+        // window.scroll(0, this.twoRef.offsetTop);
+        console.log("deltaY", e.deltaY);
+        // e.deltaY = 0;
+        // console.log(window.)
+      }
     } else if (e.nativeEvent.wheelDelta < 0) {
       // twoRef로 이동
-      // mainTwo 왼쪽 이미지 찍고 위로 올라오는거 구현하기
       window.scroll({
         top: this.twoRef.offsetTop,
         left: 0,
