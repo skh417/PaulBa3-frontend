@@ -96,15 +96,10 @@ class LocationSection extends Component {
     };
   }
 
-  callArea = () => {
-    // fetch(`${MAP_LOCATION}/store/A`)
-    fetch("http://www.mocky.io/v2/5ea97d01340000980d3f0290")
+  callArea = (area) => {
+    fetch(`${MAP_LOCATION}/store/${area.area_code}`)
       .then((res) => res.json())
-      .then((res) =>
-        this.setState({ district: res.area_info }, () => {
-          console.log(this.state.district);
-        })
-      );
+      .then((res) => this.setState({ district: res.area_info }));
   };
 
   render() {
@@ -122,7 +117,7 @@ class LocationSection extends Component {
                   className={`${list.clickable ? "clickable" : "disableClick"}`}
                   key={index}
                   id={list.area_code}
-                  onClick={this.callArea}
+                  onClick={() => this.callArea(list)}
                 >
                   {Object.values(list.area_name)}
                 </li>
