@@ -1,4 +1,4 @@
-.Nav {
+.HomeNav {
     position: fixed;
     width: 100%;
     height: 110px;
@@ -8,8 +8,8 @@
 
     .logoContainer {
         position: absolute;
+        top: 10px;
         width: 100vw;
-
         .logo {
             cursor: pointer;
             margin: 0 auto;
@@ -18,7 +18,6 @@
             background: url("../../image/logo.png");
             background-size: cover;
         }
-
         .showList {
             background: url("../../image/logo_on.png");
             background-size: cover;
@@ -29,7 +28,6 @@
         position: absolute;
         width: 100vw;
         margin-top: 60px;
-        
         ul {
             list-style: none;
             display: flex;
@@ -38,25 +36,18 @@
             margin-top: 5px; 
             width: 1003px;
             justify-content: center;
-
             li {
                 font-weight: normal;
                 justify-content: space-evenly;
                 padding: 0 45px;
-
-                a, a:link, a:hover, a:active, a:visited, a:focus {
-                    text-decoration:none;
-                }
-                
                 span {
                     cursor: pointer;
                     height: 100%;
-                    margin-right: 6px;             
+                    margin-right: 6px;
                 }
-                span:hover {
+                .aboutUs:hover, .menu:hover, .store:hover, .society:hover, .new:hover, .eShop:hover {
                     border-bottom: 3px red solid;
                 }
-
                 .aboutUs, .menu, .store, .society, .new, .eShop {
                     padding-bottom: 25px;
                     text-decoration: none;
@@ -68,14 +59,28 @@
                 .eShop {
                     font-weight: bold;
                 }
+
+                a {
+                    color: white;
+                }
             }
         }
+    }
 
+    .showFont {
+        ul {
+            li {
+                a {
+                    color: black;
+                }
+            }
+        }
     }
 
     .smallNavList {
-        position: fixed;
-        margin-top: 2px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
         color: rgba(255,255,255,0.7);
 
         ul {
@@ -86,15 +91,21 @@
             li {
                 margin-right: 15px;
 
-                a, a:link, a:hover, a:active, a:visited, a:focus {
-                    text-decoration:none;
-                }
-
                 span {
                     cursor: pointer;
                     font-size: 12px;
                     font-family: 'Roboto', 'NotoSans';
                 }
+
+                a {
+                    color: rgba(255,255,255,0.7);
+                }
+            }
+        }
+
+        .showFont {
+            a {
+                color: #969696;
             }
         }
     }
@@ -102,17 +113,20 @@
     .showList {
         color: #969696;
         background-color: white;
+
+        a {
+            color: black;
+        }
     }
 }
 
 .showList {
-    
     background-color: white;
     color: black;
 }
 
 @media (min-width: 1361px) {
-    .Nav {
+    .HomeNav {
         .logoContainer {
             width: 0vw;
             left: 30px;

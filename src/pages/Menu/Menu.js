@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Nav from "../../component/Nav/Nav";
+import HomeNav from "../../component/HomeNav/HomeNav";
 import MenuList from "./MenuList/MenuList";
 import Footer from "../../component/Footer/Footer";
 import { BASE_URL } from "../../Config";
@@ -37,7 +37,7 @@ class Menu extends Component {
 
     return (
       <>
-        <Nav />
+        <HomeNav />
         <MenuList
           products={products}
           category={this.props.match.params.category}

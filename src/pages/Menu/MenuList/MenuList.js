@@ -31,7 +31,6 @@ class MenuList extends Component {
 
     return (
       <>
-        <Nav />
         <div className='MenuList'>
           <div className='topImage'>
             <img src={menuAll[category].banner} />

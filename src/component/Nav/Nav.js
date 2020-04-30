@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import NavDetail from "./NavDetail/NavDetail";
-import "./Nav.scss";
+// import "./Nav.scss";
 
 class Nav extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class Nav extends Component {
             <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
           </div>
         </Link>
-        <div className='navList'>
+        <div className={`${this.state.show ? "navList showFont" : "navList"}`}>
           <ul onMouseEnter={this.hoveron}>
             <li>
               <span className='aboutUs'>ABOUT US</span>
@@ -80,7 +80,7 @@ class Nav extends Component {
           </ul>
         </div>
         <div className={`smallNavList ${this.state.show ? "showList" : ""}`}>
-          <ul>
+          <ul className={`${this.state.show ? "showFont" : ""}`}>
             <li>
               <Link to='/login'>
                 <span>Login</span>
