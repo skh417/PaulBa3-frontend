@@ -57,10 +57,7 @@ class MenuList extends Component {
               {theOne.products === undefined
                 ? products.map((item, index) => {
                     return (
-                      <Link
-                        to={`/menu/detail?product=${item.name_eng}`}
-                        key={index}
-                      >
+                      <Link to={`/menu/detail/${item.id}`} key={index}>
                         <MenuCard
                           key={index}
                           korName={item.name_kor}
@@ -75,10 +72,7 @@ class MenuList extends Component {
                   })
                 : theOne.products.map((item, index) => {
                     return (
-                      <Link
-                        to={`/menu/detail?product=${item.name_eng}`}
-                        key={index}
-                      >
+                      <Link to={`/menu/detail/${item.id}`} key={index}>
                         <MenuCard
                           key={index}
                           korName={item.name_kor}
