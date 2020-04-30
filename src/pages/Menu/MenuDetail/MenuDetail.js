@@ -19,7 +19,7 @@ class MenuDetail extends Component {
 
     fetch(`${BASE_URL}/menu/detail/${id}`)
       .then((data) => data.json())
-      .then((data) => this.setState({ coffee: data }))
+      .then((data) => {this.setState({ coffee: data });console.log('이거시 데이터',data)})
       .catch((err) => {
         console.error(err);
       });

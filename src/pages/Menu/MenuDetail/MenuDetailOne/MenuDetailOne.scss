@@ -68,6 +68,10 @@
                 color: #382e2c;
             }
         }
+
+        li.invisibeList {
+            display: none;
+        }
     }
 
     .nutriContainer {
@@ -121,6 +125,10 @@
                 border: none;
                 -webkit-appearance: none;
                 background: url("https://www.baristapaulbassett.co.kr/images/blt/blt_select.png") no-repeat 95% 50%;
+            }
+
+            select.invisibleSel {
+                display: none;
             }
         }
 

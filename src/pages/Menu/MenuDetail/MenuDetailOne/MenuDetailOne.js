@@ -3,6 +3,7 @@ import "./MenuDetailOne.scss"
 
 class MenuDetailOne extends Component {
 
+ 
     render(){
         const { coffee } = this.props
         console.log(coffee)
@@ -24,15 +25,15 @@ class MenuDetailOne extends Component {
                 />
               </div>
               <ul className='infomation'>
-                <li>
+                <li className={coffee.info.sort ? "" : "invisibeList" }>
                   <span>구분</span>
                   {coffee.info.sort}
                 </li>
-                <li>
+                <li className={coffee.info.allergy ? "" : "invisibeList" }>
                   <span>알레르기 유발물질</span>
                   {coffee.info.allergy}
                 </li>
-                <li>
+                <li className={coffee.info.sizes ? "" : "invisibeList" }>
                   <span>제공사이즈</span>
                   {coffee.info.sizes}
                 </li>
@@ -43,7 +44,7 @@ class MenuDetailOne extends Component {
                     영양 정보
                     <span>1회 제공량 기준</span>
                   </span>
-                  <select>
+                  <select  className={coffee.info.sizes ? "" : "invisibleSel"}>
                     <option>{coffee.info.sizes}</option>
                   </select>
                 </div>
