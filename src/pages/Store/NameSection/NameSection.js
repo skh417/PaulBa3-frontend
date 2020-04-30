@@ -54,7 +54,7 @@ class NameSection extends Component {
             <div>
               Total
               <span className='totalCount'>
-                {list.branches !== undefined ? list.branches.length : "97"}
+                {list.branches !== undefined ? list.branches.length : "98"}
               </span>
             </div>
             <div className='logos'>
