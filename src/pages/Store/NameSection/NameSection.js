@@ -7,6 +7,7 @@ class NameSection extends Component {
     super(props);
     this.state = {
       list: [],
+      searchValue: "",
     };
   }
 
@@ -16,8 +17,17 @@ class NameSection extends Component {
       .then((res) => this.setState({ list: res }));
   }
 
+  searchBoxChange = (e) => {
+    console.log(e.target.value);
+    this.setState({ searchValue: e.target.value });
+  };
+
+  goSearch = () => {
+    console.log("go to search!");
+  };
+
   render() {
-    const { list } = this.state;
+    const { list, searchValue } = this.state;
     // console.log("list.branches", list.branches);
     return (
       <div
@@ -27,7 +37,12 @@ class NameSection extends Component {
         // } ? "NameSection show" : "NameSection"`}
       >
         <div className='searchBox'>
-          <input type='text' placeholder='매장명 또는 주소 입력'></input>
+          <input
+            type='text'
+            placeholder='매장명 또는 주소 입력'
+            onChange={this.searchBoxChange}
+            value={searchValue}
+          ></input>
           <div>
             <img
               className='searchIcon'
