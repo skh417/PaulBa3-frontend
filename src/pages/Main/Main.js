@@ -26,9 +26,7 @@ class Main extends Component {
       } else {
         console.log("올라가지마ㅠㅠ");
         // window.scroll(0, this.twoRef.offsetTop);
-        console.log("deltaY", e.deltaY);
-        // e.deltaY = 0;
-        // console.log(window.)
+        window.scrollTo(0, this.twoRef.offsetTop);
       }
     } else if (e.nativeEvent.wheelDelta < 0) {
       // twoRef로 이동
