@@ -18,7 +18,6 @@ class NameSection extends Component {
   }
 
   searchBoxChange = (e) => {
-    console.log(e.target.value);
     this.setState({ searchValue: e.target.value });
   };
 
