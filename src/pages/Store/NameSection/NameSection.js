@@ -66,7 +66,7 @@ class NameSection extends Component {
                       return (
                         <>
                           <div className='sotreContainer' key={index}>
-                            <div className='test'>
+                            <div className='linkToStore'>
                               <div className='name'>{branch.shop_name}</div>
                               <div className='locationLogo'></div>
                             </div>

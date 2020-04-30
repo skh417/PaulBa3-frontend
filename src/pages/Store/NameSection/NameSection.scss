@@ -67,9 +67,10 @@ $noto: "NotoSans";
           margin-bottom: 17px;
           border-bottom: 1px solid #e2dfdc;
           
-          .test {
+          .linkToStore {
             display: flex;
             justify-content: space-between;
+            cursor: pointer;
             .name {
               font-size: 16px;
               color: #382e2c;
