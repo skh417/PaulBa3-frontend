@@ -6,7 +6,7 @@ class MenuDetailOne extends Component {
  
     render(){
         const { coffee } = this.props
-        console.log('요기->',Boolean(coffee.nutrients.length),coffee.nutrients)
+
         return(
             <div className='menuDetailBG'>
             <div className='menuDetail'>
@@ -21,7 +21,7 @@ class MenuDetailOne extends Component {
               </div>
               <div className='menuImgContainer'>
                 <img
-                  src={`https://www.baristapaulbassett.co.kr${coffee.menu.images[0]}`}
+                  src={`https://www.baristapaulbassett.co.kr${coffee.menu.image[0]}`}
                 />
               </div>
               <ul className='infomation'>
@@ -86,7 +86,6 @@ class MenuDetailOne extends Component {
                     </p>
                   </div>
                 </div>
-            
               </div>
             </div>
           </div>

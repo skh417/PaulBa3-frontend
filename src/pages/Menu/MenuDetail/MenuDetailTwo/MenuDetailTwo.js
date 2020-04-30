@@ -5,10 +5,6 @@ import MenuDetailOne from "../MenuDetailOne/MenuDetailOne";
 class MenuDetailTwo extends Component {
   render() {
     const { coffee } = this.props;
-    // console.log('커피데이터 -->', coffee)
-    // console.log('dd -->' , coffeeArr)
-    // console.log('dasf', coffee)
-    console.log('자식 here : ',coffee.best_menus);
 
     return (
       <div className='bestMenu'>
@@ -17,7 +13,7 @@ class MenuDetailTwo extends Component {
             {coffee.best_menus.map((menu, index)=>{
               return (
                 <div className="best" key={index}>
-                  <img src={`https://www.baristapaulbassett.co.kr${menu.image}`} alt=""/>
+                  <img src={`https://www.baristapaulbassett.co.kr${menu.images}`} alt=""/>
 
                   <div className='korName'>
                     {menu.name_kor}
