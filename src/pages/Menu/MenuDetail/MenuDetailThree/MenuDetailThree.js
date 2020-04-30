@@ -3,8 +3,10 @@ import "./MenuDetailThree.scss";
 
 class MenuDetailThree extends Component {
     render(){
+      const {coffee} = this.props
+      console.log('three',this.props)
         return(
-        <div className='espressoStyle'>
+        <div className={coffee.nutrients.length ?'espressoStyle': 'displayNone'}>
             <h2>5S FOR SWEET DESSERT STYLE ESPRESSO</h2>
             <ul>
               <li>

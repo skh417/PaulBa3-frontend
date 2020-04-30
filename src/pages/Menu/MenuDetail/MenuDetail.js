@@ -3,19 +3,25 @@ import { withRouter } from "react-router-dom";
 import NavWhite from "../../../component/NavWhite/NavWhite";
 import MenuDetailOne from "./MenuDetailOne/MenuDetailOne";
 import MenuDetailTwo from "./MenuDetailTwo/MenuDetailTwo";
-import MenuDetailThree from "./MenuDetailThree/MenuDetailTree";
+import MenuDetailThree from "./MenuDetailThree/MenuDetailThree";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import Footer from "../../../component/Footer/Footer";
 import { MENU_DETAIL, BASE_URL } from "../../../Config";
 import "./MenuDetail.scss";
 
 class MenuDetail extends Component {
-  state = {
-    coffee: null,
-  };
+  constructor(){
+    console.log("부모 constructor")
+    super();
+    this.state = {
+      coffee: null,
+    };
+  } 
+
+
   componentDidMount() {
     const { id } = this.props.match.params;
-    // console.log('id -->',this.props.match.params.id);
+    console.log("부모 componentDidMount");
 
     fetch(`${BASE_URL}/menu/detail/${id}`)
       .then((data) => data.json())
@@ -28,6 +34,7 @@ class MenuDetail extends Component {
   render() {
     const { coffee } = this.state;
     // console.log("props: ", this.props)
+    console.log("부모 render")
     return (
       <>
         <NavWhite />
@@ -36,7 +43,7 @@ class MenuDetail extends Component {
             <>
               <MenuDetailOne coffee={coffee} />
               <MenuDetailTwo coffee={coffee} />
-              <MenuDetailThree />
+              <MenuDetailThree coffee={coffee}/>
             </>
           ) : (
             <h3>해당 제품이 없습니다.😘</h3>
