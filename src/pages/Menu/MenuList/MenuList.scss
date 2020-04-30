@@ -32,20 +32,21 @@
         .all {
             list-style: none;
             display: flex;
-            width: 706px;
+            width: 70%;
             margin: 0 auto;
             text-align: center;
             padding-top: 20px;
+            justify-content: space-around;
             
             div {
                 font-size: 15px;
                 color: #382e2c;
-                width: 145px;
                 cursor: pointer;
-                
-                .on {
-                    border-bottom: 3px #e0004d;
-                }
+            }
+
+            .selected {
+                border-bottom: 3px solid #e0004d;
+                padding-bottom: 17px;
             }
         }
 
