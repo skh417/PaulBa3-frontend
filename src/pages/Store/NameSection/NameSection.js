@@ -27,7 +27,6 @@ class NameSection extends Component {
 
   render() {
     const { list, searchValue } = this.state;
-    // console.log("list.branches", list.branches);
     return (
       <div
         className='NameSection'

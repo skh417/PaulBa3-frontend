@@ -45,7 +45,6 @@ class MapAPI extends Component {
             google={this.props.google}
             zoom={15}
             mapTypeControl={false}
-            zoomControl={false}
             initialCenter={{ lat: currentLat, lng: currentLng }}
           >
             {branches ? (
