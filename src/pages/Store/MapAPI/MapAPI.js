@@ -27,22 +27,30 @@ class MapAPI extends Component {
     console.log(currentLat, currentLng);
     return (
       <div className='MapAPI'>
-        <Map
-          google={this.props.google}
-          zoom={15}
-          initialCenter={{ lat: 37.38536, lng: 127.1247 }}
-        >
-          {branches
-            ? branches.map((branch, index) => {
-                return (
-                  <Marker
-                    key={index}
-                    position={{ lat: branch.latitude, lng: branch.longitude }}
-                  ></Marker>
-                );
-              })
-            : console.log("no branches data now")}
-        </Map>
+        {currentLat ? (
+          <Map
+            google={this.props.google}
+            zoom={15}
+            initialCenter={{ lat: currentLat, lng: currentLng }}
+          >
+            {branches
+              ? branches.map((branch, index) => {
+                  return (
+                    <Marker
+                      key={index}
+                      position={{ lat: branch.latitude, lng: branch.longitude }}
+                      icon={{
+                        url:
+                          "https://www.baristapaulbassett.co.kr/images/store/mapIcon01.png",
+                      }}
+                    ></Marker>
+                  );
+                })
+              : console.log("no branches data now")}
+          </Map>
+        ) : (
+          <></>
+        )}
       </div>
     );
   }
