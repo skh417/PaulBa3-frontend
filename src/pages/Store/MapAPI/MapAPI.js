@@ -33,20 +33,22 @@ class MapAPI extends Component {
             zoom={15}
             initialCenter={{ lat: currentLat, lng: currentLng }}
           >
-            {branches
-              ? branches.map((branch, index) => {
-                  return (
-                    <Marker
-                      key={index}
-                      position={{ lat: branch.latitude, lng: branch.longitude }}
-                      icon={{
-                        url:
-                          "https://www.baristapaulbassett.co.kr/images/store/mapIcon01.png",
-                      }}
-                    ></Marker>
-                  );
-                })
-              : console.log("no branches data now")}
+            {branches ? (
+              branches.map((branch, index) => {
+                return (
+                  <Marker
+                    key={index}
+                    position={{ lat: branch.latitude, lng: branch.longitude }}
+                    icon={{
+                      url:
+                        "https://www.baristapaulbassett.co.kr/images/store/mapIcon01.png",
+                    }}
+                  ></Marker>
+                );
+              })
+            ) : (
+              <></>
+            )}
           </Map>
         ) : (
           <></>
