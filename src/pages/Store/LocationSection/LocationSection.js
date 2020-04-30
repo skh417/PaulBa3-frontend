@@ -144,7 +144,7 @@ class LocationSection extends Component {
                           id={list.area_code}
                           onClick={() => this.callArea(list)}
                         >
-                          {Object.values(list.area_name)}
+                          {list.area_name}
                         </li>
                       );
                     })
@@ -158,7 +158,7 @@ class LocationSection extends Component {
                           id={list.area_code}
                           onClick={() => this.callList(list)}
                         >
-                          {Object.values(list.area_name)}
+                          {list.area_name}
                         </li>
                       );
                     })}
@@ -170,11 +170,7 @@ class LocationSection extends Component {
             <div className='result'>
               <div>
                 Total
-                <span className='totalCount'>
-                  {selectedList.length !== undefined
-                    ? selectedList.length
-                    : "97"}
-                </span>
+                <span className='totalCount'>{selectedList.length}</span>
               </div>
               <div className='logos'>
                 <img
