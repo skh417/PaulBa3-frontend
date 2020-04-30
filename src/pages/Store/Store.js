@@ -4,7 +4,7 @@ import NameSection from "./NameSection/NameSection";
 import LocationSection from "./LocationSection/LocationSection";
 import OptionSection from "./OptionSection/OptionSection";
 import MapAPI from "./MapAPI/MapAPI";
-import { MAP_URL } from "../../Config";
+import { BASE_URL } from "../../Config";
 import Footer from "../../component/Footer/Footer";
 import "./Store.scss";
 
@@ -25,7 +25,7 @@ class Store extends Component {
   }
 
   componentDidMount() {
-    fetch(`${MAP_URL}`)
+    fetch(`${BASE_URL}/branch/detail`)
       .then((res) => res.json())
       .then((res) => this.setState({ mapData: res }));
   }

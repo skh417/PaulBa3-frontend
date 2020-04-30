@@ -38,7 +38,7 @@ class OptionSection extends Component {
               <div className='checkbox'></div>
             </li>
             <li title='테라스' className='rightLine'>
-              <div className='teras'></div>
+              <div className='terrace'></div>
               <p>테라스</p>
               <div className='checkbox'></div>
             </li>
