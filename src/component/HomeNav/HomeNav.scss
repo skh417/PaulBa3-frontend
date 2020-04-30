@@ -65,6 +65,10 @@
                     font-weight: bold;
                 }
             }
+
+            li:visited, li:link, li:hover, li:active, li:focus {
+                text-decoration: none;
+            }
         }
 
     }
