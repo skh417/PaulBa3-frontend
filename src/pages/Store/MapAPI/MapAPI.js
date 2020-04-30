@@ -24,7 +24,6 @@ class MapAPI extends Component {
   render() {
     const { branches } = this.props.mapData;
     const { currentLat, currentLng } = this.state;
-    console.log(currentLat, currentLng);
     return (
       <div className='MapAPI'>
         {currentLat ? (
