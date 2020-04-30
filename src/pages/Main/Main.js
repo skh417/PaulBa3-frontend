@@ -25,8 +25,7 @@ class Main extends Component {
         });
       } else {
         console.log("올라가지마ㅠㅠ");
-        // window.scroll(0, this.twoRef.offsetTop);
-        window.scrollTo(0, this.twoRef.offsetTop);
+        // window.scrollTo(0, this.twoRef.offsetTop);
       }
     } else if (e.nativeEvent.wheelDelta < 0) {
       // twoRef로 이동
