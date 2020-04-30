@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MAP_LOCATION } from "../../../Config";
+import { BASE_URL } from "../../../Config";
 import "./NameSection.scss";
 
 class NameSection extends Component {
@@ -11,11 +11,11 @@ class NameSection extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch(`${MAP_LOCATION}/branch/`)
-  //     .then((res) => res.json())
-  //     .then((res) => this.setState({ list: res }));
-  // }
+  componentDidMount() {
+    fetch(`${BASE_URL}/branch/detail`)
+      .then((res) => res.json())
+      .then((res) => this.setState({ list: res }));
+  }
 
   searchBoxChange = (e) => {
     this.setState({ searchValue: e.target.value });
