@@ -6,7 +6,7 @@ import MenuDetailTwo from "./MenuDetailTwo/MenuDetailTwo";
 import MenuDetailThree from "./MenuDetailThree/MenuDetailTree";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import Footer from "../../../component/Footer/Footer";
-import {MENU_DETAIL, BASE_URL} from "../../../Config";
+import { MENU_DETAIL, BASE_URL } from "../../../Config";
 import "./MenuDetail.scss";
 
 class MenuDetail extends Component {
@@ -14,16 +14,15 @@ class MenuDetail extends Component {
     coffee: null,
   };
   componentDidMount() {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     // console.log('id -->',this.props.match.params.id);
-
 
     fetch(`${BASE_URL}/menu/detail/${id}`)
       .then((data) => data.json())
       .then((data) => this.setState({ coffee: data }))
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
-      })
+      });
   }
 
   render() {

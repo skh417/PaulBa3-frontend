@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import Nav from "../../component/Nav/Nav";
 import MenuList from "./MenuList/MenuList";
 import Footer from "../../component/Footer/Footer";
-import { MENU_URL } from "../../Config";
+import { BASE_URL } from "../../Config";
 import "./Menu.scss";
 
 class Menu extends Component {
@@ -17,8 +17,8 @@ class Menu extends Component {
   }
   componentDidMount() {
     const { category, id } = this.props.match.params;
-    console.log({ category, id })
-    fetch(`${MENU_URL}${category}/${id}`)
+    console.log({ category, id });
+    fetch(`${BASE_URL}/menu/${category}/${id}`)
       .then((data) => data.json())
       .then((data) => this.setState({ menu: data }));
   }
@@ -26,7 +26,8 @@ class Menu extends Component {
   componentDidUpdate(prevProps) {
     const { category } = this.props.match.params;
     if (prevProps.match.params.category !== category) {
-      fetch(`${MENU_URL}${category}/0`)
+      console.log("menu", category);
+      fetch(`${BASE_URL}/menu/${category}/0`)
         .then((data) => data.json())
         .then((data) => this.setState({ menu: data }));
     }
