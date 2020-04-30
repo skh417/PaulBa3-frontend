@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MAP_URL } from "../../../Config";
+import { BASE_URL } from "../../../Config";
 import "./NameSection.scss";
 
 class NameSection extends Component {
@@ -12,7 +12,7 @@ class NameSection extends Component {
   }
 
   componentDidMount() {
-    fetch(`${MAP_URL}`)
+    fetch(`${BASE_URL}/branch/detail`)
       .then((res) => res.json())
       .then((res) => this.setState({ list: res }));
   }
@@ -27,7 +27,6 @@ class NameSection extends Component {
 
   render() {
     const { list, searchValue } = this.state;
-    // console.log("list.branches", list.branches);
     return (
       <div
         className='NameSection'
@@ -55,7 +54,7 @@ class NameSection extends Component {
             <div>
               Total
               <span className='totalCount'>
-                {list.branches !== undefined ? list.branches.length : "97"}
+                {list.branches ? list.branches.length : "98"}
               </span>
             </div>
             <div className='logos'>

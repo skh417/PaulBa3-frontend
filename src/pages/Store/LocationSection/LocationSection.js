@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MAP_LOCATION } from "../../../Config";
+import { MAP_LOCATION, BASE_URL } from "../../../Config";
 import "./LocationSection.scss";
 
 class LocationSection extends Component {
@@ -93,41 +93,126 @@ class LocationSection extends Component {
           clickable: true,
         },
       ],
+      city: [],
+      isFirst: true,
+      selectedList: [],
+      showList: false,
     };
   }
 
   callArea = (area) => {
+    console.log("현재 area", area);
     fetch(`${MAP_LOCATION}/store/${area.area_code}`)
       .then((res) => res.json())
-      .then((res) => this.setState({ district: res.area_info }));
+      .then((res) =>
+        this.setState({ city: res.area_info, isFirst: false }, () => {
+          console.log("바뀐 area", this.state.city);
+        })
+      );
+  };
+
+  callList = (list) => {
+    console.log("list", list);
+    fetch(`${BASE_URL}/branch/detail/${list.area_code}`)
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({ selectedList: res.branches, showList: true }, () => {
+          console.log("바뀐 selectedList", this.state.selectedList);
+        })
+      );
   };
 
   render() {
-    const { district } = this.state;
+    const { district, city, isFirst, showList, selectedList } = this.state;
     return (
       <div className='LocationSection'>
-        <div className='subtitle'>
-          <span>시/도 선택</span>
-        </div>
-        <div className='cityName'>
-          <ul>
-            {district.map((list, index) => {
-              return (
-                <li
-                  className={`${list.clickable ? "clickable" : "disableClick"}`}
-                  key={index}
-                  id={list.area_code}
-                  onClick={() => this.callArea(list)}
-                >
-                  {Object.values(list.area_name)}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        {!showList ? (
+          <>
+            <div className='subtitle'>
+              <span>시/도 선택</span>
+            </div>
+            <div className='cityName'>
+              <ul>
+                {isFirst
+                  ? district.map((list, index) => {
+                      return (
+                        <li
+                          className={`${
+                            list.clickable ? "clickable" : "disableClick"
+                          }`}
+                          key={index}
+                          id={list.area_code}
+                          onClick={() => this.callArea(list)}
+                        >
+                          {list.area_name}
+                        </li>
+                      );
+                    })
+                  : city.map((list, index) => {
+                      return (
+                        <li
+                          className={`${
+                            list.clickable ? "clickable" : "disableClick"
+                          }`}
+                          key={index}
+                          id={list.area_code}
+                          onClick={() => this.callList(list)}
+                        >
+                          {list.area_name}
+                        </li>
+                      );
+                    })}
+              </ul>
+            </div>
+          </>
+        ) : (
+          <div className='resultList'>
+            <div className='result'>
+              <div>
+                Total
+                <span className='totalCount'>{selectedList.length}</span>
+              </div>
+              <div className='logos'>
+                <img
+                  src='https://www.baristapaulbassett.co.kr/images/store/array.png'
+                  alt=''
+                  className='sort'
+                />
+                <img
+                  src='https://www.baristapaulbassett.co.kr/images/store/reset.png'
+                  alt=''
+                  className='back'
+                />
+              </div>
+            </div>
+
+            <div className='storeLocationContainer'>
+              <div className='storeLocation'>
+                <div className='left'>
+                  {selectedList.map((list, index) => {
+                    return (
+                      <>
+                        <div className='sotreContainer' key={index}>
+                          <div className='linkToStore'>
+                            <div className='name'>{list.shop_name}</div>
+                            <div className='locationLogo'></div>
+                          </div>
+                          <div className='address'>{list.address}</div>
+                          <div className='contact'>
+                            <span className='telLogo'></span>
+                            <span>{list.tel}</span>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 }
-
 export default LocationSection;
