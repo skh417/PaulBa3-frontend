@@ -123,48 +123,100 @@ class LocationSection extends Component {
   };
 
   render() {
-    const { district, city, isFirst } = this.state;
+    const { district, city, isFirst, showList, selectedList } = this.state;
     return (
       <div className='LocationSection'>
-        <div className='subtitle'>
-          <span>시/도 선택</span>
-        </div>
-        <div className='cityName'>
-          <ul>
-            {isFirst
-              ? district.map((list, index) => {
-                  return (
-                    <li
-                      className={`${
-                        list.clickable ? "clickable" : "disableClick"
-                      }`}
-                      key={index}
-                      id={list.area_code}
-                      onClick={() => this.callArea(list)}
-                    >
-                      {Object.values(list.area_name)}
-                    </li>
-                  );
-                })
-              : city.map((list, index) => {
-                  return (
-                    <li
-                      className={`${
-                        list.clickable ? "clickable" : "disableClick"
-                      }`}
-                      key={index}
-                      id={list.area_code}
-                      onClick={() => this.callList(list)}
-                    >
-                      {Object.values(list.area_name)}
-                    </li>
-                  );
-                })}
-          </ul>
-        </div>
+        {!showList ? (
+          <>
+            <div className='subtitle'>
+              <span>시/도 선택</span>
+            </div>
+            <div className='cityName'>
+              <ul>
+                {isFirst
+                  ? district.map((list, index) => {
+                      return (
+                        <li
+                          className={`${
+                            list.clickable ? "clickable" : "disableClick"
+                          }`}
+                          key={index}
+                          id={list.area_code}
+                          onClick={() => this.callArea(list)}
+                        >
+                          {Object.values(list.area_name)}
+                        </li>
+                      );
+                    })
+                  : city.map((list, index) => {
+                      return (
+                        <li
+                          className={`${
+                            list.clickable ? "clickable" : "disableClick"
+                          }`}
+                          key={index}
+                          id={list.area_code}
+                          onClick={() => this.callList(list)}
+                        >
+                          {Object.values(list.area_name)}
+                        </li>
+                      );
+                    })}
+              </ul>
+            </div>
+          </>
+        ) : (
+          <div className='resultList'>
+            <div className='result'>
+              <div>
+                Total
+                <span className='totalCount'>
+                  {selectedList.length !== undefined
+                    ? selectedList.length
+                    : "97"}
+                </span>
+              </div>
+              <div className='logos'>
+                <img
+                  src='https://www.baristapaulbassett.co.kr/images/store/array.png'
+                  alt=''
+                  className='sort'
+                />
+                <img
+                  src='https://www.baristapaulbassett.co.kr/images/store/reset.png'
+                  alt=''
+                  className='back'
+                />
+              </div>
+            </div>
+
+            <div className='storeLocationContainer'>
+              <div className='storeLocation'>
+                <div className='left'>
+                  {selectedList.map((list, index) => {
+                    return (
+                      <>
+                        <div className='sotreContainer' key={index}>
+                          <div className='linkToStore'>
+                            <div className='name'>{list.shop_name}</div>
+                            <div className='locationLogo'></div>
+                          </div>
+                          <div className='address'>{list.address}</div>
+                          <div className='contact'>
+                            <span className='telLogo'></span>
+                            <span>{list.tel}</span>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 }
-
 export default LocationSection;

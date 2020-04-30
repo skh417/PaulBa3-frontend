@@ -24,6 +24,7 @@ class MapAPI extends Component {
 
   showInfo = (e, map) => {
     this.setState({ isOpen: true });
+    console.log("showinfo");
     const infoWindow = new window.google.maps.InfoWindow({
       content: '<div id="infoWindow">컨텐트</div>',
       position: { lat: e.latitude, lng: e.longitude },
@@ -57,9 +58,9 @@ class MapAPI extends Component {
                       url:
                         "https://www.baristapaulbassett.co.kr/images/store/mapIcon01.png",
                     }}
-                    onClick={() => this.showInfo}
+                    onClick={this.showInfo}
                   >
-                    {this.state.isOpen && (
+                    {isOpen && (
                       <InfoWindow onCloseClick={this.closeInfo}>
                         <div>yes</div>
                       </InfoWindow>
