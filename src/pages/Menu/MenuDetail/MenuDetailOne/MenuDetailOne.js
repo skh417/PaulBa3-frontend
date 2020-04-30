@@ -6,7 +6,7 @@ class MenuDetailOne extends Component {
  
     render(){
         const { coffee } = this.props
-        console.log(coffee)
+        console.log('요기->',Boolean(coffee.nutrients.length),coffee.nutrients)
         return(
             <div className='menuDetailBG'>
             <div className='menuDetail'>
@@ -38,46 +38,46 @@ class MenuDetailOne extends Component {
                   {coffee.info.sizes}
                 </li>
               </ul>
-              <div className='nutriContainer'>
+              <div className={coffee.nutrients.length ? 'nutriContainer':'nutriContainerNone'}>
                 <div className='nutriTitle'>
                   <span>
                     영양 정보
                     <span>1회 제공량 기준</span>
                   </span>
-                  <select  className={coffee.info.sizes ? "" : "invisibleSel"}>
+                  <select className={coffee.info.sizes ? "" : "invisibleSel"}>
                     <option>{coffee.info.sizes}</option>
                   </select>
                 </div>
                 <div className='nutriContents'>
                   <div>
                     <span className='sizeML'>
-                      제공량({coffee.nutrients[0].serve_type})
-                      <span>{coffee.nutrients[0].serve}</span>
+                      제공량({coffee.nutrients[0] && coffee.nutrients[0].serve_type})
+                      <span>{coffee.nutrients[0] && coffee.nutrients[0].serve}</span>
                     </span>
                     <ul className='nutriDetails'>
                       <li>
                         <span className='tit'>열량(kcal)</span>
-                        <span className='nums'>{Math.floor(coffee.nutrients[0].kcal)}</span>
+                        <span className='nums'>{coffee.nutrients[0] && Math.floor(coffee.nutrients[0].kcal)}</span>
                       </li>
                       <li>
                         <span className='tit'>단백질(g)</span>
-                        <span className='nums'>{Math.floor(coffee.nutrients[0].protein)}</span>
+                        <span className='nums'>{coffee.nutrients[0] && Math.floor(coffee.nutrients[0].protein)}</span>
                       </li>
                       <li>
                         <span className='tit'>당류(g)</span>
-                        <span className='nums'>{Math.floor(coffee.nutrients[0].sugar)}</span>
+                        <span className='nums'>{coffee.nutrients[0] && Math.floor(coffee.nutrients[0].sugar)}</span>
                       </li>
                       <li>
                         <span className='tit'>나트륨(mg)</span>
-                        <span className='nums'>{Math.floor(coffee.nutrients[0].sodium)}</span>
+                        <span className='nums'>{coffee.nutrients[0] && Math.floor(coffee.nutrients[0].sodium)}</span>
                       </li>
                       <li>
                         <span className='tit'>포화지방(g)</span>
-                        <span className='nums'>{coffee.nutrients[0].fat}</span>
+                        <span className='nums'>{coffee.nutrients[0] && coffee.nutrients[0].fat}</span>
                       </li>
                       <li>
                         <span className='tit'>카페인(mg)</span>
-                        <span className='nums'>{Math.floor(coffee.nutrients[0].caffeine)}</span>
+                        <span className='nums'>{coffee.nutrients[0] && Math.floor(coffee.nutrients[0].caffeine)}</span>
                       </li>
                     </ul>
                     <p>
@@ -86,6 +86,7 @@ class MenuDetailOne extends Component {
                     </p>
                   </div>
                 </div>
+            
               </div>
             </div>
           </div>

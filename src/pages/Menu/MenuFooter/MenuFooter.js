@@ -10,7 +10,7 @@ class MenuFooter extends Component {
     this.setState({
       changeClass: "beverageImg",
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
   beverageImgOff = () => {
     this.setState({

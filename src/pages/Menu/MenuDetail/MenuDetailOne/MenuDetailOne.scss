@@ -74,6 +74,10 @@
         }
     }
 
+    .nutriContainerNone {
+        display: none;
+    }
+
     .nutriContainer {
         position: absolute;
         right: 70px;
@@ -131,6 +135,7 @@
                 display: none;
             }
         }
+
 
         .nutriContents {
             display: block;

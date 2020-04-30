@@ -5,25 +5,24 @@ import MenuDetailOne from "../MenuDetailOne/MenuDetailOne";
 class MenuDetailTwo extends Component {
   render() {
     const { coffee } = this.props;
-    const coffeeArr = [coffee];
-    console.log('커피데이터 -->', coffee)
-    
+    // console.log('커피데이터 -->', coffee)
     // console.log('dd -->' , coffeeArr)
     // console.log('dasf', coffee)
+    console.log('자식 here : ',coffee.best_menus);
 
     return (
       <div className='bestMenu'>
         <h2>BEST MENU</h2>
         <div className='bestImgContainer'>
-            {coffeeArr.map((data, index)=>{
-              console.log('테스트 -->' , Object.values(data)[3])
+            {coffee.best_menus.map((menu, index)=>{
               return (
                 <div className="best" key={index}>
-                  <img src={`https://www.baristapaulbassett.co.kr${Object(data).best_menus[0].image}`} alt=""/>
+                  <img src={`https://www.baristapaulbassett.co.kr${menu.image}`} alt=""/>
+
                   <div className='korName'>
-                    {data.best_menus[0].name_kor}
+                    {menu.name_kor}
                     <span className="engName">
-                      {data.best_menus[0].name_eng}
+                      {menu.name_eng}
                     </span>
                   </div>
                 </div>
