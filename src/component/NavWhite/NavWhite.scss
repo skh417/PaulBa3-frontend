@@ -35,6 +35,10 @@
                 justify-content: space-evenly;
                 padding: 0 45px;
 
+                a, a:link, a:hover, a:active, a:visited, a:focus {
+                    text-decoration:none;
+                }
+
                 span {
                     cursor: pointer;
                     font-size: 14px;
@@ -69,6 +73,9 @@
 
             li {
                 margin-right: 15px;
+                a, a:link, a:hover, a:active, a:visited, a:focus {
+                    text-decoration:none;
+                }
 
                 span {
                     cursor: pointer;
