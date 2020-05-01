@@ -252,9 +252,32 @@
         width: 76px;
         height: 122px;
 
+        p {
+            .line {
+                position: absolute;
+                top: 20px;
+                left: 38px;
+                border: .5px solid #e0004d;
+                border-top-width: 40px;
+                display: inline-block;
+            }
+            .arrowDown{
+                position: absolute;
+                top: 50px;
+                left: 34px;
+                border: solid #e0004d;
+                border-width: 0 1px 1px 0;
+                display: inline-block;
+                padding: 4px;
+                transform: rotate(45deg);
+            }
+        }
+        
+
         .text {
             position: relative;
             top: 60%;
+            font-size: 13px;
             color: white;
             text-align: center;
             opacity: 0.8;

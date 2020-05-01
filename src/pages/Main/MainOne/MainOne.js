@@ -126,7 +126,12 @@ class MainOne extends Component {
             </div>
           </div>
           <div className='scroll'>
-            <div className='fixed'></div>
+            <p>
+              <i className='line'></i>
+            </p>
+            <p>
+              <i className='arrowDown'></i>
+            </p>
             <div className='text'>SCROLL</div>
           </div>
         </div>
