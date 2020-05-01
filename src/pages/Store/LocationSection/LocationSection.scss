@@ -134,4 +134,10 @@ $noto: "NotoSans";
       }
     }
   }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B8B8B8;
+  }
 }
