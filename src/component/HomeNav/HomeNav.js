@@ -71,13 +71,19 @@ class HomeNav extends Component {
               </span>
             </li>
             <li>
-              <span className='society'>SOCIETY</span>
+              <span className='society'>
+                <Link to='/'>SOCIETY</Link>
+              </span>
             </li>
             <li>
-              <span className='new'>WHAT'S NEW</span>
+              <span className='new'>
+                <Link to='/'>WHAT'S NEW</Link>
+              </span>
             </li>
             <li>
-              <span className='eShop'>E-SHOP</span>
+              <span className='eShop'>
+                <Link to='/'>E-SHOP</Link>
+              </span>
             </li>
           </ul>
         </div>
