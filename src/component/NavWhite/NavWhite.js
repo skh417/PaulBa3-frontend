@@ -36,7 +36,9 @@ class NavWhite extends Component {
         <div className='navList'>
           <ul onMouseEnter={this.hoveron}>
             <li>
-              <span className='aboutUs'>ABOUT US</span>
+              <span className='aboutUs'>
+                <Link to='/'>ABOUT US</Link>
+              </span>
             </li>
             <li>
               <span className='menu'>
@@ -48,14 +50,21 @@ class NavWhite extends Component {
                 <Link to='/store'>STORE</Link>
               </span>
             </li>
+
             <li>
-              <span className='society'>SOCIETY</span>
+              <span className='society'>
+                <Link to='/'>SOCIETY</Link>
+              </span>
             </li>
             <li>
-              <span className='new'>WHAT'S NEW</span>
+              <span className='new'>
+                <Link to='/'>WHAT'S NEW</Link>
+              </span>
             </li>
             <li>
-              <span className='eShop'>E-SHOP</span>
+              <span className='eShop'>
+                <Link to='/'>E-SHOP</Link>
+              </span>
             </li>
           </ul>
         </div>

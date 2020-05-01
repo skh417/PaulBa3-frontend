@@ -37,6 +37,8 @@
             li {
                 font-weight: normal;
                 justify-content: space-evenly;
+                
+                
                 padding: 0 45px;
                 span {
                     cursor: pointer;
@@ -94,6 +96,10 @@
             padding-left: 30px;
             height: 70px;
             width: 120px;
+            .logo {
+                width: 130px;
+                height: 56px;
+            }
         }
 
         .navList {

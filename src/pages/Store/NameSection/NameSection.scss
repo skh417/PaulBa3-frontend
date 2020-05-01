@@ -48,15 +48,14 @@ $noto: "NotoSans";
   }
   .storeLocationContainer {
     height: 580px;
+    max-height: 600px;
     overflow: scroll;
-    
-    
+    overflow-x: unset;
 
     .storeLocation {
       overflow: auto;
       margin: 0 20px;
-      padding: 25px 0 16px 0;
-      border-bottom: 1px solid #e2dfdc;
+      padding: 25px 0 50px 0;
       display: flex;
       justify-content: space-around;
       .left {
@@ -105,5 +104,11 @@ $noto: "NotoSans";
         }
       }
     }
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B8B8B8;
   }
 }

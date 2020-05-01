@@ -2,7 +2,8 @@
     width: 100%;
     .topImage {
         img {
-            background: url("../../../image/menu_coffe_banner.jpg") no-repeat center;
+            background: url("../../../image/menu_coffe_banner.jpg") no-repeat 0 0;
+            background-size: contain;
             position: relative;
             display: inline-block;
             width: 100%;
@@ -11,15 +12,26 @@
         div {
             position: absolute;
             color: white;
-            top: 170px;
-            left: 46%;
+            top: 200px;
+            width: 100%;
+            margin: 0 auto;
             text-align: center;
+            opacity: 0;
 
             .title {
                 font-size: 50px;
-                font-weight: bold;
-                font-family: 'Roboto';
             }
+
+            .description {
+                color: rgba(255,255,255,0.6);
+                font-size: 15px;
+            }
+        }
+
+        .loaded {
+            opacity: 1;
+            top: 170px;
+            transition: all .5s linear;
         }
     }
 

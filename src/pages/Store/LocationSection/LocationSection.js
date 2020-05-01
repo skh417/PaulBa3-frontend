@@ -101,24 +101,16 @@ class LocationSection extends Component {
   }
 
   callArea = (area) => {
-    console.log("현재 area", area);
     fetch(`${MAP_LOCATION}/store/${area.area_code}`)
       .then((res) => res.json())
-      .then((res) =>
-        this.setState({ city: res.area_info, isFirst: false }, () => {
-          console.log("바뀐 area", this.state.city);
-        })
-      );
+      .then((res) => this.setState({ city: res.area_info, isFirst: false }));
   };
 
   callList = (list) => {
-    console.log("list", list);
     fetch(`${BASE_URL}/branch/detail/${list.area_code}`)
       .then((res) => res.json())
       .then((res) =>
-        this.setState({ selectedList: res.branches, showList: true }, () => {
-          console.log("바뀐 selectedList", this.state.selectedList);
-        })
+        this.setState({ selectedList: res.branches, showList: true })
       );
   };
 
