@@ -8,12 +8,43 @@ class HomeNav extends Component {
     super(props);
     this.state = {
       show: false,
+      listShow: false,
     };
   }
 
-  hoveronOff = () => {
-    this.setState({ show: !this.state.show });
+  componentDidMount() {
+    window.addEventListener("scroll", this.scrollTo);
+  }
+
+  scrollTo = () => {
+    let currentY = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentY === 0) {
+      this.setState({ show: false });
+    } else {
+      this.setState({ show: true });
+    }
   };
+
+  hoveron = () => {
+    this.setState({ show: true, listShow: true });
+  };
+
+  hoverOff = () => {
+    let currentY = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentY === 0) {
+      this.setState({ show: false, listShow: false });
+    } else {
+      this.setState({ show: true, listShow: false });
+    }
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollTo);
+  }
+
+  // hoveronOff = () => {
+  //   this.setState({ show: !this.state.show });
+  // };
 
   render() {
     return (
@@ -21,13 +52,13 @@ class HomeNav extends Component {
         className={`HomeNav ${this.state.show ? "showList" : ""}`}
         style={{ display: this.props.navShow }}
       >
-        <div className='logoContainer' onMouseEnter={this.hoveronOff}>
+        <div className='logoContainer' onMouseEnter={this.hoverOff}>
           <Link to='/'>
             <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
           </Link>
         </div>
         <div className={`navList ${this.state.show ? "showFont" : ""}`}>
-          <ul onMouseEnter={this.hoveronOff}>
+          <ul onMouseEnter={this.hoveron}>
             <li>
               <span className='aboutUs'>ABOUT US</span>
             </li>
@@ -79,8 +110,8 @@ class HomeNav extends Component {
         </div>
         {this.state.show && (
           <HomeNavDetail
-            show={this.state.show}
-            onMouseLeave={this.hoveronOff}
+            show={this.state.listShow}
+            onMouseLeave={this.hoverOff}
           />
         )}
       </div>
