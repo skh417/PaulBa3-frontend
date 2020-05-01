@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MAP_LOCATION, BASE_URL } from "../../../Config";
+import { BASE_URL } from "../../../Config";
 import "./LocationSection.scss";
 
 class LocationSection extends Component {
@@ -101,7 +101,7 @@ class LocationSection extends Component {
   }
 
   callArea = (area) => {
-    fetch(`${MAP_LOCATION}/store/${area.area_code}`)
+    fetch(`${BASE_URL}/branch/${area.area_code}`)
       .then((res) => res.json())
       .then((res) => this.setState({ city: res.area_info, isFirst: false }));
   };
