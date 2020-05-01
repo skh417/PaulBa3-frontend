@@ -42,21 +42,17 @@ class HomeNav extends Component {
     window.removeEventListener("scroll", this.scrollTo);
   }
 
-  // hoveronOff = () => {
-  //   this.setState({ show: !this.state.show });
-  // };
-
   render() {
     return (
       <div
         className={`HomeNav ${this.state.show ? "showList" : ""}`}
         style={{ display: this.props.navShow }}
       >
-        <div className='logoContainer' onMouseEnter={this.hoverOff}>
-          <Link to='/'>
+        <Link to='/'>
+          <div className='logoContainer' onMouseEnter={this.hoverOff}>
             <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
-          </Link>
-        </div>
+          </div>
+        </Link>
         <div className={`navList ${this.state.show ? "showFont" : ""}`}>
           <ul onMouseEnter={this.hoveron}>
             <li>
