@@ -15,9 +15,16 @@
     }
 
     ul {
+        max-width: 1606px;
         height: 370px;
+        margin: 0 auto;
+        border: 1px solid #e2dfdc;
+        border-left: none;
 
         li {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
             position: relative;
             text-align: center;
             list-style: none;
@@ -25,8 +32,8 @@
             height: 370px;
             float: left;
             padding: 50px 0;
-            border: 1px solid #e2dfdc;
             border-left: none;
+            border-left: 1px solid #e2dfdc;
 
             span {
                 display: block;
@@ -37,6 +44,7 @@
             }
         }
 
+
         li::before {
             content: "";
             clear: both;
@@ -46,12 +54,13 @@
             position: absolute;
             background: url("https://www.baristapaulbassett.co.kr/images/menu/icon.png") no-repeat 0 0;
             background-position: 0 -52px;
-            left: 40px;
+            // left: 40px;
             top: 120px;
         }
 
         li:nth-child(2)::before {
             background-position-x: -200px;
+
         }
 
         li:nth-child(3)::before {
