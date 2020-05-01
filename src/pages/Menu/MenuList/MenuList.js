@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import Nav from "../../../component/Nav/Nav";
 import MenuCard from "./MenuCard/MenuCard";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import { menuAll } from "./menuAll";
-import { MENU_URL } from "../../../Config";
+import { BASE_URL } from "../../../Config";
 import "./MenuList.scss";
 
 class MenuList extends Component {
@@ -19,7 +18,7 @@ class MenuList extends Component {
   componentDidUpdate(prevProps) {
     const { category, id } = this.props.match.params;
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`${MENU_URL}${category}/${id}`)
+      fetch(`${BASE_URL}${category}/${id}`)
         .then((data) => data.json())
         .then((data) => this.setState({ theOne: data }));
     }
