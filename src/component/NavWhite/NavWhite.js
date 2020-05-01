@@ -12,6 +12,10 @@ class NavWhite extends Component {
     };
   }
 
+  clickToMove = () => {
+    window.scrollTo(0,0);
+  }
+
   hoveron = () => {
     this.setState({ show: true, listShow: true });
   };
@@ -71,12 +75,12 @@ class NavWhite extends Component {
         <div className='smallNavList'>
           <ul>
             <li>
-              <Link to='/login'>
+              <Link to='/login' onClick={this.clickToMove}>
                 <span>Login</span>
               </Link>
             </li>
             <li>
-              <Link to='/signup'>
+              <Link to='/signup' onClick={this.clickToMove}>
                 <span>Join</span>
               </Link>
             </li>

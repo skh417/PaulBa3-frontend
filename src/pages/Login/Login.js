@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
+import {BASE_URL} from "../../Config"
 import "./Login.scss";
 
 class Login extends Component {
@@ -46,7 +48,7 @@ class Login extends Component {
         password: this.state.password,
       })
     );
-    fetch("http://10.58.6.197:8000/sign-in", {
+    fetch(`${BASE_URL}/sign-in`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -124,7 +126,7 @@ class Login extends Component {
                 <span>아직 Paul Bassett Society 회원이 아니신가요?</span> <br />
                 지금 가입하시고 Exclusive Benefits으로 돌려받으세요
               </div>
-              <a href='http://localhost:3000/signup'>회원가입</a>
+              <Link to='/signup'>회원가입</Link>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NavWhite from "../../component/NavWhite/NavWhite";
 import Footer from "../../component/Footer/Footer";
 import "./Signup.scss";
+import { BASE_URL } from "../../Config";
 
 class Signup extends Component {
   constructor() {
@@ -102,7 +103,7 @@ class Signup extends Component {
     ) {
       alert("필수항목을 작성해주세요");
     } else {
-      fetch("http://10.58.6.197:8000/sign-up", {
+      fetch(`${BASE_URL}/sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +130,7 @@ class Signup extends Component {
   idCheck = (e) => {
     e.preventDefault();
     const { usableId } = this.state;
-    fetch("http://10.58.6.197:8000/sign-up/check", {
+    fetch(`${BASE_URL}/sign-up/check`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

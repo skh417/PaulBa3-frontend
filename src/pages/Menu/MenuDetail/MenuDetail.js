@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter,Link } from "react-router-dom";
 import NavWhite from "../../../component/NavWhite/NavWhite";
 import MenuDetailOne from "./MenuDetailOne/MenuDetailOne";
 import MenuDetailTwo from "./MenuDetailTwo/MenuDetailTwo";
@@ -31,6 +31,10 @@ class MenuDetail extends Component {
       });
   }
 
+  goBack = () => {
+    this.props.history.goBack();
+  }
+
   render() {
     const { coffee } = this.state;
     // console.log("props: ", this.props)
@@ -49,7 +53,7 @@ class MenuDetail extends Component {
             <h3>해당 제품이 없습니다.😘</h3>
           )}
           <div className='btnContainer'>
-            <a href=''>LIST</a>
+            <Link onClick={this.goBack}>LIST</Link>
           </div>
           <MenuFooter />
         </div>
