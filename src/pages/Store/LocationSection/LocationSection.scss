@@ -20,7 +20,9 @@ $noto: "NotoSans";
 
     ul {
       list-style: none;
-      width: 300px;
+      width: 290px; 
+      border-left: 1px solid #aaa8a7;
+      border-top: 1px solid #aaa8a7;
 
       li {
         display: inline-block;
@@ -28,10 +30,10 @@ $noto: "NotoSans";
         height: 50px;
         padding-top: 16px;
         border: 1px solid #aaa8a7;
-        
+        font-family: "NotoSans";
         text-align: center;
-        // margin-top: -1px;
-        // margin-left: -1px;
+        border-top-color: transparent;
+        border-left-color: transparent;
       }
       .clickable {
         cursor: pointer;
