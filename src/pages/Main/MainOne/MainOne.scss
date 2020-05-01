@@ -9,6 +9,10 @@
         width: 100%;
         background-attachment: fixed;
         background-position: center; 
+        
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
 
         .mainText {
             position: absolute;
@@ -16,6 +20,20 @@
             left: 180px;
             color: #382e2c;
             line-height: 80px;
+
+            
+
+            // -webkit-animation: moving .2s ;
+            // animation: moving 2s infinite;
+            // animation-duration: 3s;
+            // animation-iteration-count: infinite;
+            // animation-timing-function: linear;
+
+            @keyframes moving {
+                from {top: 50%;}
+                to {top: 37%;}
+            }
+
             .korName {
                 font-size: 47px;
                 font-family: 'NanumSqaure';

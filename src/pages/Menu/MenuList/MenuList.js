@@ -12,6 +12,7 @@ class MenuList extends Component {
     super(props);
     this.state = {
       theOne: [],
+      moveTextUp: false,
     };
   }
 
@@ -27,17 +28,20 @@ class MenuList extends Component {
   render() {
     const { products, category } = this.props;
     const { theOne } = this.state;
+    const { moveTextUp } = this.props;
     if (!products) return <></>;
 
     return (
       <>
-        <div className='MenuList'>
+        <div className='MenuList' onLoad={this.props.moveText}>
           <div className='topImage'>
             <img src={menuAll[category].banner} />
-            <div>
+            <div className={`${moveTextUp ? "loaded" : ""}`}>
               <span className='title'>{menuAll[category].title}</span>
               <br />
-              <span>{menuAll[category].description}</span>
+              <span className='description'>
+                {menuAll[category].description}
+              </span>
             </div>
           </div>
           <div className='category'>

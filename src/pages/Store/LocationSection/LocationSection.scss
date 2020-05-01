@@ -74,7 +74,7 @@ $noto: "NotoSans";
     }
   }
   .storeLocationContainer {
-    height: 580px;
+    height: calc(100vh-110px);
     overflow: scroll;
     
 

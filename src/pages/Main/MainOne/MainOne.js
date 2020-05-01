@@ -19,7 +19,7 @@ class MainOne extends Component {
   changeCurrent = () => {
     setInterval(() => {
       this.setState({ current: this.state.current + 1 });
-    }, 2500);
+    }, 5000);
   };
 
   currentBanner = (banners, current) => {
@@ -37,6 +37,22 @@ class MainOne extends Component {
         description: "",
       });
     return filterResult[0];
+  };
+
+  prevBanner = () => {
+    if (this.state.current < 1) {
+      this.setState({ current: 6 });
+    } else {
+      this.setState({ current: this.state.current - 1 });
+    }
+  };
+
+  nextBanner = () => {
+    if (this.state.current > 6) {
+      this.setState({ current: 1 });
+    } else {
+      this.setState({ current: this.state.current + 1 });
+    }
   };
 
   render() {
@@ -66,8 +82,8 @@ class MainOne extends Component {
             <span className='allPage'>06</span>
           </div>
           <div className='slideControll'>
-            <span className='prev'></span>
-            <span className='next'></span>
+            <span className='prev' onClick={this.prevBanner}></span>
+            <span className='next' onClick={this.nextBanner}></span>
           </div>
           <div className='recommend'>
             <div>

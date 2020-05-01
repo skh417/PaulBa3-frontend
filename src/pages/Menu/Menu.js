@@ -13,22 +13,26 @@ class Menu extends Component {
     this.state = {
       menu: [],
       num: 0,
+      moveTextUp: false,
     };
   }
   componentDidMount() {
     const { category, id } = this.props.match.params;
-    console.log({ category, id });
     fetch(`${BASE_URL}/menu/${category}/${id}`)
       .then((data) => data.json())
       .then((data) => this.setState({ menu: data }));
   }
+
+  moveText = () => {
+    this.setState({ moveTextUp: true });
+  };
 
   componentDidUpdate(prevProps) {
     const { category } = this.props.match.params;
     if (prevProps.match.params.category !== category) {
       fetch(`${BASE_URL}/menu/${category}/0`)
         .then((data) => data.json())
-        .then((data) => this.setState({ menu: data }));
+        .then((data) => this.setState({ menu: data, moveTextUp: false }));
     }
   }
 
@@ -41,6 +45,8 @@ class Menu extends Component {
         <MenuList
           products={products}
           category={this.props.match.params.category}
+          moveTextUp={this.state.moveTextUp}
+          moveText={this.moveText}
         />
         <Footer />
       </>
