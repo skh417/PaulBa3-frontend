@@ -56,7 +56,9 @@ class HomeNav extends Component {
         <div className={`navList ${this.state.show ? "showFont" : ""}`}>
           <ul onMouseEnter={this.hoveron}>
             <li>
-              <span className='aboutUs'>ABOUT US</span>
+              <span className='aboutUs'>
+                <Link to='/'>ABOUT US</Link>
+              </span>
             </li>
             <li>
               <span>

@@ -36,7 +36,9 @@ class NavWhite extends Component {
         <div className='navList'>
           <ul onMouseEnter={this.hoveron}>
             <li>
-              <span className='aboutUs'>ABOUT US</span>
+              <span className='aboutUs'>
+                <Link to='/'>ABOUT US</Link>
+              </span>
             </li>
             <li>
               <span className='menu'>
