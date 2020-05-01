@@ -9,4 +9,4 @@ export const LOGIN_URL = "";
 export const SIGNUP_URL = "";
 
 // 가람님
-export const MAP_LOCATION = "http://10.58.0.58:8000";
+export const MAP_LOCATION = "http://10.58.1.53:8000";
