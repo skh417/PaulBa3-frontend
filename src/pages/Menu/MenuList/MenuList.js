@@ -18,7 +18,7 @@ class MenuList extends Component {
   componentDidUpdate(prevProps) {
     const { category, id } = this.props.match.params;
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`${BASE_URL}${category}/${id}`)
+      fetch(`${BASE_URL}/menu/${category}/${id}`)
         .then((data) => data.json())
         .then((data) => this.setState({ theOne: data }));
     }
