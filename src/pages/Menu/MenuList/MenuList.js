@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import Nav from "../../../component/Nav/Nav";
 import MenuCard from "./MenuCard/MenuCard";
 import MenuFooter from "../MenuFooter/MenuFooter";
 import { menuAll } from "./menuAll";
-import { MENU_URL } from "../../../Config";
+import { BASE_URL } from "../../../Config";
 import "./MenuList.scss";
 
 class MenuList extends Component {
@@ -12,13 +11,14 @@ class MenuList extends Component {
     super(props);
     this.state = {
       theOne: [],
+      moveTextUp: false,
     };
   }
 
   componentDidUpdate(prevProps) {
     const { category, id } = this.props.match.params;
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`${MENU_URL}${category}/${id}`)
+      fetch(`${BASE_URL}/menu/${category}/${id}`)
         .then((data) => data.json())
         .then((data) => this.setState({ theOne: data }));
     }
@@ -27,17 +27,20 @@ class MenuList extends Component {
   render() {
     const { products, category } = this.props;
     const { theOne } = this.state;
+    const { moveTextUp } = this.props;
     if (!products) return <></>;
 
     return (
       <>
-        <div className='MenuList'>
+        <div className='MenuList' onLoad={this.props.moveText}>
           <div className='topImage'>
             <img src={menuAll[category].banner} />
-            <div>
+            <div className={`${moveTextUp ? "loaded" : ""}`}>
               <span className='title'>{menuAll[category].title}</span>
               <br />
-              <span>{menuAll[category].description}</span>
+              <span className='description'>
+                {menuAll[category].description}
+              </span>
             </div>
           </div>
           <div className='category'>

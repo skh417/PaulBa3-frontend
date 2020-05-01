@@ -6,7 +6,9 @@ class HomeNavDetail extends Component {
   render() {
     return (
       <div
-        className={this.props.show ? "NavDetail show" : "NavDetail unShown"}
+        className={
+          this.props.show ? "HomeNavDetail show" : "HomeNavDetail unShown"
+        }
         onMouseLeave={this.props.onMouseLeave}
       >
         <div>

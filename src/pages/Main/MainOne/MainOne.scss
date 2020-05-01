@@ -9,6 +9,10 @@
         width: 100%;
         background-attachment: fixed;
         background-position: center; 
+        
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
 
         .mainText {
             position: absolute;
@@ -16,6 +20,20 @@
             left: 180px;
             color: #382e2c;
             line-height: 80px;
+
+            
+
+            // -webkit-animation: moving .2s ;
+            // animation: moving 2s;
+            // animation-duration: 3s;
+            // animation-iteration-count: 1;
+            // animation-timing-function: linear;
+
+            @keyframes moving {
+                from {top: 50%;}
+                to {top: 37%;}
+            }
+
             .korName {
                 font-size: 47px;
                 font-family: 'NanumSqaure';
@@ -234,9 +252,32 @@
         width: 76px;
         height: 122px;
 
+        p {
+            .line {
+                position: absolute;
+                top: 20px;
+                left: 38px;
+                border: .5px solid #e0004d;
+                border-top-width: 40px;
+                display: inline-block;
+            }
+            .arrowDown{
+                position: absolute;
+                top: 50px;
+                left: 34px;
+                border: solid #e0004d;
+                border-width: 0 1px 1px 0;
+                display: inline-block;
+                padding: 4px;
+                transform: rotate(45deg);
+            }
+        }
+        
+
         .text {
             position: relative;
             top: 60%;
+            font-size: 13px;
             color: white;
             text-align: center;
             opacity: 0.8;

@@ -1,6 +1,7 @@
 $noto: "NotoSans";
 
 .LocationSection {
+  height: calc(100vh-110px);
   .subtitle {
     margin: 23px 0 25px 30px;
     span {
@@ -19,7 +20,9 @@ $noto: "NotoSans";
 
     ul {
       list-style: none;
-      width: 300px;
+      width: 290px; 
+      border-left: 1px solid #aaa8a7;
+      border-top: 1px solid #aaa8a7;
 
       li {
         display: inline-block;
@@ -27,10 +30,10 @@ $noto: "NotoSans";
         height: 50px;
         padding-top: 16px;
         border: 1px solid #aaa8a7;
-        
+        font-family: "NotoSans";
         text-align: center;
-        // margin-top: -1px;
-        // margin-left: -1px;
+        border-top-color: transparent;
+        border-left-color: transparent;
       }
       .clickable {
         cursor: pointer;
@@ -74,14 +77,14 @@ $noto: "NotoSans";
     }
   }
   .storeLocationContainer {
-    height: 580px;
+    height: 75vh;
     overflow: scroll;
-    
+    overflow-x: unset;
 
     .storeLocation {
       overflow: auto;
       margin: 0 20px;
-      padding: 25px 0 16px 0;
+      padding: 25px 0 50px 0;
       display: flex;
       justify-content: space-around;
       .left {
@@ -130,5 +133,11 @@ $noto: "NotoSans";
         }
       }
     }
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B8B8B8;
   }
 }
