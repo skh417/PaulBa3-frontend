@@ -74,25 +74,27 @@ class NameSection extends Component {
           <div className='storeLocationContainer'>
             <div className='storeLocation'>
               <div className='left'>
-                {list.branches !== undefined
-                  ? list.branches.map((branch, index) => {
-                      return (
-                        <>
-                          <div className='sotreContainer' key={index}>
-                            <div className='linkToStore'>
-                              <div className='name'>{branch.shop_name}</div>
-                              <div className='locationLogo'></div>
-                            </div>
-                            <div className='address'>{branch.address}</div>
-                            <div className='contact'>
-                              <span className='telLogo'></span>
-                              <span>{branch.tel}</span>
-                            </div>
+                {list.branches !== undefined ? (
+                  list.branches.map((branch, index) => {
+                    return (
+                      <>
+                        <div className='sotreContainer' key={index}>
+                          <div className='linkToStore'>
+                            <div className='name'>{branch.shop_name}</div>
+                            <div className='locationLogo'></div>
                           </div>
-                        </>
-                      );
-                    })
-                  : console.log("없음")}
+                          <div className='address'>{branch.address}</div>
+                          <div className='contact'>
+                            <span className='telLogo'></span>
+                            <span>{branch.tel}</span>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 $noto: "NotoSans";
 
 .LocationSection {
+  height: calc(100vh-110px);
   .subtitle {
     margin: 23px 0 25px 30px;
     span {
@@ -74,14 +75,14 @@ $noto: "NotoSans";
     }
   }
   .storeLocationContainer {
-    height: calc(100vh-110px);
+    height: 75vh;
     overflow: scroll;
-    
+    overflow-x: unset;
 
     .storeLocation {
       overflow: auto;
       margin: 0 20px;
-      padding: 25px 0 16px 0;
+      padding: 25px 0 50px 0;
       display: flex;
       justify-content: space-around;
       .left {
