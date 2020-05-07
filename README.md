@@ -8,15 +8,15 @@
 ----
 
 ### 데모
-![메인](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https://k.kakaocdn.net/dn/P6z83/btqDQTwo9f8/KH1KZlrKjjdkNm9fjlyk7k/img.png)
-[데모영상](https://youtu.be/a1vKyWHA8pE)
+[![메인](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FP6z83%2FbtqDQTwo9f8%2FKH1KZlrKjjdkNm9fjlyk7k%2Fimg.png)](https://youtu.be/a1vKyWHA8pE)
+데모영상 보러가기▲(이미지 클릭)
 
 ----
 
 ### 사용된 기술
-**Fronted**: JavaScript, React.js, SASS
-**Backed**: Python, Django, Selenium, BeautifulSoup4, MySQL 
-**Deployment**: AWS EC2
+- **Fronted**: JavaScript, React.js, SASS
+- **Backed**: Python, Django, Selenium, BeautifulSoup4, MySQL 
+- **Deployment**: AWS EC2, CORS
 
 ----
 
