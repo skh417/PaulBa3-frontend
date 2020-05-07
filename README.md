@@ -8,7 +8,7 @@
 ----
 
 ### 데모
-[![메인](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FP6z83%2FbtqDQTwo9f8%2FKH1KZlrKjjdkNm9fjlyk7k%2Fimg.png)](https://youtu.be/a1vKyWHA8pE)
+[![메인](https://media.vlpt.us/images/magnoliarfsit/post/eb955457-4c79-4474-b8ba-2f99c9378da4/mainpage.png)](https://youtu.be/a1vKyWHA8pE)
 데모영상 보러가기▲(이미지 클릭)
 
 ----
