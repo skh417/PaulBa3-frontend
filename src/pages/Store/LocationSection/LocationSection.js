@@ -117,13 +117,13 @@ class LocationSection extends Component {
   render() {
     const { district, city, isFirst, showList, selectedList } = this.state;
     return (
-      <div className='LocationSection'>
+      <div className="LocationSection">
         {!showList ? (
           <>
-            <div className='subtitle'>
+            <div className="subtitle">
               <span>시/도 선택</span>
             </div>
-            <div className='cityName'>
+            <div className="cityName">
               <ul>
                 {isFirst
                   ? district.map((list, index) => {
@@ -158,40 +158,40 @@ class LocationSection extends Component {
             </div>
           </>
         ) : (
-          <div className='resultList'>
-            <div className='result'>
+          <div className="resultList">
+            <div className="result">
               <div>
                 Total
-                <span className='totalCount'>{selectedList.length}</span>
+                <span className="totalCount">{selectedList.length}</span>
               </div>
-              <div className='logos'>
+              <div className="logos">
                 <img
-                  src='https://www.baristapaulbassett.co.kr/images/store/array.png'
-                  alt=''
-                  className='sort'
+                  src="https://www.baristapaulbassett.co.kr/images/store/array.png"
+                  alt=""
+                  className="sort"
                 />
                 <img
-                  src='https://www.baristapaulbassett.co.kr/images/store/reset.png'
-                  alt=''
-                  className='back'
+                  src="https://www.baristapaulbassett.co.kr/images/store/reset.png"
+                  alt=""
+                  className="back"
                 />
               </div>
             </div>
 
-            <div className='storeLocationContainer'>
-              <div className='storeLocation'>
-                <div className='left'>
+            <div className="storeLocationContainer">
+              <div className="storeLocation">
+                <div className="left">
                   {selectedList.map((list, index) => {
                     return (
                       <>
-                        <div className='sotreContainer' key={index}>
-                          <div className='linkToStore'>
-                            <div className='name'>{list.shop_name}</div>
-                            <div className='locationLogo'></div>
+                        <div className="sotreContainer" key={index}>
+                          <div className="linkToStore">
+                            <div className="name">{list.shop_name}</div>
+                            <div className="locationLogo"></div>
                           </div>
-                          <div className='address'>{list.address}</div>
-                          <div className='contact'>
-                            <span className='telLogo'></span>
+                          <div className="address">{list.address}</div>
+                          <div className="contact">
+                            <span className="telLogo"></span>
                             <span>{list.tel}</span>
                           </div>
                         </div>

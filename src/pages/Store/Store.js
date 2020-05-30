@@ -39,32 +39,32 @@ class Store extends Component {
     return (
       <>
         <NavWhite />
-        <div className='Store'>
+        <div className="Store">
           {/* 왼쪽 검색 */}
-          <div className='storeContainer'>
-            <div className='storeList'>
+          <div className="storeContainer">
+            <div className="storeList">
               <p>매장 찾기</p>
             </div>
-            <div className='category'>
+            <div className="category">
               <ul>
                 <li
                   className={`${selected === 0 ? "selected" : ""}`}
                   onClick={this.isSelected}
-                  id='0'
+                  id="0"
                 >
                   매장명
                 </li>
                 <li
                   className={`${selected === 1 ? "selected" : ""}`}
                   onClick={this.isSelected}
-                  id='1'
+                  id="1"
                 >
                   지역
                 </li>
                 <li
                   className={`${selected === 2 ? "selected" : ""}`}
                   onClick={this.isSelected}
-                  id='2'
+                  id="2"
                 >
                   옵션 선택
                 </li>

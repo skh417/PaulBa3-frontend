@@ -11,7 +11,7 @@ class MenuList extends Component {
     super(props);
     this.state = {
       theOne: [],
-      moveTextUp: false,
+      // moveTextUp: false,
     };
   }
 
@@ -32,19 +32,19 @@ class MenuList extends Component {
 
     return (
       <>
-        <div className='MenuList' onLoad={this.props.moveText}>
-          <div className='topImage'>
+        <div className="MenuList" onLoad={this.props.moveText}>
+          <div className="topImage">
             <img src={menuAll[category].banner} />
             <div className={`${moveTextUp ? "loaded" : ""}`}>
-              <span className='title'>{menuAll[category].title}</span>
+              <span className="title">{menuAll[category].title}</span>
               <br />
-              <span className='description'>
+              <span className="description">
                 {menuAll[category].description}
               </span>
             </div>
           </div>
-          <div className='category'>
-            <div className='all'>
+          <div className="category">
+            <div className="all">
               {menuAll[category].categories.map((cat, index) => {
                 return (
                   <Link to={`/menu/${category}/${index}`} key={index}>
@@ -54,8 +54,8 @@ class MenuList extends Component {
               })}
             </div>
           </div>
-          <div className='menuConatinaer'>
-            <div className='oneContainer'>
+          <div className="menuConatinaer">
+            <div className="oneContainer">
               {theOne.products === undefined
                 ? products.map((item, index) => {
                     return (

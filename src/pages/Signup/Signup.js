@@ -203,9 +203,9 @@ class Signup extends Component {
     return (
       <>
         <NavWhite />
-        <div className='SignUp'>
+        <div className="SignUp">
           <h2>회원가입</h2>
-          <ul className='currentStep'>
+          <ul className="currentStep">
             <li>
               <span>01</span>
               본인 인증
@@ -220,43 +220,43 @@ class Signup extends Component {
               <span>04</span>가입 완료
             </li>
           </ul>
-          <div className='memberInfoTitle'>
+          <div className="memberInfoTitle">
             회원 정보 입력
             <span>
               * 표시 되어진 부분은 필수 항목으로 반드시 입력하셔야 합니다.
             </span>
           </div>
-          <div className='notice'>
+          <div className="notice">
             Paul Bassett은 안전한 개인정보 보호를 위해 회원님의 동의 없이 제
             3자에게 정보를 제공하지 않습니다.
           </div>
-          <table className='memberInfoTable'>
+          <table className="memberInfoTable">
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 아이디<span>*</span>
               </th>
               <td>
                 <input
-                  className='customId'
-                  type='text'
+                  className="customId"
+                  type="text"
                   onChange={this.inputId}
                 />
-                <a className='checkOverlap' onClick={this.idCheck}>
+                <a className="checkOverlap" onClick={this.idCheck}>
                   중복확인
                 </a>
               </td>
             </tr>
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 비밀번호<span>*</span>
               </th>
               <td>
                 <input
-                  className='customPw'
-                  type='password'
+                  className="customPw"
+                  type="password"
                   onChange={this.inputPw}
                 />
-                <ul className='pwCaption'>
+                <ul className="pwCaption">
                   <li>영문자/숫자/특수 문자가 모두 포함되어야 합니다.</li>
                   <li>사용 가능한 특수 문자는 !@.#^* >+=_~ 입니다.</li>
                   <li>비밀번호는 최소 8자리 이상입니다.</li>
@@ -265,39 +265,39 @@ class Signup extends Component {
               </td>
             </tr>
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 비밀번호 확인<span>*</span>
               </th>
               <td>
                 <input
-                  className='checkPw'
-                  type='password'
+                  className="checkPw"
+                  type="password"
                   onChange={this.inputPwCheck}
                 />
               </td>
             </tr>
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 이름<span>*</span>
               </th>
               <td>
                 <input
-                  className='inputName'
-                  type='text'
+                  className="inputName"
+                  type="text"
                   onChange={this.inputName}
                 />
                 {/* 실제 폴 바셋 사이트에서는 휴대폰 인증에서 입력한 이름이 자동으로 input value값으로 입력, readOnly */}
               </td>
             </tr>
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 생년월일<span>*</span>
               </th>
-              <td className='birthDay'>
+              <td className="birthDay">
                 {/* fetch실습 */}
                 <input
-                  className='birthDay'
-                  type='text'
+                  className="birthDay"
+                  type="text"
                   onChange={this.inputBirth}
                 />
                 {/* <select className="year" />
@@ -306,13 +306,13 @@ class Signup extends Component {
               </td>
             </tr>
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 휴대폰<span>*</span>
               </th>
-              <td className='phoneNumber'>
+              <td className="phoneNumber">
                 <input
-                  className='phoneNumber'
-                  type='text'
+                  className="phoneNumber"
+                  type="text"
                   onChange={this.inputPhone}
                 />
                 {/* <select className="selectPhone" />
@@ -323,11 +323,11 @@ class Signup extends Component {
               </td>
             </tr>
             <tr>
-              <th scope='row'>
+              <th scope="row">
                 이메일<span>*</span>
               </th>
-              <td className='eMail'>
-                <input type='text' onChange={this.inputEmail} />
+              <td className="eMail">
+                <input type="text" onChange={this.inputEmail} />
                 {/* <span>@</span>
                             <input type="text" />
                             <select className="selectMail">
@@ -340,31 +340,31 @@ class Signup extends Component {
               </td>
             </tr>
             <tr>
-              <th scope='row'>주소</th>
-              <td className='address'>
-                <div className='addressDiv'>
+              <th scope="row">주소</th>
+              <td className="address">
+                <div className="addressDiv">
                   <input
-                    id='home'
+                    id="home"
                     className={home ? "home" : "home2"}
                     onClick={this.checkHome}
-                    type='radio'
+                    type="radio"
                   />
-                  <label for='home'>자택</label>
+                  <label for="home">자택</label>
                   <input
-                    id='workplace'
+                    id="workplace"
                     className={workplace ? "workplace" : "workplace2"}
                     onClick={this.checkWork}
-                    type='radio'
+                    type="radio"
                   />
-                  <label for='workplace'>회사</label>
+                  <label for="workplace">회사</label>
                 </div>
                 {/* <input className="zipCode" type="text" />
                             <span className="hyphen" />
                             <a href="">주소찾기</a>
                             <br /> */}
                 <input
-                  className='addAddress'
-                  type='text'
+                  className="addAddress"
+                  type="text"
                   onChange={this.inputAddress}
                 />
                 {/* <br />
@@ -377,7 +377,7 @@ class Signup extends Component {
               </td>
             </tr>
           </table>
-          <div className='marketingAgree'>
+          <div className="marketingAgree">
             <strong>
               광고/정보 수신 및 마케팅 활용에 대한 안내<span>선택</span>
             </strong>
@@ -391,7 +391,7 @@ class Signup extends Component {
                 발송됩니다.
               </li>
             </ul>
-            <div className='marketingTxt'>
+            <div className="marketingTxt">
               회사는 고객님의 정보를 활용하여 다양한 방법 (앱푸시, 문자메시지,
               이메일) 을 통해 고객님께 온라인 주문 상태를 알리거나 꼭 필요한
               회사 혹은 제휴사의 상품, 서비스를 추천, 이벤트 홍보 및 광고 (쿠폰,
@@ -451,48 +451,48 @@ class Signup extends Component {
               · 문의전화 : 1899-8829 (유료)
               <br />· 팩스 : 02-3446-2220
             </div>
-            <div className='marketingCheck'>
-              <div className='checkAgree'>
+            <div className="marketingCheck">
+              <div className="checkAgree">
                 <input
-                  id='smsAgree'
+                  id="smsAgree"
                   className={smsAgree ? "toggleOff" : "toggleOn"}
                   onClick={this.checkSmsAgree}
-                  type='checkbox'
+                  type="checkbox"
                 ></input>
-                <label for='smsAgree'>SMS/MMS 수신 동의</label>
+                <label for="smsAgree">SMS/MMS 수신 동의</label>
                 <input
-                  id='mailAgree'
+                  id="mailAgree"
                   className={mailAgree ? "toggleOff" : "toggleOn"}
                   onClick={this.checkMailAgree}
-                  type='checkbox'
+                  type="checkbox"
                 ></input>
-                <label for='mailAgree'>E-mail 수신 동의</label>
+                <label for="mailAgree">E-mail 수신 동의</label>
                 <input
-                  id='pushAgree'
+                  id="pushAgree"
                   className={pushAgree ? "toggleOff" : "toggleOn"}
                   onClick={this.checkPushAgree}
-                  type='checkbox'
+                  type="checkbox"
                 ></input>
-                <label for='pushAgree'>PUSH 수신 동의</label>
+                <label for="pushAgree">PUSH 수신 동의</label>
               </div>
-              <div className='checkAll'>
+              <div className="checkAll">
                 <input
-                  id='agreeAll'
+                  id="agreeAll"
                   className={agreeAll ? "agreeAll1" : "agreeAll2"}
                   onClick={this.agreeAll}
-                  type='checkbox'
+                  type="checkbox"
                 ></input>
-                <label for='agreeAll'>
+                <label for="agreeAll">
                   광고/정보 수신 및 마케팅 활용에 전체 동의합니다.
                 </label>
               </div>
             </div>
           </div>
-          <div className='buttonArea'>
-            <a className='cancle' href=''>
+          <div className="buttonArea">
+            <a className="cancle" href="">
               취소
             </a>
-            <a className='join' onClick={this.clickSignup}>
+            <a className="join" onClick={this.clickSignup}>
               회원가입
             </a>
           </div>
