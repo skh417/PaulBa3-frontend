@@ -54,14 +54,6 @@ class Main extends Component {
       this.setState({
         veryLeft: this.state.veryLeft - 100,
       });
-      // console.log('width', window.innerWidth / document.documentElement.clientWidth * 100)
-      // console.log('실제 width', window.innerWidth)
-      // console.log('최대치', (window.innerWidth) * 1.2)
-      // console.log('left', this.state.veryLeft)
-      // console.log(`만약 왼쪽값 ${this.state.veryLeft}이 윈도우 width ${-window.innerWidth}보다 커진다면, `)
-      // if (this.state.veryLeft <= -(window.innerWidth * 1.2)) {
-      //     this.setState({ veryLeft: -(window.innerWidth * 1.8) })
-      // }
 
       if (this.state.veryLeft <= -1200) {
         console.log(this.state.veryLeft);
@@ -72,7 +64,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div className='Main' onWheel={this.moveScroll}>
+      <div className="Main" onWheel={this.moveScroll}>
         <div
           ref={(ref) => {
             this.oneRef = ref;

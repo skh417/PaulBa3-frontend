@@ -58,9 +58,9 @@ class MainOne extends Component {
   render() {
     const banner = this.currentBanner(this.state.banners, this.state.current);
     return (
-      <div className='MainOne' id='top'>
+      <div className="MainOne" id="top">
         <div className={`mainBanner ${banner.img}`}>
-          <div className='mainText'>
+          <div className="mainText">
             <p
               className={`${banner.classname} === "hasWhite"? korName hasWhite: korName`}
             >
@@ -77,62 +77,62 @@ class MainOne extends Component {
               {banner.detail}
             </span>
           </div>
-          <div className='slideNum'>
-            <span className='nowPage'>0{banner.id}</span>
-            <span className='allPage'>06</span>
+          <div className="slideNum">
+            <span className="nowPage">0{banner.id}</span>
+            <span className="allPage">06</span>
           </div>
-          <div className='slideControll'>
-            <span className='prev' onClick={this.prevBanner}></span>
-            <span className='next' onClick={this.nextBanner}></span>
+          <div className="slideControll">
+            <span className="prev" onClick={this.prevBanner}></span>
+            <span className="next" onClick={this.nextBanner}></span>
           </div>
-          <div className='recommend'>
+          <div className="recommend">
             <div>
-              <div className='logo'></div>
-              <div className='text'>추천메뉴</div>
+              <div className="logo"></div>
+              <div className="text">추천메뉴</div>
             </div>
           </div>
-          <div className='mainSns'>
+          <div className="mainSns">
             <a
-              href='https://www.facebook.com/paulbassettkorea/'
-              target='_blank'
-              className='facebook'
+              href="https://www.facebook.com/paulbassettkorea/"
+              target="_blank"
+              className="facebook"
             >
               {""}
             </a>
             <a
-              href='https://www.instagram.com/paulbassettkorea/'
-              target='_blank'
-              className='instagram'
+              href="https://www.instagram.com/paulbassettkorea/"
+              target="_blank"
+              className="instagram"
             >
               {""}
             </a>
             <a
-              href='https://www.baristapaulbassett.co.kr/society/MobileApp.pb'
-              target='_blank'
-              className='app'
+              href="https://www.baristapaulbassett.co.kr/society/MobileApp.pb"
+              target="_blank"
+              className="app"
             >
               {""}
             </a>
           </div>
-          <div className='findStore'>
-            <div className='logo'></div>
+          <div className="findStore">
+            <div className="logo"></div>
             <div>FIND A STORE</div>
           </div>
-          <div className='mainNotice'>
-            <div className='container'>
-              <div className='title'>NOTICE</div>
-              <div className='list'>공지사항 제목 [추후 DB연동]</div>
-              <div className='next'></div>
+          <div className="mainNotice">
+            <div className="container">
+              <div className="title">NOTICE</div>
+              <div className="list">공지사항 제목 [추후 DB연동]</div>
+              <div className="next"></div>
             </div>
           </div>
-          <div className='scroll'>
+          <div className="scroll">
             <p>
-              <i className='line'></i>
+              <i className="line"></i>
             </p>
             <p>
-              <i className='arrowDown'></i>
+              <i className="arrowDown"></i>
             </p>
-            <div className='text'>SCROLL</div>
+            <div className="text">SCROLL</div>
           </div>
         </div>
       </div>

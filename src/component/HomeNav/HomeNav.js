@@ -48,43 +48,43 @@ class HomeNav extends Component {
         className={`HomeNav ${this.state.show ? "showList" : ""}`}
         style={{ display: this.props.navShow }}
       >
-        <Link to='/'>
-          <div className='logoContainer' onMouseEnter={this.hoverOff}>
+        <Link to="/">
+          <div className="logoContainer" onMouseEnter={this.hoverOff}>
             <div className={`logo ${this.state.show ? "showList" : ""}`}></div>
           </div>
         </Link>
         <div className={`navList ${this.state.show ? "showFont" : ""}`}>
           <ul onMouseEnter={this.hoveron}>
             <li>
-              <span className='aboutUs'>
-                <Link to='/'>ABOUT US</Link>
+              <span className="aboutUs">
+                <Link to="/">ABOUT US</Link>
               </span>
             </li>
             <li>
               <span>
-                <Link to='/menu/coffee/0' className='menu'>
+                <Link to="/menu/coffee/0" className="menu">
                   MENU
                 </Link>
               </span>
             </li>
             <li>
-              <span className='store'>
-                <Link to='/store'>STORE</Link>
+              <span className="store">
+                <Link to="/store">STORE</Link>
               </span>
             </li>
             <li>
-              <span className='society'>
-                <Link to='/'>SOCIETY</Link>
+              <span className="society">
+                <Link to="/">SOCIETY</Link>
               </span>
             </li>
             <li>
-              <span className='new'>
-                <Link to='/'>WHAT'S NEW</Link>
+              <span className="new">
+                <Link to="/">WHAT'S NEW</Link>
               </span>
             </li>
             <li>
-              <span className='eShop'>
-                <Link to='/'>E-SHOP</Link>
+              <span className="eShop">
+                <Link to="/">E-SHOP</Link>
               </span>
             </li>
           </ul>
@@ -92,12 +92,12 @@ class HomeNav extends Component {
         <div className={`smallNavList ${this.state.show ? "showList" : ""}`}>
           <ul className={`${this.state.show ? "showFont" : ""}`}>
             <li>
-              <Link to='/login'>
+              <Link to="/login">
                 <span>Login</span>
               </Link>
             </li>
             <li>
-              <Link to='/signup'>
+              <Link to="/signup">
                 <span>Join</span>
               </Link>
             </li>
